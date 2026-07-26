@@ -1,0 +1,82 @@
+[
+  {
+    "id": "gandhi_001",
+    "question": "What did Gandhi mean by nonviolence?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_002",
+    "question": "Why did Gandhi believe that means and ends were connected?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_003",
+    "question": "What were Gandhi's views on industrialization and machinery?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_004",
+    "question": "How did Gandhi describe the idea of self-rule or swaraj?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_005",
+    "question": "What role did religion play in Gandhi's political thinking?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "SYNTHESIZED",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_006",
+    "question": "What did Gandhi believe about civil disobedience?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_007",
+    "question": "How did Gandhi view the relationship between personal discipline and public leadership?",
+    "category": "synthesized_viewpoint",
+    "expected_support_level": "SYNTHESIZED",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_008",
+    "question": "What did Gandhi say about economic inequality and poverty?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "SYNTHESIZED",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_009",
+    "question": "How did Gandhi think India's villages should contribute to national development?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "DIRECT",
+    "expected_sources": [],
+    "notes": ""
+  },
+  {
+    "id": "gandhi_010",
+    "question": "What did Gandhi believe about education?",
+    "category": "direct_viewpoint",
+    "expected_support_level": "SYNTHESIZED",
+    "expected_sources": [],
+    "notes": ""
+  }
+]
