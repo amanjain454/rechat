@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from app.retrieval.router import router as retrieval_router
 
 from app.config import settings
 from app.database.client import get_supabase_client
@@ -12,6 +13,9 @@ app = FastAPI(
     title="RecChat API",
     version="0.1.0",
 )
+# Include the retrieval router.
+app.include_router(retrieval_router)
+
 
 
 # Allow the local Next.js frontend to call this backend.
