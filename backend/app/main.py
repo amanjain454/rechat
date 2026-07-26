@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.retrieval.router import router as retrieval_router
+from app.generation.router import router as generation_router
 
 from app.config import settings
 from app.database.client import get_supabase_client
@@ -16,7 +17,8 @@ app = FastAPI(
 # Include the retrieval router.
 app.include_router(retrieval_router)
 
-
+# Include the generation router.
+app.include_router(generation_router)
 
 # Allow the local Next.js frontend to call this backend.
 #
