@@ -1,3 +1,5 @@
+import argparse
+import csv
 import json
 from pathlib import Path
 
@@ -11,34 +13,175 @@ from app.ingestion.token_counter import (
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-SOURCE_FILE = (
+SOURCE_INVENTORY_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "source_inventory"
+    / "gandhi_sources.csv"
+)
+
+RAW_SOURCE_DIR = (
     PROJECT_ROOT
     / "data"
     / "raw"
     / "gandhi"
-    / "freedoms_battle_1922.txt"
 )
 
-OUTPUT_FILE = (
+PROCESSED_SOURCE_DIR = (
     PROJECT_ROOT
     / "data"
     / "processed"
     / "gandhi"
-    / "freedoms_battle_1922_chunks.json"
 )
 
-# text-embedding-3-small standard API price:
-# $0.02 per 1 million input tokens.
 PRICE_PER_MILLION_TOKENS_USD = 0.02
+
+
+def parse_arguments() -> argparse.Namespace:
+    """
+    Read the source key supplied through the command line.
+    """
+
+    parser = argparse.ArgumentParser(
+        description=(
+            "Chunk and export one approved Gandhi source."
+        )
+    )
+
+    parser.add_argument(
+        "source_key",
+        help="Source key from gandhi_sources.csv.",
+    )
+
+    return parser.parse_args()
+
+
+def load_source_record(
+    source_key: str,
+) -> dict[str, str]:
+    """
+    Find one source record in the Gandhi source inventory.
+
+    The file may be comma-separated or tab-separated depending
+    on how it was saved from Excel.
+    """
+
+    with SOURCE_INVENTORY_FILE.open(
+        mode="r",
+        encoding="utf-8-sig",
+        newline="",
+    ) as csv_file:
+        sample = csv_file.read(4096)
+        csv_file.seek(0)
+
+        dialect = csv.Sniffer().sniff(
+            sample,
+            delimiters=",\t",
+        )
+
+        reader = csv.DictReader(
+            csv_file,
+            dialect=dialect,
+        )
+
+        if not reader.fieldnames:
+            raise ValueError(
+                "The source inventory has no header row."
+            )
+
+        fieldnames = [
+            field.strip()
+            for field in reader.fieldnames
+            if field
+        ]
+
+        if "source_key" not in fieldnames:
+            raise ValueError(
+                "The source inventory does not contain a "
+                f"'source_key' column. Found: {fieldnames}"
+            )
+
+        for row in reader:
+            cleaned_row = {
+                key.strip(): value.strip()
+                for key, value in row.items()
+                if key is not None and value is not None
+            }
+
+            if (
+                cleaned_row.get("source_key")
+                == source_key
+            ):
+                return cleaned_row
+
+    raise ValueError(
+        f"Source key not found in inventory: {source_key}"
+    )
+
+
+def is_approved(value: str) -> bool:
+    """
+    Interpret common true values from the inventory.
+    """
+
+    return value.strip().lower() in {
+        "true",
+        "yes",
+        "1",
+    }
 
 
 def main() -> None:
     """
-    Load the source, create chunks, count tokens, save structured
-    records, and estimate the embedding cost.
+    Load one approved source, chunk it, count tokens,
+    and export structured JSON records.
     """
 
-    text = load_text_file(SOURCE_FILE)
+    args = parse_arguments()
+
+    source = load_source_record(
+        args.source_key
+    )
+
+    if not is_approved(
+        source.get(
+            "approved_for_ingestion",
+            "",
+        )
+    ):
+        raise ValueError(
+            "Source is not approved for ingestion: "
+            f"{args.source_key}"
+        )
+
+    local_filename = source.get(
+        "local_filename",
+        "",
+    )
+
+    if not local_filename:
+        raise ValueError(
+            "No local filename configured for source: "
+            f"{args.source_key}"
+        )
+
+    source_file = (
+        RAW_SOURCE_DIR
+        / local_filename
+    )
+
+    output_filename = (
+        f"{Path(local_filename).stem}_chunks.json"
+    )
+
+    output_file = (
+        PROCESSED_SOURCE_DIR
+        / output_filename
+    )
+
+    text = load_text_file(
+        source_file
+    )
 
     chunks = chunk_text(
         text=text,
@@ -46,20 +189,49 @@ def main() -> None:
         overlap_chars=200,
     )
 
+    if not chunks:
+        raise RuntimeError(
+            "Chunking produced no output."
+        )
+
     records: list[dict] = []
     total_tokens = 0
 
-    for index, chunk in enumerate(chunks):
-        token_count = count_tokens(chunk)
+    for index, chunk in enumerate(
+        chunks
+    ):
+        token_count = count_tokens(
+            chunk
+        )
+
         total_tokens += token_count
 
         records.append(
             {
                 "chunk_id": (
-                    f"gandhi_freedoms_battle_1922_{index:04d}"
+                    f"{args.source_key}_{index:04d}"
                 ),
-                "figure_slug": "mahatma-gandhi",
-                "source_key": "gandhi_freedoms_battle_1922",
+                "figure_slug": (
+                    "mahatma-gandhi"
+                ),
+                "source_key": (
+                    args.source_key
+                ),
+                "source_title": (
+                    source["title"]
+                ),
+                "source_type": (
+                    source.get(
+                        "source_type",
+                        "",
+                    )
+                ),
+                "publication_date": (
+                    source.get(
+                        "publication_date",
+                        "",
+                    )
+                ),
                 "chunk_index": index,
                 "text": chunk,
                 "character_count": len(chunk),
@@ -68,12 +240,16 @@ def main() -> None:
         )
 
     estimated_cost = (
-        total_tokens / 1_000_000
+        total_tokens
+        / 1_000_000
     ) * PRICE_PER_MILLION_TOKENS_USD
 
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    output_file.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
-    OUTPUT_FILE.write_text(
+    output_file.write_text(
         json.dumps(
             records,
             ensure_ascii=False,
@@ -87,24 +263,43 @@ def main() -> None:
         for record in records
     ]
 
-    print(f"Embedding model: {EMBEDDING_MODEL}")
-    print(f"Saved chunks: {len(records):,}")
-    print(f"Total tokens: {total_tokens:,}")
+    print(
+        f"Source: {source['title']}"
+    )
+    print(
+        f"Source key: {args.source_key}"
+    )
+    print(
+        f"Input: {source_file}"
+    )
+    print(
+        f"Embedding model: {EMBEDDING_MODEL}"
+    )
+    print(
+        f"Saved chunks: {len(records):,}"
+    )
+    print(
+        f"Total tokens: {total_tokens:,}"
+    )
     print(
         "Average tokens per chunk: "
         f"{total_tokens / len(records):,.1f}"
     )
     print(
-        f"Largest chunk: {max(token_counts):,} tokens"
+        "Largest chunk: "
+        f"{max(token_counts):,} tokens"
     )
     print(
-        f"Smallest chunk: {min(token_counts):,} tokens"
+        "Smallest chunk: "
+        f"{min(token_counts):,} tokens"
     )
     print(
         "Estimated embedding cost: "
         f"${estimated_cost:.6f}"
     )
-    print(f"Output: {OUTPUT_FILE}")
+    print(
+        f"Output: {output_file}"
+    )
 
 
 if __name__ == "__main__":
