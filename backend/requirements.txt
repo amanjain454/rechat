@@ -6,3 +6,4 @@ pytest
 httpx
 supabase
 tiktoken
+openai==2.48.0
