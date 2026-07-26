@@ -1,10 +1,12 @@
+import os
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from app.retrieval.router import router as retrieval_router
-from app.generation.router import router as generation_router
 
 from app.config import settings
 from app.database.client import get_supabase_client
+from app.generation.router import router as generation_router
+from app.retrieval.router import router as retrieval_router
 
 
 # Create the FastAPI application.
@@ -14,26 +16,49 @@ app = FastAPI(
     title="RecChat API",
     version="0.1.0",
 )
+
+
+def get_allowed_origins() -> list[str]:
+    """
+    Read comma-separated frontend origins from the environment.
+
+    Local example:
+    FRONTEND_ORIGINS=http://localhost:3000
+
+    Production example:
+    FRONTEND_ORIGINS=http://localhost:3000,https://rechat.vercel.app
+    """
+
+    configured_origins = os.getenv(
+        "FRONTEND_ORIGINS",
+        "http://localhost:3000",
+    )
+
+    return [
+        origin.strip()
+        for origin in configured_origins.split(",")
+        if origin.strip()
+    ]
+
+
+# Allow approved frontend applications to call this backend.
+#
+# Browsers block cross-origin requests by default, so CORS must
+# explicitly allow both local and production frontend origins.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=get_allowed_origins(),
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 # Include the retrieval router.
 app.include_router(retrieval_router)
 
 # Include the generation router.
 app.include_router(generation_router)
-
-# Allow the local Next.js frontend to call this backend.
-#
-# Frontend: http://localhost:3000
-# Backend:  http://127.0.0.1:8000
-#
-# Browsers block cross-origin requests by default, so CORS must
-# explicitly allow the frontend origin during local development.
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 @app.get("/health")
@@ -48,6 +73,7 @@ def health_check() -> dict[str, str]:
 
     It does not test the database or any external service.
     """
+
     return {"status": "ok"}
 
 
@@ -59,8 +85,11 @@ def config_status() -> dict[str, bool]:
     This endpoint returns only True or False values.
     It never returns or exposes the actual credentials.
     """
+
     return {
-        "supabase_url_configured": bool(settings.supabase_url),
+        "supabase_url_configured": bool(
+            settings.supabase_url
+        ),
         "supabase_publishable_key_configured": bool(
             settings.supabase_publishable_key
         ),
@@ -84,9 +113,10 @@ def get_figures() -> dict[str, list[dict]]:
     The Supabase secret key remains on the backend and is never
     sent to the frontend.
     """
+
     try:
         # Create a Supabase client using the URL and secret key
-        # stored in backend/.env.
+        # stored in the environment.
         supabase = get_supabase_client()
 
         # Query the figures table.
@@ -98,7 +128,8 @@ def get_figures() -> dict[str, list[dict]]:
             supabase.table("figures")
             .select(
                 "id, slug, display_name, full_name, "
-                "birth_year, death_year, short_description, is_active"
+                "birth_year, death_year, short_description, "
+                "is_active"
             )
             .eq("is_active", True)
             .execute()
