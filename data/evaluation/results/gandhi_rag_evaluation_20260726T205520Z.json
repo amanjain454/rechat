@@ -1,0 +1,1066 @@
+{
+  "evaluation_metadata": {
+    "created_at_utc": "20260726T205520Z",
+    "figure_slug": "mahatma-gandhi",
+    "generation_model": "gpt-5.6-luna",
+    "match_count": 5,
+    "question_count": 10
+  },
+  "results": [
+    {
+      "id": "gandhi_001",
+      "question": "What did Gandhi mean by nonviolence?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi meant nonviolence as more than simply refusing to use physical force. It required:\n\n- **Controlling anger**, rather than allowing it to become destructive violence; he saw disciplined self-control as a way of preserving and directing collective energy. [1][3]\n- **Rejecting violence, disorder, plunder, and destruction** even while opposing an unjust government. [1][2]\n- **Resisting injustice through “soul force”**—courageously accepting suffering, withdrawing cooperation, and refusing to support unjust institutions rather than responding with force. [3][4]\n- **Practicing nonviolence in thought, speech, and action**, not merely using it as a convenient tactic. [5]\n\nThus, for Gandhi, nonviolence was a courageous, disciplined form of resistance rooted in self-sacrifice, love, and moral opposition to injustice—not passivity or weakness. [1][4]",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Freedom's Battle",
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0312",
+          "chunk_index": 312,
+          "similarity": 0.5773164614836,
+          "token_count": 415,
+          "content": "SPEECH AT MUZAFFARABAD\n\nBefore a crowded meeting of Mussalmans in the Muzaffarabad, Bombay, held\non the 29th July 1920, speaking on the impending non-co-operation which\ncommenced on the 1st of August, Mr. Gandhi said: The time for speeches\non non-co-operation was past and the time for practice had arrived. But\ntwo things were needful for complete success. An environment free from\nany violence on the part of the people and a spirit of self-sacrifice.\nNon-co-operation, as the speaker had conceived it, was an impossibility\nin an atmosphere surcharged with the spirit of violence. Violence was an\nexhibition of anger and any such exhibition was dissipation of valuable\nenergy. Subduing of one's anger was a storing up of national energy,\nwhich, when set free in an ordered manner, would produce astounding\nresults. His conception of non-co-operation did not involve rapine,\nplunder, incendiarism and all the concomitants of mass madness. His\nscheme presupposed ability on their part to control all the forces of\nevil. If, therefore, any disorderliness was found on the part of the\npeople which they could not control, he for one would certainly help the\nGovernment to control them. In the presence of disorder it would be for\nhim a choice of evil, and evil through he considered the present\nGovernment to be, he would not hesitate for the time being to help the\nGovernment to control disorder. But he had faith in the people. He\nbelieved that they knew that the cause could only be won by non-violent\nmethods. To put it at the lowest, the people had not the power, even if\nthey had the will, to resist with brute strength the unjust Governments\nof Europe who had, in the intoxication of their success disregarding\nevery canon of justice dealt so cruelly by the only Islamic Power\nin Europe.",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0105",
+          "chunk_index": 105,
+          "similarity": 0.568377009383512,
+          "token_count": 651,
+          "content": "The  Non  Co-opekation  Pbogbamme\n\nAnd  what  was  the  Non-Co-operation  programme  that \nMr,  Gandhi  had  worked  out  for  the  adoption  of  the  country \nfor  rectifying  the  wrongs  done  to  Muslim  sentiment  ?  He \nenunciated  the  four  stages  in  the  programme  of  Non -Co- \noperation in  clear  and  unambiguous  terms.\n\nThe  first  was  the  giving  up  of  titles  and  honorary- \noffices  ;  the  second  was  the  refusal  to  serve  Government  in \npaid  appointments  or  to  participate  in  any  manner  in  the- \nworking  of  the  existing  machinery  of  civil  and  judicial \nadministration.  The  third  was  to  decline  to  pay  taxes  and' \nthe  last  was  to  ask  the  police  and  the  military  to  withdraw \n■co-operation  from  the  Government.  From  the  first  Mr. \nGandhi  realised  the  full  scope  of  the  movement  and  he  had \nno  doubt  of  its  far-reaching  efiects.  It  cannot  therefore \nbe  said  that  he  started  the  movement  in  a  fit  of  indigna- \ntion. Far  from  it  he  had  worked  out  his  programme  to \nthe  farthest  limits  of  its  logic  and  had  a  clear  grasp  of  all \nits  implications.  From  time  to  time  he  set  right  many  a \nmisconception  in  the  mind  of  the  non-  co-operationists,  such \nfor  instance,  in  regard  to  the  position  of  the  non  co- \noperationist  Vakil.  There  is  no  ambiguity  in  what  Mr. \nGandhi  said.  The  Vakil  should  quietly  wash  his  hands  oflT \nthe  court,  cases  and  all,  Mr.  Gandhi  took  care  to  explain \nthat  no  stage  would  be  taken  until'he  had  made  suie  that \nhe  was  on  firm  ground.  That  is,  he  would  not  embark  on \nthe  last  two  stages  till  he  bad  created  an  indigenous \npanchayat  to  dispense  justice  and  an  organization  of \nvolunteers  to  maintain  peace  and  order.  In  any  case, \nviolence  should  be  completely  avoided.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0313",
+          "chunk_index": 313,
+          "similarity": 0.566879074911698,
+          "token_count": 719,
+          "content": "Before a crowded meeting of Mussalmans in the Muzaffarabad, Bombay, held\non the 29th July 1920, speaking on the impending non-co-operation which\ncommenced on the 1st of August, Mr. Gandhi said: The time for speeches\non non-co-operation was past and the time for practice had arrived. But\ntwo things were needful for complete success. An environment free from\nany violence on the part of the people and a spirit of self-sacrifice.\nNon-co-operation, as the speaker had conceived it, was an impossibility\nin an atmosphere surcharged with the spirit of violence. Violence was an\nexhibition of anger and any such exhibition was dissipation of valuable\nenergy. Subduing of one's anger was a storing up of national energy,\nwhich, when set free in an ordered manner, would produce astounding\nresults. His conception of non-co-operation did not involve rapine,\nplunder, incendiarism and all the concomitants of mass madness. His\nscheme presupposed ability on their part to control all the forces of\nevil. If, therefore, any disorderliness was found on the part of the\npeople which they could not control, he for one would certainly help the\nGovernment to control them. In the presence of disorder it would be for\nhim a choice of evil, and evil through he considered the present\nGovernment to be, he would not hesitate for the time being to help the\nGovernment to control disorder. But he had faith in the people. He\nbelieved that they knew that the cause could only be won by non-violent\nmethods. To put it at the lowest, the people had not the power, even if\nthey had the will, to resist with brute strength the unjust Governments\nof Europe who had, in the intoxication of their success disregarding\nevery canon of justice dealt so cruelly by the only Islamic Power\nin Europe.\n\nIn non-co-operation they had a matchless and powerful weapon. It was a\nsign of religious atrophy to sustain an unjust Government that supported\nan injustice by resorting to untruth and camouflage. So long therefore\nas the Government did not purge itself of the canker of injustice and\nuntruth, it was their duty to withdraw all help from it consistently\nwith their ability to preserve order in the social structure. The first\nstage of non-co-operation was therefore arranged so as to involve\nminimum of danger to public peace and minimum of sacrifice on the part\nof those who participated in the movement. And if they might not help an\nevil Government nor receive any favours from it, it followed that they\nmust give up all titles of honour which were no longer a proud\npossession. Lawyers, who were in reality honorary officers of the Court,\nshould cease to support Courts that uphold the prestige of an unjust\nGovernment and the people must be able to settle their disputes and\nquarrels by private arbitration. Similarly parents should withdraw their\nchildren from the public schools and they must evolve a system of\nnational education or private education totally independent of the\nGovernment. An insolent Government conscious of its brute strength,\nmight laugh at such withdrawals by the people especially as the Law\ncourts and schools were supposed to help the people, but he had not a\nshadow of doubt that the moral effect of such a step could not possibly\nbe lost even upon a Government whose conscience had become stifled by\nthe intoxication of power.",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0561",
+          "chunk_index": 561,
+          "similarity": 0.533938503084732,
+          "token_count": 649,
+          "content": "thoughts  of  the  audience  to  the  soul  resistance  of  Indians- versus  brute  force  in  south  Africa. He  insisted  that  it was  completely  a  mistake  to  believe  that  Indians  were incapable  of  lengthened  resistance  for  a  principle  ;  in their  fearlessness  of  suffering  they  were  second  to  none in  the  world. Passive  resistance  had  been  called  a weapon  of  the  weak,  but  Mr. Gandhi  maintained  that  it required  courage  higher  than  that  of  a  soldier  on  the battlefield,  which  was  often  the  impulse  of  the  moment ; for  passive  resistance  was  continuous  and  sustained  :  it meant  physical  suffering. Some  people  were  inclined to  think  it  too  difficult  to  be  carried  out  to-day,  but  those who  held  that  idea  were  not  moved  by  true  courage— Again  referring  to  Oriental  teaching,  Mr. Gandhi  said that  the  teaching  of  the  \"  Lord's  Song\"  was,  from  the beginning,  the  necessity  of  fearlessness. He  touched  on the  question  of  physical  force  while  insisting  that  it . was  not  thought  of  by  Indians  in  the  Transvaal. He  does does  not  want  to  share  in  liberty  for  India  that  is gained  by  violence  and  bloodshed,  and  insists  that  no country  is  so  capable  as  India  f  or  wielding  soul  force. Mr. Gandhi  did  not  approve  of  the  militant  tactics  of the  suffragettes  for  the  reason  that  they  were  meeting body  force  with  body  force,  and  not  using  the  higher power  of  soul  force  .•  violence  begot  violence. He  main- tained, too,  that  the  association  of  Britain  and  India — must  be  a  mutual  benefit,  ■  if  India — eschewing violence — did  not  depart  from  her  proud  position  of  be- ing the  giver  and  the  teacher  of  religion. \"If  the  world believes  in  the  existence  of  the  soul.\"  He  said  in  con- clusion, \"it  must  be  recognised  that  soul  force  is  better\n\nthan  body  force  :  it  is  the  sacred  principle  of  love  which moves  mountains. On  us  is  the  responsibility  of  living",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1449",
+          "chunk_index": 1449,
+          "similarity": 0.531939263649121,
+          "token_count": 665,
+          "content": "REPLY  TO  CRITICS.\n\nIf  the  Pardoli  decisions  offended  a  few  zealous  followers  of \nIMr.  Gandhi,  the  Delhi  resolutions  were  condemned  by  a  large \nsection  of  the  public.  Congressmen  were  uncomfortable  at  the \nsudden  and  incessant  changes  of  programme.  Doubts  as  to  the \nvalidity  'of  the  principles  of  non-violence  were  openly  discussed, \ntsome  adhering  to  it  as  a  mere  policy  and  as  policy,  liable  to  change. \nTo  these  Air.  Gandhi  replied: — ]\n\nI  am  sorry  that  I  find  a  nervous  fear  among  some \nHindus  and  Mahomedans  that  I  am  undermining  their \nfaith  and  that  I  am  even  doing  irreparable  harm  to \nIndia  by  my  uncompromising  preaching  of  non-violence. \nThey  seem  almost  to  imply  that  violence  is  their  creed. \nI  touch  a  tender  spot  if  I  talk  about  extreme  non-violence \njn  their  presence.  They  confound  me  with  texts  from \nthe  Mahabharata  and  the  Koran  eulogising  or  permit- \nting violence.  Of  the  Mahabharata  I  can  write  without \n■jestraint;  but  the  most  devout  Mahomedau  will  not, \nJ  hope,  deny  me  the  privilege  of  understanding \nthe  message  of  the  Prophet.  I  make  bold  to  say \nthat  violence  is  the  creed  of  no  religion  and  that \nwhereas  non-violence  in  most  cases  is  obligatory  in \n.all,  violence  is  merely  permissible  in  some  cases.  But \nI  have  not  put  before  India  the  final  form  of  non- \nviolence. The  non-violence  that  I  have  preached  from \n■Congress  platforms  is  non-violence  as  a  policy.  But  even \n•policies  require  honest  adherence  in  thought,  word  and \n•deed.  If  I  believe  that  honesty  is  the  best  policy,  surely \nwhilst  I  so  believe,  I  must  be  honest  in  thought,  word \n.and  deed ;  otherwise  I  become  an  imposter.  Noa- \n■\"violence   being  a   policy    means   that   it  can    upon    due\n\n704  NON-CO-OPERATION",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_002",
+      "question": "Why did Gandhi believe that means and ends were connected?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi believed means and ends were connected because the way people pursued a goal shaped the result they could achieve. A just society could not be created through hatred, coercion, or violence; it had to be pursued through truth, love, nonviolence, and moral self-discipline. The sources describe truth as requiring freedom, with “all forms of force or coercion” ruled out, and identify love, truth, and nonviolence as interchangeable principles [3]. They also summarize his ideal as “conquering hate by love” and achieving the triumph of right over might [1].\n\nThus, Gandhi’s methods were not merely practical tactics: they had to embody the moral character of the desired end. His response to violence in the name of non-cooperation—self-chastisement rather than retaliation—illustrates this connection between moral means and moral ends [3].",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.570874664032467,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0129",
+          "chunk_index": 129,
+          "similarity": 0.547279282902844,
+          "token_count": 358,
+          "content": "34  M.  K.   GANDHI\n\nTHE   ETHICS   OP   DESTEUCTION\n\nAnother  feature  of  Mr.  Gandhi's  activity  which  for  a: \na  time  threw  a  baleful  light  over  the  movement  was  the> \ncult  of  destruction,  as  typefied  in  the  burning  of  foreign \ncloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, \nseveral  others,  horrified  at  the  wanton  waste,  pointed  out \nfrom  time  to  time  the  evil  effects  of  this  burning  business, \nMr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no \nsuch  counsel  but  continued  literally  to  feed  the  flames.. \nWith  that  cultivated  sense  of  distinction  between  the  doer \nand  the  thing  done,  which  is  ever  present  in  men \nsuch  as  he,  there  might  be  some  efficacy  in \nthis  form  of  purification  and  self-denial.  But  many  were \nthe  critics  who  held  that  his  honfvre  mania  was  the  surest- \nway  to  rouse  all  the  evil  passions  of  the  multitude  and  as- \nsurely  lead  to  hatred  and  civil  strife.\n\nThe  Bombay  Riots",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1770",
+          "chunk_index": 1770,
+          "similarity": 0.540184600789769,
+          "token_count": 791,
+          "content": "To  understand  Mr.  Gandhi's  view  of  life,  attention  milst  be \nfixed  on  the  rules  he  has  laid  down  for  the  regulation  of  bis \n^hmedabad  institution.  Its  name,  Satyagrahasrama,  means  the \nhermitage  of  the  determined  practice  of  truth  or  the  abode  of  soul- \nforce.  The  Asrama  is  still  small,  Ic  has  had  no  real  chance  uC \nproving  its  vitality,  for  ever  since  its  establishment  other  things \nhave  claimed  the  energies  of  its  founder.  But  the  attainment  of \nits  objects  is  oouditioned  by  the  inorease  of  its  numbers  and  the \n^coeptanoe  by  the  community  at  large  of  these  austere  ideals  as  at \npresent  exemplified  in  ibe  lives  of  a  fe,T  apostles,  No  eatimate  can \nbe  formed  of  the  prospective  inflaenoe  of  the  new  gospel  without \nan  ezaminaiiou  of  its  real  nature.\n\nTruth  in  the  highest  sense  is  possible  only  where  the  individqal \nenjoys  complete  freedom.  All  forms  of  force  oc  ooerjions  are  thus \nat  once  barred.  Compulsion,  authority,  government,  these  are  an- \nathema marantha  to  one  who  at  bottom  is  a  philsophioal  anarchist. \nIn  fact,  he  describes  the  essence  of  his  dootrins  sometimes  as  love. \nSometimes  as  truth,  sometimes  as  noovioleaoa  (ahimsa),  these \nftirms  are  in  his  opinion  interchangeable:  For  organized  govern- \nmaot  in  the  ideal  world,  is  justifiable.  The  merit  of  the  British \nGovernment  is  that  it  governs  the  least.  Even  a  family  and  a \neohool  must  trust  entirely  to  the  power  of  love  and  moral \nreasoning.  Flagrant  misoonduct  he  deals  with  by  himself \n{asting  for  a  certain  number  of  days,  the  guilty  party  being  in- \nvariably brought  to  a  st^ie  of  contrition  within  that  period.  Some- \ntimes ago  he  applied  this  remedy  to  end  a  serious  strike  in  a  mill, \nthe  employers  coming  to  reason  for  tear  of  incurring  sin,  Within \nthe  last  few  weeka  the  violence  practised  by  some  persons  in \nBombay  in  the  name  of  non-co-operation  on  the  occasion  of  the \nPrince  of  Wales'  visit  entailed  this  form  of  eelf-chastisement  on \nhis  part,  and  by  all  aooounts  it  had  the  desired  result.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1752",
+          "chunk_index": 1752,
+          "similarity": 0.533254602907866,
+          "token_count": 700,
+          "content": "■M-  1^^*'°^*'.  \"\"^^  *■*  °°*'°  personal  opinion  of  the  Indian  le.ader). \nM.  K.  Gandhi,  there  oan  be  no  doubt  that  be  is  a  remarkable  man. \nKemaikable  because  his  aianoard  of  conduct  and  method  of  action \nare  so  entirely  different  from  those  of  other  Indian  leaders.  States- \nmen and  politioians  are  seldom  guided  by  the  motives  which \ncompel  Gandhi  to  action,  and  the  very  fact  that  in  him  we  see  a \nman  who  wields  enormous  influence  over  his  countrymen  by  a \ncharacter— the  exaot  antithesis  of  the  ordinary  political  leader — \ngives  to  his  personality  a  peculiar  interest.  One  Governor  of.  a \nBritish  Province  in  the  East  has  described  him  as  \"  a  dangerous \nand  misguided  saint.\"  Everyone,  whether  fee  or  friend,  agrees  in \nregarding  him  as  a  saint.  And  it  is  because  of  his  evident  eaintli- \nness  of  character  that  be  has  such  an  unparalleled  icflueuce  in \nIndia  at  the  present  day,\n\nGandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0150",
+          "chunk_index": 150,
+          "similarity": 0.532158583036819,
+          "token_count": 609,
+          "content": "64  M.   K.  GANDHI\n\nbe  well  founded.  And  so  the  three  great  grievances \nfor  which  Mr.  Gandhi  has  been  fighting — are  griev- \nances admitted  by  all  to  be  just.  In  the  opinion \nof  Mr.  Gandhi  and  most  of  his  countrymen \nthere  would  never  have  arisen  these  festering  sores \n'  if  we  were  in  our  country  what  others  are  in  their \nown,'  if  in  short,  we  too  had  been  given  ''  the  Self- \ndetermination,\"  for  which  elsewhere  so  much  blood  and \ntreasure  have  been  sacrificed.  The  whole  question  there- \nfore reduces  itself  to  one  dominant  problem — the  Problem \nof  8waraj.  And  the  problem  of  Mr.  Gandhi  is  no  less  than \nthat.  But  for  the  lost  faith  of  the  people  in  the  sincerity \nof  the  British,  even  this  question  would  not  have  assumed \nsuch  an  acute  form  as  we  find  it  to-day.\n\nYou  cannot  solve  this  problem  by  clapping  its  best, \nbrightest  and  noblest  exponent  even  though  bis  methods \nmay  be  novel  and  his  activities  inconvenient  and  some- \ntimes dangerous.  Sir  John  Rees  was  not  far  wrong \nwhen  he  observed  that  \"  Gandhi  in  Jail  might  prove  to  be \nmore  dangerous  than  Gandhi  out  of  it.\"  There  is  a \nworld  of  significance  in  the  warning  of  Professor  Gilbert \nMurray : —\n\n\"Persons  in  power  should  be  very  careful  when  they  deal \nwith  a  man  who  cares  nothing  for  sensual  pleasures,  nothing  for \nriches,  nothing  for  comfort  or  praise  or  promises  but  simply \ndetermines  to  do  what  he  believes  to  be  right.  He  is  a  danger- \nous and  uncomfortable  enemy  because  his  body,  which \nyou  can  always  conquer,  gives  you  so  little  purchase  upon  his \nsoul.\"\n\nTHE\n\nSouth  African  Indian  Question\n\nTHE  BEGINNING  OF  THE  STRUGGLE",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_003",
+      "question": "What were Gandhi's views on industrialization and machinery?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi opposed industrialization in the modern, large-scale sense, especially when it displaced village livelihoods and created poverty, idleness, and dependence. He favored simpler, decentralized production—above all, household hand-spinning—as a supplementary occupation for India’s peasants. He argued that gigantic textile mills would be like replacing every family stove with a few huge bakeries: efficient in one sense, but economically damaging to ordinary people. [2]\n\nHis criticism was not an absolute rejection of all machinery. Gandhi stated that he had “nothing to say against” developing other Indian industries through machinery; his objection was specifically to using gigantic mills to supply India’s cloth and to the broader machinery-driven industrial system of modern civilization. [2]\n\nMore broadly, he associated excessive machinery, luxury, and industrial civilization with social harm and the failures of modern society. He therefore advocated simplicity of life and a less complicated “machinery of living,” rather than a return to machinery-free primitivism. [1][3]",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "The Wheel of Fortune",
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0002",
+          "chunk_index": 2,
+          "similarity": 0.598623502211411,
+          "token_count": 555,
+          "content": "Many critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: \"Ye cannot put old wine into new bottles.\" The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so\n\nevidently has decided to throw on the scrap-heap? Such attempts are contrary to the teaching of past history. But anything, which tends to reach the common roots of all civilisations, should be encouraged. In order that the spiritual civilisation of the Future may have a real chance of growing in an atmosphere congenial to it, Mahatma Gandhi's demonstration of the right path should be welcomed. His emphasis on simplicity of life and on the simplification of the machinery of living must be realised as a supremely essential condition of the coming of the new Era. In the civilisation of the Future, an Era of natural harmonious living will be inaugurated, and artificial, luxurious and pompous living will be entirely rooted out.",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0095",
+          "chunk_index": 95,
+          "similarity": 0.545109646931985,
+          "token_count": 496,
+          "content": "You know the great Scientist Dr. P. C. Ray, but you may not know that he\nhas also become an enthusiast on behalf of the spinning wheel. India\ndoes not need to be industrialized in the modern sense of the term. It\nhas 7,50,000 villages scattered over a vast area 1,900 miles long, 1,500\nmiles broad. The people are rooted to the soil, and the vast majority\nare living a hand-to-mouth life. Whatever may be said to the contrary,\nhaving travelled throughout the length and breadth of the land with eyes\nopen, and having mixed with millions, there can be no doubt that\npauperism is growing. There is no doubt also that the millions are\nliving in enforced idleness for at least 4 months in the year.\nAgriculture does not need revolutionary changes. The Indian peasant\nrequires a supplementary industry. The most natural is the introduction\nof the spinning wheel, not the hand-loom. The latter cannot be\nintroduced in every home, whereas the former can, and it used to be so\neven a century ago. It was driven out not by economic pressure but by\nforce deliberately used as can be proved from authentic records. The\nrestoration, therefore, of the spinning wheel solves the economic\nproblem of India at a stroke. I know that you are a lover of India, that\nyou are deeply interested in the economic and moral uplift of my\ncountry. I know too that you have great influence. I would like to\nenlist it on behalf of the spinning wheel. It is the most effective\nforce for introducing successful Co-Operative Societies. Without honest\nco-operation of the millions, the enterprise can never be successful,\nand as it is already proving a means of weaning thousands of women from\na life of shame, it is as moral an instrument as it is economic.\n\nI hope you will not allow yourself to be prejudiced by anything you\nmight have heard about my strange views about machinery. I have nothing\nto say against the development of any other industry in India by means\nof machinery but I do say that to supply India with cloth manufactured\neither outside or inside through gigantic mills is an economic blunder\nof the first magnitude just as it would be to supply cheap bread\nthrough huge bakeries established in the chief centres in India and to\ndestroy the family stove.",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0001",
+          "chunk_index": 1,
+          "similarity": 0.537862615854543,
+          "token_count": 412,
+          "content": "DAWN OF A NEW ERA\n\nMany critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: \"Ye cannot put old wine into new bottles.\" The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0090",
+          "chunk_index": 90,
+          "similarity": 0.530661584526947,
+          "token_count": 437,
+          "content": "[A certain correspondent from Sindh writing to Mahatma Gandhi puts the\nquestion, \"Will the spinning wheel solve the problem of India's poverty?\nIf it will, how?\" Here is his answer.]\n\nI am more than ever convinced that without the spinning wheel the problem of India's poverty cannot be solved. Millions of India's peasants starve for want of supplementary occupation. If they have spinning to add to their slender resources, they can fight successfully against pauperism and famine. Mills cannot solve the problem. Only hand-spinning--and nothing else--can. When India was forced to give up hand-spinning, she had no other occupation in return. Imagine what would happen to a man who found himself suddenly deprived of a quarter of his bare livelihood. Over eighty-five percent of Her population have more than a quarter of their time lying idle. And, therefore, even apart from the terrible drain rightly pointed out by the Grand Old Man of India, she has steadily grown poorer because of this enforced idleness. The problem is how to utilise these billions of hours of the nation without disturbing the rest. Restoration of the spinning wheel is the only possible answer. This has nothing to do with my special views on machinery or with the boycott of foreign goods in general, India is likely to accept the answer in full during this year. It is madness to tinker with the problem. I am writing this in Puri in front of the murmuring waves. The picture of the crowd of men, women, and children, with their fleshless ribs under the very shadow of Jagannath, haunts me. If I had the power, I would suspend every other activity in schools, and colleges, and everywhere else, and popularise spinning; prepare out of these lads and lasses spinning teachers: inspire every carpenter to prepare spinning wheels; and ask the teachers to take these life-going machines to every home, and teach them spinning. If I had the power, I would stop an ounce of cotton from being exported and would have it turned into yarn in these homes. I would dot India with depots for receiving this yarn and distributing it among weavers. Given sufficient",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0129",
+          "chunk_index": 129,
+          "similarity": 0.512735599077998,
+          "token_count": 358,
+          "content": "34  M.  K.   GANDHI\n\nTHE   ETHICS   OP   DESTEUCTION\n\nAnother  feature  of  Mr.  Gandhi's  activity  which  for  a: \na  time  threw  a  baleful  light  over  the  movement  was  the> \ncult  of  destruction,  as  typefied  in  the  burning  of  foreign \ncloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, \nseveral  others,  horrified  at  the  wanton  waste,  pointed  out \nfrom  time  to  time  the  evil  effects  of  this  burning  business, \nMr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no \nsuch  counsel  but  continued  literally  to  feed  the  flames.. \nWith  that  cultivated  sense  of  distinction  between  the  doer \nand  the  thing  done,  which  is  ever  present  in  men \nsuch  as  he,  there  might  be  some  efficacy  in \nthis  form  of  purification  and  self-denial.  But  many  were \nthe  critics  who  held  that  his  honfvre  mania  was  the  surest- \nway  to  rouse  all  the  evil  passions  of  the  multitude  and  as- \nsurely  lead  to  hatred  and  civil  strife.\n\nThe  Bombay  Riots",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_004",
+      "question": "How did Gandhi describe the idea of self-rule or swaraj?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi described **swaraj** as self-government by the people of India—specifically, “Parliamentary Government of India in the modern sense,” obtained either with or without British cooperation [3]. The Indian National Congress’s aim, he said, was to achieve this “by all legitimate and peaceful means” [2].\n\nHe also presented swaraj as more than a change of rulers: it required national self-respect, discipline, self-sacrifice, organization, courage, and economic self-reliance through swadeshi [4]. In practice, Indians were to assert themselves through determination and sacrifice while adopting non-cooperation and non-violence [3]. Thus, swaraj meant both political self-rule and the capacity of Indians to govern and sustain themselves.",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Freedom's Battle",
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0130",
+          "chunk_index": 130,
+          "similarity": 0.602516882014845,
+          "token_count": 162,
+          "content": "SWARAJ MY IDEAL\n\nThe following is a fairly full report of Mr. Gandhi's important speech\nat Calcutta on the 13th December 1920:--\n\nThe very fact, that so many of you cannot understand Hindi which is\nbound to be the National medium of expression throughout Hindustan in\ngatherings of Indians belonging to different parts of the land, shows\nthe depth of the degradation to which we have sunk, and points to the\nsupreme necessity of the non-co-operation movement which is intended to\nlift us out of that condition. This Government has been instrumental in\ndegrading this great nation in various ways, and it is impossible to be\nfree from it without co-operation amongst ourselves which is in turn\nimpossible without a national medium of expression.",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0154",
+          "chunk_index": 154,
+          "similarity": 0.59521933996849,
+          "token_count": 379,
+          "content": "\"Supposing that the British Government wish to retire because India is\nnot a paying concern, what do you think will then be the position\nof India?\"\n\nMr. Gandhi answered: \"At that stage surely it is easy to understand that\nIndia will then have evolved either outstanding spiritual height or the\nability to offer violence, against violence. She will have evolved an\norganising ability of a high order, and will therefore be in every way\nable to cope with any emergency that might arise.\" \"In other words,\"\nobserved the _Times_ representative, \"you expect the moment of the\nBritish evacuation, if such a contingency arises, will coincide with the\nmoment of India's preparedness and ability and conditions favourable for\nIndia to take over the Indian administration as a going concern and work\nit for the benefit and advancement of the Nation?\"\n\nMr. Gandhi answered the question with an emphatic affirmative. \"My\nexperience during the last months fills me with the hope,\" continued Mr.\nGandhi, \"that within the nine months that remain of the year in which I\nhave expected Swaraj for India we shall redress the two wrongs and we\nshall see Swaraj established in accordance with the wishes of the people\nof India.\"\n\n\"Where will the present Government be at the end of the nine months?\"\nAsked the _Times_ representative.\n\nMr. Gandhi, with a significant smile, said: \"The lion will then lie with\nthe lamb.\"\n\n_Young India, December, 1920._\n\nTHE ATTAINMENT OF SWARAJ\n\nMr. Gandhi in moving his resolution on the creed before the Congress,\nsaid, \"The resolution which I have the honour to move is as follows: The\nobject of the Indian National Congress is the attainment of Swarajya by\nthe people of India by all legitimate and peaceful means.\"",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0152",
+          "chunk_index": 152,
+          "similarity": 0.556964320443134,
+          "token_count": 458,
+          "content": "SWARAJ IN NINE MONTHS\n\nAsked by the _Times_ representative as to his impressions formed as a\nresult of his activities during the last three months, Mr. Gandhi\nsaid:--\"My own impression of these three months' extensive experience is\nthat this movement of non-co-operation has come to stay, and it is most\ndecidedly a purifying movement, in spite of isolated instances of\nrowdyism, as for instance at Mrs. Besant's meeting in Bombay, at some\nplaces in Delhi, Bengal, and even in Gujarat. The people are\nassimilating day after day the spirit of non-violence, not necessarily\nas a creed, but as an inevitable policy. I expect most startling\nresults, more startling than, say, the discoveries of Sir J.C. Bose, or\nthe acceptance by the people of non-violence. If the Government could be\nassured beyond any possibility of doubt that no violence would ever be\noffered by us the Government would from that moment alter its character,\nunconsciously and involuntarily, but nonetheless surely on that\naccount.\"\n\n\"Alter its character,--in what, direction?\" asked the _Times_\nrepresentative.\n\n\"Certainly in the direction which we ask it should move--that being in\nthe direction of Government becoming responsive to every call of\nthe nation.\"\n\n\"Will you kindly explain further?\" asked the representative.\n\n\"By that I mean,\" said Mr. Gandhi, \"people will be able by asserting\nthemselves through fixed determination and self-sacrifice to gain the\nredress of the Khilafat wrong, the Punjab wrong, and attain the Swaraj\nof their choice.\"\n\n\"But what is your Swaraj, and where does the Government come in\nthere--the Government which, you say will alter its character\nunconsciously?\"\n\n\"My Swaraj,\" said Mr. Gandhi, \"is the Parliamentary Government of India\nin the modern sense of the term for the time being, and that Government\nwould be secured to us either through the friendly offices of the\nBritish people or without them.\"\n\n\"What do you mean by the phrase, 'without them!'\" questioned the\ninterviewer.",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Freedom's Battle",
+          "source_key": "gandhi_freedoms_battle_1922",
+          "chunk_key": "gandhi_freedoms_battle_1922_0122",
+          "chunk_index": 122,
+          "similarity": 0.555779388792012,
+          "token_count": 412,
+          "content": "And is it such an impracticable proposition to expect parents to\nwithdraw their children from schools and colleges and establish their\nown institutions or to ask lawyers to suspend their practice and devote\ntheir whole time attention to national service against payment where\nnecessary, of their maintenance, or to ask candidates for councils not\nto enter councils and lend their passive or active assistance to the\nlegislative machinery through which all control is exercised. The\nmovement of non-co-operation is nothing but an attempt to isolate the\nbrute force of the British from all the trappings under which it is\nhidden and to show that brute force by itself cannot for one single\nmoment hold India.\n\nBut I frankly confess that, until the three conditions mentioned by me\nare fulfilled, there is no Swaraj. We may not go on taking our college\ndegrees, taking thousands of rupees monthly from clients for cases which\ncan be finished in five minutes and taking the keenest delight in\nwasting national time on the council floor and still expect to gain\nnational self-respect.\n\nThe last though not the least important part of the Maya still remains\nto be considered. That is Swadeshi. Had we not abandoned Swadeshi, we\nneed not have been in the present fallen state. If we would get rid of\nthe economic slavery, we must manufacture our own cloth and at the\npresent moment only by hand-spinning and hand weaving.\n\nAll this means discipline, self-denial, self-sacrifice, organising\nability, confidence and courage. If we show this in one year among the\nclasses that to-day count, and make public opinion, we certainly gain\nSwaraj within one year. If I am told that even we who lead have not\nthese qualities in us, there certainly will never be Swaraj for India,\nbut then we shall have no right to blame the English for what they are\ndoing. Our salvation and its time are solely dependent upon us.\n\nBRITISH RULE--AN EVIL",
+          "metadata": {
+            "source_key": "gandhi_freedoms_battle_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Freedom's Battle",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0079",
+          "chunk_index": 79,
+          "similarity": 0.54796759934498,
+          "token_count": 639,
+          "content": "You  have  successfully  demonstrated  how  you  can \nresist  Government  with  civility,  and  how  you  can  re- \ntain your  own  respect  without  hurting  theirs.  I  now \nplace  before  you  an  opportunity  of  proving  that  you \nbear  no  hostility  to  Government  in  spite  of  your  strenuous  flght \nwith  them.\n\nYou  are  all  Home  Rulers,  some  of  you  are  members  of \nHome  Rule  Leagues.  One  meaning  of  Home  rule  is  that  we \nshould  become  partners  of  the  Empire.  To-day  we  are  a  subject \npeople.  We  do  not  enjoy  all  the  rights  of  Englishmen.  We \nare  not  to-day  partners  of  the  Empire  as  are  Canada,  South \nAfrica  and  Australia.  We  are  a  Dependency.  We  want  the \nrights  of  Enelishmen,  and  we  aspire  to  be  as  much  partners  of \nthe  Empire  as  the  Dominions  Overseas.  We  wish  for  the  time \nwhen  we  may  aspire  to  the  Viceregal  office.  To  bring  such  a \nstate  of  things  we  should  have  the  ability  to  defend  ourselves, \nthat  is  the  ability  to  bear  arms  and  to  use  them.  As  long  as \nwe  have  to  look  to  Englishmen  for  our  defence,  as  long  as  we \nare  not  free  from  the  fear  of  the  military,  so  long  we  cannot  be \nregarded  as  equal  partners  with  Englishmen.  It,  therefore,  be- \nhoves us  to  learn  the  use  of  arms  and  to  acquire  the  ability  to \ndefend  ourselves.  If  we  want  to  learn  the  use  of  arms  With  the \ngreatest  possible  despatch,  it  is  our  duty  to  enlist  ourselves  in \nthe  Army.\n\nM.  K.    GANDHI  33.\n\nThe  easiest  and  the  straightest  way  to  win  Swiwajya, \nsai4  Mr.  Gandhi,  is  to  participate  in  the  defence  of  the \nEmpire.  This  argument,  doubtless,  went  home,  and  he- \nappealed  in  the  following  words  : —",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_005",
+      "question": "What role did religion play in Gandhi's political thinking?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Religion was central to Gandhi’s political thinking, not separate from it. He described himself as “at heart a religious man,” even though he appeared publicly as a politician [2]. His religious outlook emphasized moral responsibility, duty, fearlessness before God, and service to others [2].\n\nThis shaped his political methods and goals. He believed political struggle should be nonviolent, disciplined, and willing to accept imprisonment rather than use force [3]. He also sought to overcome hatred through love and to establish the victory of moral right over physical power [4]. His religious perspective was broad rather than narrowly sectarian: it was rooted in Hinduism but influenced by and sympathetic to other traditions [1].",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1693",
+          "chunk_index": 1693,
+          "similarity": 0.606505698267093,
+          "token_count": 705,
+          "content": "The  folUwitig  account  of  Mr.  Gandhi's  religious  views  from \nthe  pen  of  the  late  Bev.  Joseph  Dolie  brings  cut  clearly  the  essen- \ntials of  Hinduism  as  conceived  by  Mr,  Gandhi :— ^\n\nMr,  Gandhi's  leligioua  viens,  and  his  place  in  the  theologioal \nwoild,  have  saluially  been  a  eubjeot  of  much  diecUBEiou  here.  A \n{en  days  ago  I  viaa  told  that  \"he  is  a  Buddhist.\"  Not  long  sinoe \na  nenspapet  desotibed  him  as  \"a  ChristiaD  Mubammadan,\"  au  ex- \nttaotdinaty  mixture  indeed.  Others  imagine  that  he  npiships \nidols,  and  would  be  quite  prepared  to  find  a  shrine  in  big  tffioe.  oc \ndiscover  the  trunk  of  Gunpatt;  projecting  Irom  among  his  books! \nNot  a  lew  belie'ved  him  to  be  a  Theosophist.  I  question  whether \n■  an;  Bjslem  of  religion  can  absolutely  hold  him.  His  vi^ws  are  too \noloEely  allied  to  Chriatiaoity  to  be  entirely  Hindu  ;  and  too  deeply \nEaturated  with  Hindnicm  to  be  oalle^  Chiiatiao,  while  his  sym- \n{iBtbiea  are  so  wide  and  oatholio,  that  one  would  imagine  \"he  has \nteacfaed  a  point  where  the  formulae  of  sects  are  meaningless,\"'\n\nOne  night,  when  the  house  was  still,  we  argued  out  the \nmatter  into  the  morning,  and  these  are  the  results.\n\nHis  oonviotion  is  that  old  Hinduism,  the  Hinduism  of  the \nearliest  leoords,  was  a  pure  faith,  free  from  idolatry  ;  that  the \nspiritual  faith  of  India  has  been  corrupted  by  materialism,  and \nbecause  of  this  she  has  lost  her  place  in  the  van  of  the  nations  ; \nthat,  through  the  ages  God,  pervading  all,  has  manifested  Him- \nself in  difierent  forms,  becoming  incarnate,  for  purposes  of \nsalvation,  with  the  object  of  leading  men  back  into  the  right  path. \nThe  Oita  makes  Krishna  eay  ; —",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1789",
+          "chunk_index": 1789,
+          "similarity": 0.598555462098778,
+          "token_count": 668,
+          "content": "phould  make  the  people  fear  none  and  aothiag  but  God — no \ncowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* \npiinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of \nthe  Act,  against  voluntary  registration,  having  been  given,  it  is \nthe  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and \nthe  Colony  to  the  uttermost.\"\n\nTo  assume  responsibilities,  to  recognise  obligations,  was  always \nMr.  Gandhi's  main  thought'  in  his  relations  with  the  European \ncolonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights \ncannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe \nhis  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- \nbearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal \nauthorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of \npublic  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- \nmunit'y.  He  always  felt  that  the  only  possible  road  to  progress \nwas  by  compelling  the  European  colonists  to  reocgnise  the  real \nWorth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- \nseited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his \naction  in  advising  his  fellow-countrymen  to  continue  the  struggle \n(or  Ihe  preservation  of  their  manhood,\n\nMr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself \nagainst  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare \nwhose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his \ngeneral  attitude  may  be  briefly  summed  up  in  the  fallowing  state- \nments he  ouce  made  to  the  writer  ;\"  Most  religious  men  I  have \nmet  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of \na  politioian,  am  at  heart  a  religious  man,\"\n\nHINDU-MUSLIM  BBOTHEBHOOD",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1692",
+          "chunk_index": 1692,
+          "similarity": 0.576436971273857,
+          "token_count": 549,
+          "content": "What  mUBt  we  then  do  ?  Surely  remain  non-violenb- \nand  yet  strccig  enough  to  offer  as  many  willing  viotims- \nas  tbe  GoTernment  may  require  for  imprisonment.  Oar- \nwork  must  continue  with  clock-work  regularity.  Eaob \nprovince  must  elect,  its  own  succession  of  leaders.  Lalajv \nhas  set  a  brilliant  example  by  making  all  the  necessary \narrangements,  Tbe  chairman  and  tbe  secretary  must- \nbe  given  in  each  province  emergency  powers.  The- \nexeoutive  committees  must  be  tbe  smallest  possible. \nEvery  Congressman  must  be  a  volunteer.\n\nWhilst  we  must  sot  avoid  arrest  we  must  not \nprovoke  it  by  giving  unnecessary  offence.\n\nWe  must  vigorously  prosecute  the  Swadeshi' \ncampaign  till  we  are  fully  organised  for  the  manufacture- \nof  ali  tbe  band-spun  Khadi  we  require  and  have  brought \nabout  a  complete  boycott  of  foreign  cloth.\n\nWe  must  hold  the  Congress  at  any  oost  in  spite  of \nthe  arrest  of  every  one  of  the  leaders  unless  tbe  Govern- \nment dissolve  it  by  force.  And  if  we  are  neither  cowed \ndown  nor  provoked  to  violence  but  are  able  to  continue \nnational  work,  we  have  certainly  attained  Swaraj.  For \nno  power  on  earth  can  stop  the  onward  march  of  a- \npeaceful,  detenuined  and  godly  people-\n\nAPPENDIX  I\n\nI.    Mb.  GANDHI'S  RELIGION  ',\n\nThe  folUwitig  account  of  Mr.  Gandhi's  religious  views  from \nthe  pen  of  the  late  Bev.  Joseph  Dolie  brings  cut  clearly  the  essen- \ntials of  Hinduism  as  conceived  by  Mr,  Gandhi :— ^",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.549340554600835,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0129",
+          "chunk_index": 129,
+          "similarity": 0.543537237045161,
+          "token_count": 358,
+          "content": "34  M.  K.   GANDHI\n\nTHE   ETHICS   OP   DESTEUCTION\n\nAnother  feature  of  Mr.  Gandhi's  activity  which  for  a: \na  time  threw  a  baleful  light  over  the  movement  was  the> \ncult  of  destruction,  as  typefied  in  the  burning  of  foreign \ncloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, \nseveral  others,  horrified  at  the  wanton  waste,  pointed  out \nfrom  time  to  time  the  evil  effects  of  this  burning  business, \nMr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no \nsuch  counsel  but  continued  literally  to  feed  the  flames.. \nWith  that  cultivated  sense  of  distinction  between  the  doer \nand  the  thing  done,  which  is  ever  present  in  men \nsuch  as  he,  there  might  be  some  efficacy  in \nthis  form  of  purification  and  self-denial.  But  many  were \nthe  critics  who  held  that  his  honfvre  mania  was  the  surest- \nway  to  rouse  all  the  evil  passions  of  the  multitude  and  as- \nsurely  lead  to  hatred  and  civil  strife.\n\nThe  Bombay  Riots",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_006",
+      "question": "What did Gandhi believe about civil disobedience?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi believed civil disobedience could be a powerful remedy against injustice, but only when practiced openly, nonviolently, and with a willingness to endure suffering and imprisonment rather than resist violently. He viewed it as “peaceful rebellion,” based on the moral force of innocent suffering [3].\n\nHe was especially cautious about **mass** civil disobedience. It required a calm atmosphere, disciplined and informed participants, and strict conditions; otherwise it could lead to bloodshed or disorder [1][2][4]. He therefore urged patience and preparation before launching large-scale campaigns [3]. For individuals, however, he believed disobedience could become a duty when obeying the law would violate conscience or deny God [4]. In practice, this meant openly breaking an unjust order while accepting its legal penalty, as he did in Champaran [5].",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1327",
+          "chunk_index": 1327,
+          "similarity": 0.645627351170573,
+          "token_count": 646,
+          "content": "•636  NON-CO-OPERATION\n\nto  greater  cordon  than  the  Government  will  be  to  make \nIndia  more  slave  than  she  is  now.\n\nSwaraj  is  freedom  for  every  one,  the  smallest \namong  us,  to  do  as  he  likes  without  any  physical  inter- \nnerence  with  his  liberty.  Non-violent  non-co-operation \nis  the  method  whereby  we  cultivate  the  freest  public \nopinion  and  get  it  enforced.  When  there  is  complete \nfreedom  of  opinion,  that  of  the  majority  must  prevail. \nIf  we  are  in  a  minority,  we  can  prove  worthy  of  our \nreligion  by  remaining  true  to  it  in  the  fact  of  coercion. \nThe  Prophet  submitted  to  the  coercion  of  the  majority \n^nd  remained  true  to  his  faith.  And  when  he  found \nhimself  in  a  majority  he  declared  to  his  followers  that \nthere  should  be  no  compulsion  in  religion.  Let  us  not \nAgain  either  by  verbal  or  physical  violenc'e  depart  from \nthe  injunction,  and  by  our  own  folly  further  cut  back \nthe  hands  of  the  clock  of  progress.\n\nCIVIL  DISOBEDIENCE.\n\n[Though  the  author  of  the  Civil  Disobedience  move- \nment in  India,  Mr.  Gandhi  was  always  alive  to  its \ndangers.  He  therefore  insisted  that  his  conditions  should \nbe  fulfilled  in  toto  before  any  Talul^a  could  embark  on  a \ncampaign  of  Civil  Disobedience.  He  was  always  very \nsautious  in  permitting  Civil  Disobedience  as  will  be  seen \nfrom  the  following  article  in  Young  India.  He  restrain- \ned at  a  certain  stage,  the  majority  of  the  Congress  Com- \nmittee from  a  rushing  and  perilous  programme.^\n\nCivil  disobedience  was  on  the  lips  of  every  one  of \nthe  members  of  the  All-India  Congress  Committee.  Not \nhaving  really  over  tried  it,  every  one  appeared  to  be \nenamoured  of    it    from    a    mistaken    belief    in  it    as  a\n\nCIVIL    DISOBEDIENCE  637",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0132",
+          "chunk_index": 132,
+          "similarity": 0.603055335004014,
+          "token_count": 386,
+          "content": "And  then  Mr,  Gandhi  drove  the  moral  home  to  the \ngathering  as  also  to  the  eager  and  anxious  public  all  over \nIndia,\n\nWarned  by  the  disasters  at  Bombay  and  the  Moplab \nrebellion  which  was  still  going  on  in  Malabar,  it  was  ex- \npected that  Mr.  Gandhi  would  reconsider  his  position  and' \nstop  short  of  the  extreme  steps  in  Non- Co  operation.  But \nthat  was  not  to  be.  The  Congress  had  by  this  time  become \nan\"  organ  for  registering  his  decrees.  And  the  Committee \nmet  frequently  to  devise  methods  in  pursuance  of  Non-Co- \noperation. Thundering  resolutions,  alternating  with  hopes- \nand  warnings,  came  in  quick  succession.  Province  after \nProvince  vied  with  one  another  for  the  exciting  novelty  of \ncivil  disobedience.\n\nThough  the  author  of  the  Civil  Disobedience  move- \nment in  India,  Mr.  Gandhi  was  always  alive  to  its  dangers,. \nHe  therefore  insisted  that  his  conditions  should  be  fulfilled \nin  toto  before  any  Taluka  could  embark  on  a  campaign  o£\n\n56  M.   K.   GANDHI\n\n\"Civil    Disobedience.       And    those    conditions   were   very \n.rigorous  indeed.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1333",
+          "chunk_index": 1333,
+          "similarity": 0.593239023798346,
+          "token_count": 548,
+          "content": ":them,  to  be  fired  all  of  a  sudden   for  civil   disobedience.\n\nDisobedience  to  be  civil  has  to  be  open  and  non-violent.\n\nComplete  civil  disobedience  is  a  state  of  peaceful \nrebellion — a  refusal  to  obey  every  single  State-made \nJaw,  It  is  certainly  more  dangerous  than  an  armed \nrebellion.  For  it  can  never  be  down  if  the  civil  re- \nsisters  are  prepared  to  face  extreme  hardship.  It  is \nbased  upon  an  implicit  belief  in  the  absolute  efficacy \nof  innocent  sufTering.  By  noiselessly  going  to  prison  a \ncivil  resister  ensures  a  calm  atmosphere.  The  wrongdoer \nwearies  of  wrong-doing  in  the  absence  of  resistance. \nAH  pleasure  is  lost  when  the  victim  betrays  no  resi- \nstance. A  full  grasp  of  the  conditions  of  successful  civil \nrresistance  is  necessary  at  least  on  the  pan  of  the  repre- \nsentatives of  the  people  before  we  can  launch  out  on  an \nenterprise  of  such  magnitude.  The  quickest  remedies \n-are  always  fraught  with  the  greatest  danger  and  require \nthe  utmost  skill  in  handling  them.  It  is  my  firm \n•conviction  that  if  we  bring  about  a  successful  boycott \nof  foreign  cloth  we  shall  have  produced  an  atmosphere \nthat  would  enable  us  to  inaugurate  civil  disobedience  on \n.a  scale  that  no  Government  can  resist.  I  would  therefore\n\n640  NON-CO-OPERATION\n\nurge  patience  and  determined  concentration  on  Swadeshi \nupon  those  who  are  impatient  to  embark  on  mass  civil \ndisobedience.\n\nTHE  MOPLAH  OUTBREAK.\n\n[Mr,  Gandhi  addressed  the  following  appeal  to  the- \nLiberals  on  Nov.  21  \\ — ]",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1328",
+          "chunk_index": 1328,
+          "similarity": 0.59140554874561,
+          "token_count": 555,
+          "content": "CIVIL    DISOBEDIENCE  637\n\nsoverign  remedy  for  present  day  ills.  I  feel  sure  that \nit  can  be  made  such  if  we  can  produge  the  necessary \natmosphere  for  it.  For  individuals  there  always  is  that \natmosphere  except  when  their  civil  disobedience  is- \ncertain  to  lead  to  bloodshed.  I  discovered  this  exception, \nduring  the  Satyagraha  days.  But  even  so  a  call  may; \ncome  which  one  dare  not  neglect,  cost  it  what  it  may^ \nI  can  clearly  see  that  time  is  coming  to  me  when  I  must \nrefuse  obedience  to  every  single  State-made-law  even \nthough  there  may  be  a  certainty  of  bloodshed.  When \nneglect  of  the  call  means  a  denial  of  God,  civil  disobe- \ndience becomes  a  peremptory  duty.\n\nMass  civil  disobedience  stands  on  a  different  footing. \nIt  can  only  be  tried  in  a  calm    atmosphere.     It  must  be \nthe  calmness  of  strength  not   weakness,   knowledge  not \nignorance.     Individual    civil    disobedience    may  be  and: \noften  is  vicarious.     Mass  civil  disobedience   may  be  and' \noften  is  selfish    in    the    sense  that    individuals    expect- \npersonal  gain  from  their    disobedience.     Thus  in  South \nAfrica,  Kallenbach  and   Polak    offered  vicarious    civil' \ndisobedience.     They  had    nothing  to    gain.    Thousands- \noffered  it  because    they    expected    personal  gain  also  in. \nthe  shape  say  of  the    removal    of  the    annual    poll-tax \nlevied  upon    ex-indentured    men    and  their    wives  and. \ngrown  up  children.    It  is  sufficient  in  mass   civil  disobe- \ndience if  the  resisters    understand    the     working  of  the- \ndoctrine.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0060",
+          "chunk_index": 60,
+          "similarity": 0.569345017048908,
+          "token_count": 643,
+          "content": "ME.    GANDHI    IN    CHAMPARAN\n\nThen  came  the  Champaran  incident  which  has  since \nbecome  historic.  In  the  Lucknow  Congress  of  December \n1916,  Mr.  Gandhi,  though  pressed  by  some  of  the  citizens \nof  Behar,  declined  to  talk  about  the  grievances  of  the \nlabourers  in  the  Behar  plantations  without  first-hand \nknowledge  of  the  real  state  of  afiairs.  This  he  resolved  to \nacquire  soon  after  the  Congress  session  :  nnd  in  response \n■to  an  insistent  public  demand,  to  inquire  into  the \nconditions  under  which  Indians  work  in  the  indigo \nplantations,  Mr  Gandhi  was  in  Muzaffarpur  on  the \n15th  April  1917,\"  whence  he  took  the  mid-day  train  for \nMotihari,  Next  day  he  was  served  with  a  notice  from  the \nChamparan  District  Magistrate  to  quit  the  district  \"  by \nthe  next  available  train  \"  as  his  presence  \"  will  endanger \nthe  public  peace  and  may  lead  to  serious  disturbance  which \nmay  be  accompanied  by  loss  of  life.\"  But  the  local \nauthorities  in  issuing  this  mandate  counted  without  the \nhost.     For  Mr.  Gandhi,   who   had    initiated    the  Passive\n\nM.   K.   GANDHI  2$\n\nfleBista.nce  Movement  in  South  Africa,  replied  in  a  way \nthat  did  not  surprise  those  who  had  known  him  : —\n\nOut  of  a  sense  of  public  responsibility,  I  feel  it  to  be  my \n•duty  to  say  that  I  am  unable  to  leave  this  district,  but  if  it  so \npleases  the  authorities,  I  shall  submit  to  the  order  by  suffering \nthe  penalty  of  disobedience.\n\ni  most  emphatically  repudiate  the  Commissioner's  sugges- \ntion that  \"  my  object  is  likely  to  be  agitation.\"  Hy  desire  is \n.purely  and  simply  for  \"  a  genuine  search  for  knowledge  \"  and \nthis  I  shall  continue  to  satisfy  so  long  as  I  am  left  free^",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_007",
+      "question": "How did Gandhi view the relationship between personal discipline and public leadership?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi viewed personal discipline as the foundation of effective public leadership. His austere, ascetic life and loyalty to moral principles gave him unusual influence over the public [1][3]. He believed a leader should apply accepted principles fearlessly, resist popular pressure, and accept personal hardship rather than ask followers to bear risks he avoided [3][4].  \n\nHe also connected discipline with responsibility: people could fully exercise their rights only when they were developed and responsible, and public leaders should recognize obligations and serve the wider community [2]. Thus, leadership required moral self-control, courage, directness, and willingness to lead by personal example rather than by rhetoric or popularity [2][4].",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1752",
+          "chunk_index": 1752,
+          "similarity": 0.576873140348942,
+          "token_count": 700,
+          "content": "■M-  1^^*'°^*'.  \"\"^^  *■*  °°*'°  personal  opinion  of  the  Indian  le.ader). \nM.  K.  Gandhi,  there  oan  be  no  doubt  that  be  is  a  remarkable  man. \nKemaikable  because  his  aianoard  of  conduct  and  method  of  action \nare  so  entirely  different  from  those  of  other  Indian  leaders.  States- \nmen and  politioians  are  seldom  guided  by  the  motives  which \ncompel  Gandhi  to  action,  and  the  very  fact  that  in  him  we  see  a \nman  who  wields  enormous  influence  over  his  countrymen  by  a \ncharacter— the  exaot  antithesis  of  the  ordinary  political  leader — \ngives  to  his  personality  a  peculiar  interest.  One  Governor  of.  a \nBritish  Province  in  the  East  has  described  him  as  \"  a  dangerous \nand  misguided  saint.\"  Everyone,  whether  fee  or  friend,  agrees  in \nregarding  him  as  a  saint.  And  it  is  because  of  his  evident  eaintli- \nness  of  character  that  be  has  such  an  unparalleled  icflueuce  in \nIndia  at  the  present  day,\n\nGandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1789",
+          "chunk_index": 1789,
+          "similarity": 0.563576719007644,
+          "token_count": 668,
+          "content": "phould  make  the  people  fear  none  and  aothiag  but  God — no \ncowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* \npiinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of \nthe  Act,  against  voluntary  registration,  having  been  given,  it  is \nthe  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and \nthe  Colony  to  the  uttermost.\"\n\nTo  assume  responsibilities,  to  recognise  obligations,  was  always \nMr.  Gandhi's  main  thought'  in  his  relations  with  the  European \ncolonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights \ncannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe \nhis  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- \nbearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal \nauthorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of \npublic  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- \nmunit'y.  He  always  felt  that  the  only  possible  road  to  progress \nwas  by  compelling  the  European  colonists  to  reocgnise  the  real \nWorth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- \nseited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his \naction  in  advising  his  fellow-countrymen  to  continue  the  struggle \n(or  Ihe  preservation  of  their  manhood,\n\nMr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself \nagainst  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare \nwhose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his \ngeneral  attitude  may  be  briefly  summed  up  in  the  fallowing  state- \nments he  ouce  made  to  the  writer  ;\"  Most  religious  men  I  have \nmet  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of \na  politioian,  am  at  heart  a  religious  man,\"\n\nHINDU-MUSLIM  BBOTHEBHOOD",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.562036476042776,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0108",
+          "chunk_index": 108,
+          "similarity": 0.561822733317824,
+          "token_count": 754,
+          "content": "the  impracticability  of  his  scheme  and  the  dangers  involved in  it. Many  Liberal  League  organisations  implored  Mr. Gandhi  not  to  lead  the  country  to  a  repetition  of  the Punjab  tragedy. Moderate  leaders  like  Sir  Narayan  Chan- davarkar  argued  the  futility  of  methods  leading  to anarchy  and  chaos. But  the  most  amusing,  even at  such  serious  times,  was  the  attitude  of  some Congressmen. These  were  variously  divided. All  hailed Non- Co- operation  in  theory. But  when  the  time came  for  practising  it,  they  flooded  the  country  with  a mass  of  literature  of  the  most  tortuous  kind  ;  casuistry  was dealt  in  abundance. Aspirants  after  Council  honours refused  to  commit  what  they  called  \"political  suicide\"  by \"boycotting  the  New  Councils\". Others  affected  to  believe in  the  possibilities  of  further  efforts  of  constitutional  agita- tion. Still  others  detected  illegalities  in  some  stages  of Non- Co-operation. And  yet  some  would  not  commit themselves  but  await  the  verdict  of  the  Special  Congress, _A  minority  would  contest  at  the  elections  only  to  resign again  and  yet  some  others  would  join  the  New  Councils just  to  wreck  the  Reforms  ! What  a  cloud  of  words  and mystification  of  meaning ! To  all  this  warfare  of  words Mr. Gandhi's  own  direct  and  simple  statements  are  in refreshing  contrast. He  spoke  and  wrote  strongly  on  the subject. There  could  be  no  doubt  of  bis  intentions  or  his iplans. There  was  no  ambiguity  in  bis  language. His words  went  straight  as  a  bullet  and  he  had  a  wholesome scorn  of  diplomatic  reserves  in  opinion. Whatever  one ■may  think  of  his  views  Mr. Gandhi's  leadership  was faultless  and  he  held  his  ground  with  the  fervour  of  faith. In  no  case  would  he  play  to  the  gallery  nor  make  light\n\nof  his  cherished  convictions  even  if  he  found  the  whole mass  of  the  people  ranged  against  him. He  would  not  be led  away  by  the  passing  gusts  of  popular  frenzy  'and  he has  a  wholesome  contempt  for  sycophancy  of  any  kind, even  to  the  people. He  has  a  noble  way  of  bearing  the brunt  of  all  toil  and  trouble. He  would  not  like  many ■other  \"leaders\"  throw  the  followers  into  the  fray  while they  continue   to  remain   in   comparative   security. He",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0107",
+          "chunk_index": 107,
+          "similarity": 0.546444836084768,
+          "token_count": 600,
+          "content": "44  M.   K.  GANDHI\n\nthe  impracticability  of  his  scheme  and  the  dangers  involved in  it. Many  Liberal  League  organisations  implored  Mr. Gandhi  not  to  lead  the  country  to  a  repetition  of  the Punjab  tragedy. Moderate  leaders  like  Sir  Narayan  Chan- davarkar  argued  the  futility  of  methods  leading  to anarchy  and  chaos. But  the  most  amusing,  even at  such  serious  times,  was  the  attitude  of  some Congressmen. These  were  variously  divided. All  hailed Non- Co- operation  in  theory. But  when  the  time came  for  practising  it,  they  flooded  the  country  with  a mass  of  literature  of  the  most  tortuous  kind  ;  casuistry  was dealt  in  abundance. Aspirants  after  Council  honours refused  to  commit  what  they  called  \"political  suicide\"  by \"boycotting  the  New  Councils\". Others  affected  to  believe in  the  possibilities  of  further  efforts  of  constitutional  agita- tion. Still  others  detected  illegalities  in  some  stages  of Non- Co-operation. And  yet  some  would  not  commit themselves  but  await  the  verdict  of  the  Special  Congress, _A  minority  would  contest  at  the  elections  only  to  resign again  and  yet  some  others  would  join  the  New  Councils just  to  wreck  the  Reforms  ! What  a  cloud  of  words  and mystification  of  meaning ! To  all  this  warfare  of  words Mr. Gandhi's  own  direct  and  simple  statements  are  in refreshing  contrast. He  spoke  and  wrote  strongly  on  the subject. There  could  be  no  doubt  of  bis  intentions  or  his iplans. There  was  no  ambiguity  in  bis  language. His words  went  straight  as  a  bullet  and  he  had  a  wholesome scorn  of  diplomatic  reserves  in  opinion. Whatever  one ■may  think  of  his  views  Mr. Gandhi's  leadership  was faultless  and  he  held  his  ground  with  the  fervour  of  faith. In  no  case  would  he  play  to  the  gallery  nor  make  light",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_008",
+      "question": "What did Gandhi say about economic inequality and poverty?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "The available sources provide only limited evidence on this specific question. Gandhi questioned the idea that unlimited material advancement automatically meant genuine progress. He contrasted “economic progress,” understood as unlimited material improvement, with “real progress,” which he identified with moral progress, and asked whether the two might conflict [2].\n\nThe sources also show his concern about economic exploitation: he criticized indentured labor as a system in which capital was given artificial advantages over labor and employers were made supreme [5]. More broadly, the passages portray him as valuing moral principles over wealth, comfort, and personal gain [3][4].",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0678",
+          "chunk_index": 678,
+          "similarity": 0.520868710072657,
+          "token_count": 446,
+          "content": "good  to    his   country,  does  not   mind   killing  off  a  fe'w\n\n•officials.     All  these  are  actuated    by  hatred,    cowardice\n\n,and  fear.  Here  the    love   of  the  cow  or   the  country  is  a\n\nvague  thing  intended  to  satisfy  one's  vanity,  or  soothe  a\n\n:stinging  conscience.\n\nAhimsa  truly  understood,   is  in  my  humble   opinion  a\n\n286  EARLIER   INDIAN   SPEECHES\n\npanacea  for  all  evils  mundane  and  extra-mundane.  We \ncan  never  overdo  it.  Just  at  present  we  are  not  doing \nit  at  all.  Ahimasa  does  not  displace  the  practice \nof  other  virtues,  but  renders  their  practice  im- \nperatively necessary  before  it  can  be  practised  even  in \nits  rudiments.  Mahavira  and  Buddha  were  soldiers,  and \nso  was  Tolstoy.  Only  they  saw  deeper  and  truer  into \ntheir  profession,  and  found  the  secret  of  a  true,  happy, \nhonourable  and  godly  life.  Let  us  be  joint  sharers  with \nthese  teachers,  and  this  land  of  ours  will  once  more  be \nthe  adode  of  Gods.\n\nENCONOMIC  vs.  MORAL  PROGRESS\n\nThe  following  is  a  lecture  delivered  by  Mr.  Gandhi \nat  a  meeting  of  the  Muir  Central  College  Economic \nSociety,  held  at  Allahabad,  on  Friday,  22nd  December, \n1916.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0679",
+          "chunk_index": 679,
+          "similarity": 0.510956162489572,
+          "token_count": 359,
+          "content": "The  following  is  a  lecture  delivered  by  Mr.  Gandhi \nat  a  meeting  of  the  Muir  Central  College  Economic \nSociety,  held  at  Allahabad,  on  Friday,  22nd  December, \n1916.\n\nDoes  economic  progress  clash  with  real  progress? \nBy  economic  progress,  I  take  it,  we  mean  material \nadvancement  without  limit,  and  by  real  progress  we \nmean  moral  progress,  'which  again  is,  the  same  thing \nas  progress  of  the  permanent  element  in  us.  The \nsubject  may  therefore  be  stated  thus  ;  Does  not  moral \nprogress  increase  in  the  same  proportion  as  material \nprogress?  I  know  that  this  is  a  wider  proposition \nthan  the  one  before  us.  But  I  venture  to  think  that  we \nalways  mean  the  large  one  even  when  we  lay  down  the \nsmaller.  For  we  know  enough  of  science  to  realize \nthat  there  is  no  such  thing  as  perfect  rest  or  repose  in \nthis  visible  universe  of  ours.  If,  therefore,  material \nprogress  does   not   clash    with    moral    progress,  it  must\n\nECONOMIC  VS.  MORAL  PROGRESS  287\"",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0150",
+          "chunk_index": 150,
+          "similarity": 0.487529050178054,
+          "token_count": 609,
+          "content": "64  M.   K.  GANDHI\n\nbe  well  founded.  And  so  the  three  great  grievances \nfor  which  Mr.  Gandhi  has  been  fighting — are  griev- \nances admitted  by  all  to  be  just.  In  the  opinion \nof  Mr.  Gandhi  and  most  of  his  countrymen \nthere  would  never  have  arisen  these  festering  sores \n'  if  we  were  in  our  country  what  others  are  in  their \nown,'  if  in  short,  we  too  had  been  given  ''  the  Self- \ndetermination,\"  for  which  elsewhere  so  much  blood  and \ntreasure  have  been  sacrificed.  The  whole  question  there- \nfore reduces  itself  to  one  dominant  problem — the  Problem \nof  8waraj.  And  the  problem  of  Mr.  Gandhi  is  no  less  than \nthat.  But  for  the  lost  faith  of  the  people  in  the  sincerity \nof  the  British,  even  this  question  would  not  have  assumed \nsuch  an  acute  form  as  we  find  it  to-day.\n\nYou  cannot  solve  this  problem  by  clapping  its  best, \nbrightest  and  noblest  exponent  even  though  bis  methods \nmay  be  novel  and  his  activities  inconvenient  and  some- \ntimes dangerous.  Sir  John  Rees  was  not  far  wrong \nwhen  he  observed  that  \"  Gandhi  in  Jail  might  prove  to  be \nmore  dangerous  than  Gandhi  out  of  it.\"  There  is  a \nworld  of  significance  in  the  warning  of  Professor  Gilbert \nMurray : —\n\n\"Persons  in  power  should  be  very  careful  when  they  deal \nwith  a  man  who  cares  nothing  for  sensual  pleasures,  nothing  for \nriches,  nothing  for  comfort  or  praise  or  promises  but  simply \ndetermines  to  do  what  he  believes  to  be  right.  He  is  a  danger- \nous and  uncomfortable  enemy  because  his  body,  which \nyou  can  always  conquer,  gives  you  so  little  purchase  upon  his \nsoul.\"\n\nTHE\n\nSouth  African  Indian  Question\n\nTHE  BEGINNING  OF  THE  STRUGGLE",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.477755040497815,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0436",
+          "chunk_index": 436,
+          "similarity": 0.474332759492059,
+          "token_count": 585,
+          "content": "Gandhi  thought  the  mental  state  of  thosa  recruitera must   be    miserable,  who  could    send    so    many  of  their countrymen  as  semi-slaves. After  having  seen  what  the recruiting  agents  did  and  after  having  read  the  many  groaa\n\nTHE  INIQUfli^IES -OP  3CHB  iNDBNTOTB  8Y8IEM    14'7\n\ntnis-statemebtB  they  made,  he  was  not  surprised  that  tibou' \n«tLtids''and  thoaaandB  of  their  oountrymsn  wer'^  beoomiog \nibdentared  labourers.  The  Oommiasiobers  deToted  several \n'Pages  to  bhe  ioamorality  prevailing  oa  the  estates.  It  was \nuob  forty  women  for  sisty  men  ;  bub  the  statement  was \nmade  than  these  men  did  not  marry  these  womeo,  but  kept \nthem,  aud  that  many  of  these  women  were  prostitutes. \nMr.  Gaadhi  said  he  would  deoline  togend  his  ohildrea \nunder  suoh  ao  indenture,  if  he  was  worthy  of  his  salt,  out \n<>f  the  oouatry.  Bat  thousands  of  men  and  Women  had \ngone.      What  did  thsy  think  of  that  in  India?\n\nThe  oouditions  were  that  rigorous  provisions  should \nb'a  either  expunged  from  the  Ordinances  br  that  the  Pro- \nteotor  should  oontrol  employers.  As  for  the  ragulationa \nmade  to  protect  these  labourers  they  oould  take  it  from \nhim,  Mr.  Gandhi  said,  that  there  were  a  great  many \n:B.iW8  in  them  and  a  ooach  and  four  could  be  easily \ndriven  through  these.  The  aim  of  the  rules  was  to \nmake  the  employer  supreme.  Here  was  capital  ranged \nagainst  labour  with  arbifioial  props  for  capital  and  nob \nlabour.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_009",
+      "question": "How did Gandhi think India's villages should contribute to national development?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "Gandhi believed India’s villages should be the foundation of national development through **local self-government, self-reliance, and cooperation**.\n\n- Villagers should manage their own affairs through **village panchayats**, making them a living force in India’s self-government. [1]\n- Villages should use their organizational abilities to resist oppression and preserve their **dignity and independence**. [1][2]\n- They should become economically self-sufficient by producing necessities locally—especially through spinning and weaving—so that they would not depend on imports or suffer exploitation. [2]\n- Development should also spread education through India’s own languages, improve sanitation, and connect educated people with the rural masses. Gandhi believed this would make national knowledge available to ordinary villagers and strengthen the country as a whole. [1]\n\nThus, villages were not merely recipients of development; Gandhi saw them as active, organized communities whose self-reliance and democratic participation could build Swaraj.",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Third Class in Indian Railways",
+        "The Wheel of Fortune",
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Third Class in Indian Railways",
+          "source_key": "gandhi_third_class_indian_railways",
+          "chunk_key": "gandhi_third_class_indian_railways_0016",
+          "chunk_index": 16,
+          "similarity": 0.512752184123957,
+          "token_count": 694,
+          "content": "I have sought your help in religious matters, which it is yours to give in a special sense. But I make bold to seek it even in political matters. I do not believe that religion has nothing to do with politics. The latter divorced from religion is like a corpse only fit to be buried. As a matter of fact, in your own silent manner, you influence politics not a little. And I feel that, if the attempt to separate politics from religion had not been made as it is even now made, they would not have degenerated as they often appear to have done. No one considers that the political life of the country is in a happy state. Following out the Swadeshi spirit, I observe the indigenous institutions and the village panchayats hold me. India is really a republican country, and it is because it is that, that it has survived every shock hitherto delivered. Princes and potentates, whether they were Indian born or foreigners, have hardly touched the vast masses except for collecting revenue. The latter in their turn seem to have rendered unto Caesar what was Caesar's and for the rest have done much as they have liked. The vast organisation of caste answered not only the religious wants of the community, but it answered to its political needs. The villagers managed their internal affairs through the caste system, and through it they dealt with any oppression from the ruling power or powers. It is not possible to deny of a nation that was capable of producing the caste system its wonderful power of organisation. One had but to attend the great Kumbha Mela at Hardwar last year to know how skilful that organisation must have been, which without any seeming effort was able effectively to cater for more than a million pilgrims. Yet it is the fashion to say that we lack organising ability. This is true, I fear, to a certain extent, of those who have been nurtured in the new traditions. We have laboured under a terrible handicap owing to an almost fatal departure from the Swadeshi spirit.\n\nWe, the educated classes, have received our education through a foreign tongue. We have therefore not reacted upon the masses. We want to represent the masses, but we fail. They recognise us not much more than they recognise the English officers. Their hearts are an open book to neither. Their aspirations are not ours. Hence there is a break. And you witness not in reality failure to organise but want of correspondence between the representatives and the represented. If during the last fifty years we had been educated through the vernaculars, our elders and our servants and our neighbours would have partaken of our knowledge; the discoveries of a Bose or a Ray would have been household treasures as are the Ramayan and the Mahabharat. As it is, so far as the masses are concerned, those great discoveries might as well have been made by foreigners. Had instruction in all the branches of learning been given through the vernaculars, I make bold to say that they would have been enriched wonderfully. The question of village sanitation, etc., would have been solved long ago. The village panchayats would be now a living force in a special way, and India would almost be enjoying self-government suited to its requirements and would have been spared the humiliating spectacle of organised assassination on its sacred soil. It is not too late to mend. And you can help if you will, as no other body or bodies can.",
+          "metadata": {
+            "source_key": "gandhi_third_class_indian_railways",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "essay_collection",
+            "source_title": "Third Class in Indian Railways",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1917-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0089",
+          "chunk_index": 89,
+          "similarity": 0.501183953566822,
+          "token_count": 154,
+          "content": "instances of whole villages taking a legitimate pride in the fact that they had to import nothing but salt in the whole round of the six seasons. With such conditions, there could be no drain, no exploitation and therefore no Para-raj. A little village could make terms with the rulers of the land consistent with its self-respect, dignity and independence. Is our love of luxury so inveterate, that we cannot control it even for the sake of Swaraj?\n\n_Y. I.--6th July 1921._\n\nTHE WHEEL OF FORTUNE\n\n[A certain correspondent from Sindh writing to Mahatma Gandhi puts the\nquestion, \"Will the spinning wheel solve the problem of India's poverty?\nIf it will, how?\" Here is his answer.]",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "The Wheel of Fortune",
+          "source_key": "gandhi_wheel_of_fortune_1922",
+          "chunk_key": "gandhi_wheel_of_fortune_1922_0002",
+          "chunk_index": 2,
+          "similarity": 0.499821397751514,
+          "token_count": 555,
+          "content": "Many critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: \"Ye cannot put old wine into new bottles.\" The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so\n\nevidently has decided to throw on the scrap-heap? Such attempts are contrary to the teaching of past history. But anything, which tends to reach the common roots of all civilisations, should be encouraged. In order that the spiritual civilisation of the Future may have a real chance of growing in an atmosphere congenial to it, Mahatma Gandhi's demonstration of the right path should be welcomed. His emphasis on simplicity of life and on the simplification of the machinery of living must be realised as a supremely essential condition of the coming of the new Era. In the civilisation of the Future, an Era of natural harmonious living will be inaugurated, and artificial, luxurious and pompous living will be entirely rooted out.",
+          "metadata": {
+            "source_key": "gandhi_wheel_of_fortune_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "book",
+            "source_title": "The Wheel of Fortune",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.498634691578008,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0564",
+          "chunk_index": 564,
+          "similarity": 0.492798543257623,
+          "token_count": 651,
+          "content": "out  this  sacred  law  ;  we  are  not  concerned  with  results,\" Mr. Gandhi  protested  against  the  mad  rush  of  to- daVj  and,  instead  of  blessing  the,  means  by  which modern  science  has  made  this  mad  rush  possible,  that is,  railways,  motors,  telegraph,  telephone,  and  even  ther coming  flying  machines,  he  declared  that  they  were- diverting  man's  thoughts  from  the  main  purpose  of  life  ; bodily  comfort  stood  before  soul  growth  ;  man  had  no time  to-day  even  to  know  himself  ;  he  preferred  a  news- paper or  sport  or  other  things  rather  than  to  be  left alone  with  himself  for  thought. He  claimed  Ruskin  as- on  his  side  in  this  expression  of  protest  against  th^ drive  and  hurry  of  modern  civilisation. He  did  not describe  this  development  of  material  science  as  ex- clusively British,  'but  he  considered  that  its  effect  in India  had  been  baneful  in  many  ways. He  instanced the  desecration  of  India's  holy  places,  which  he  said, were  no  longer  holy,  because  the  fatal  facility  of locomotion  had  brought  to  those  places  people  whose only  aim  was  to  defraud  the  unsophisticated :  such people,  in  the  olden  days  when  pilgrimages  meant  long and  wearisome  walking  through  jungles,  crossing  rivers,. and  encountering  many  dangers,  had  not  the  stamina  to reach  the  goal. Pilgrimages  in  those  days  could  only be  undertaken  by  the  cream  of  society,  but  they  came to  know  each  other  ;  the  aim  of  the  holy  places  was  to- make  India  holy. Plague  and  famine,  which  existed  in pre-British  days,  were  local  then  ;  to-day,  rapid  locomo- tion had  caused  them  to  spread. To  avoid  the  calamity which  intense  materialism  must  bring,  Mr. Gandhi urged  that  india  should  go  back  to  her  former  holiness which  is  not  yet  lost. The  contact  with  the  West  has\n\nawakened  her  from  the    lethargy    into   which   she    had\"",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gandhi_010",
+      "question": "What did Gandhi believe about education?",
+      "expected_answer_type": null,
+      "expected_sources": [],
+      "generated_answer": "The available sources suggest that Gandhi believed education should be actively expanded and discussed publicly. He supported:\n\n- cultivating public opinion on educational issues;\n- sustained efforts to address those issues; and\n- practical measures to spread education in Gujarat. [5]\n\nThe passage also identifies “education through the vernaculars” as the subject of his address, indicating an emphasis on education in local languages. [5]",
+      "generation_model": "gpt-5.6-luna",
+      "match_count_requested": 5,
+      "match_count_returned": 5,
+      "retrieved_source_titles": [
+        "Speeches and Writings of M. K. Gandhi"
+      ],
+      "sources": [
+        {
+          "source_number": 1,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0019",
+          "chunk_index": 19,
+          "similarity": 0.572405814013103,
+          "token_count": 688,
+          "content": "EAELT   LIFE   AND   EDUCATION\n\nMohandas  Karamchand  Gandhi  was  born  on  the  2nd* \n(October,  1869.  Though  he  has  a  Brahmin's  spirituality \nand  desire  to  serve  and  teach,  he  is  not  a  Brahmin.  Though \nhe  has  a  Kshattriya's  courage  and  devotion,  he  is  not  a \n'Kshattriya.  He  belongs  to  an  old  Bania  family  resident  in \n'Kathiawar,  politics  being  a  heritage  of  the  family.  His \nforefathers  were  Dewans  of  the  State  of  Forbandar  in  that \nProvince,  his  father  having  been  Dewan  of  that  State  for \n25  years,  as  also  of  Rajkote  and  other  States  in \nKathiawar,  He  was  likewise,  at  one  time,  a  member \n-of  the  Rajasthanik  Sabha,  having  been  nominated \nthereto  by  the  Government  of  Bombay.  Mr,  Gandhi's \niather  was  known  to  and  loved  by  all  with  whom  he \ncame  in  contact  and  he  did  not  hesitate,  if  need  came,  to \noppose  the  will  of  the  Rana,  of  Forbandar  and  of  the  Foli- \ntical  Agent,  when  he  thought  that  they  were  adopting  a \nwrong  or  unwoethy  line  of  conduct.  This  particular  trait \nhas  evidently  descended  to  his  youngest  son.  Mr.  Gandhi's \nmother  was  an  orthodox  Hindu  lady,  rigid  in  her  obser- \nvance of  religious  obligations,  strict  in  the  performance  of \nJier  duties  as  wife  and  mother,  and  stern  in  determination \nthat  her  children  should  grow  up  good  and  honest  men \nand  women.  Between  her  jftungest  son  and  herself  exist- \ned a  strong  affection  and  her  religious  example  £).nd  influ- \nence left  a  lastii^g  impression  upon  his  character.  Mohan- \ndas Gandhi  received  his  education  partly  in  Kathiawar  an4 \npartly  in  London.  It  was  only  with  the  greatest  difficulty \nthat  his  mother  could  be  prevailed  upon  to  consent  to  his \n^crossing  the  waters,  and  before  doing  so,  she  exacted  from.\n\n6  M.   K.  GANDHI",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 2,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1789",
+          "chunk_index": 1789,
+          "similarity": 0.548753098260333,
+          "token_count": 668,
+          "content": "phould  make  the  people  fear  none  and  aothiag  but  God — no \ncowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* \npiinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of \nthe  Act,  against  voluntary  registration,  having  been  given,  it  is \nthe  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and \nthe  Colony  to  the  uttermost.\"\n\nTo  assume  responsibilities,  to  recognise  obligations,  was  always \nMr.  Gandhi's  main  thought'  in  his  relations  with  the  European \ncolonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights \ncannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe \nhis  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- \nbearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal \nauthorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of \npublic  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- \nmunit'y.  He  always  felt  that  the  only  possible  road  to  progress \nwas  by  compelling  the  European  colonists  to  reocgnise  the  real \nWorth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- \nseited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his \naction  in  advising  his  fellow-countrymen  to  continue  the  struggle \n(or  Ihe  preservation  of  their  manhood,\n\nMr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself \nagainst  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare \nwhose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his \ngeneral  attitude  may  be  briefly  summed  up  in  the  fallowing  state- \nments he  ouce  made  to  the  writer  ;\"  Most  religious  men  I  have \nmet  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of \na  politioian,  am  at  heart  a  religious  man,\"\n\nHINDU-MUSLIM  BBOTHEBHOOD",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 3,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_1753",
+          "chunk_index": 1753,
+          "similarity": 0.545881545243982,
+          "token_count": 352,
+          "content": "Gandhi  has  heen  able  to  unite  people  of  India  as  they  have \nnever  before  been  united  not  only  because  of  his  unfaltering  loyalty \nto  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but \nbecause  the  British  Government  has  itself  fed  fuel  to  the  fires  of \nnational  aspiration.  Confronting  the  most  powerful  Empire  in \nexistence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own \npersonal  life,  who  is  uncompromising  and  fearless  in  the  application \nof  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any \nlonger  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he \nregards  as  having  \"  forfeited  all  title  to  confidence,  respect  or  sup- \nport.\" He  believes  in  conquering  hate  by  love,  in  the  triumph  of \ntight  over  might,  and  all  the  effort  of  his  public  life  is  directed' \ntowards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. \n{The  Asian  Revievi.)\n\nMr.  Percival  Landon",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 4,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0018",
+          "chunk_index": 18,
+          "similarity": 0.536497039573045,
+          "token_count": 499,
+          "content": "The  man  is  Mohandas  Karamchand  Gandhi,  Dewan's \nson,  Barrister-at-Law,  scholar,  student,  cultured  Indian \ngentleman  \"  farmer,  weaver,\"  and  leader  of  his  people^ \nBecause  he  preferred  to  obey  the  dictates  of  conscience* \nbecause  he  placed  honour  before  comfort  or  even  life  itself' \nbecause  he  chose  not  to  accept  an  insult  to  his  Motherland' \nbecause  he  strove  so  that  right  should  prevail  and  that  his \npeople  might  have  life,  a  civilised.  Christian  Government \nin  a  Colony  over  which  waves  the  British  flag,  deemed  that \nthe  best  way  to  overcome  such  dangerous  contumacy  was- \nte cast  his  body  into  gaol,  where  at  one  time  he  was  com- \npelled to  herd  with  and  starve  upon  the  diet  of  the  most \ndegraded  aboriginal  native  felons,  men  barely  emerging \nfrom  the  condition  of  brute  beasts,  or  rather,  with  all  their\n\nM.   K.  GANDHI  5\n\n'human  aspirations  and  instincts  crushed  out  of  them  by \niihe  treatment  accorded  to  them  under  the  \"  civilising  \" \n.process  of  the  Transvaal's  colour  legislation,  And,  again \nobeying  the  behests  of  conscience,  believing  that  he  best \nserves  India  so,  he  has  again  chosen  the  refuge  of  prison, \nconvinced  like  Thoreau  that  he  is  freer  than  his  gaolers  or \nthose  who  mourn  for  him,  but  do  not  liberate  themselves \nfrom  bondage.\n\nEAELT   LIFE   AND   EDUCATION",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        },
+        {
+          "source_number": 5,
+          "source_title": "Speeches and Writings of M. K. Gandhi",
+          "source_key": "gandhi_speeches_writings_1922",
+          "chunk_key": "gandhi_speeches_writings_1922_0768",
+          "chunk_index": 768,
+          "similarity": 0.53346335932425,
+          "token_count": 584,
+          "content": "THE  HINDU-MAHOMEDAN  PROBLEM.\n\nThe  following  is  an  extract  from  a  Gujarati  letter \naddressed  by  Mr,  Gandhi,  to  a  Mahomedan  corres- \npondent :\n\nI  never  realise  any  distinction  between  a  Hindu  and \na  Mahomedan.  To  my  mind,  both  are  sons  of  Mother \nIndia.  I  know  that  Hindus  are  in  a  numerical  majority, \nand  that  they  are  believed  to  be  more  advanced  in  know- \nledge and  education.  Accordingly,  they  should  be  glad \nto  give  way  so  much  the  more  to  their  Mahomedan \nbrethren.  As  a  man  of  truth,  I  honestly  believe  that \nHindus  should  yield  up  to  the  Mahomedans  what  the \nlatter  desire,  and  that  they  should  rejoice  in  so  doing- \nWe  can  expect  unity  only  if  such  mutual  large-hearted- \nness  is  displayed.  When  the  Hindus  and  Mahomedans \nact  towards  each  other  as  blood-brothers,  then  alone  can \nthere  be  unity,  then  only  can  we  hope  for  the  dawn  of \nIndia.\n\nGUJARAT  EDUCATIONAL  CONFERENCE\n\nThe  following  is  the  Presidential  address  to  the \nSecond  Gujarat  Educational  Conference  held  at  Broach \nin  October  20,  1917,  specially  translated  for  the  \"  Indian \nReview\"\n\nEDUCATIOV  THROUGH  THE  VERNACULARS\n\nThe  Gujarat  Education  League  that  has  called  us \ntogether  has  set  before  it  three  objects  :\n\n(1)  To  cultivate  and  express  public  opinion  on \nmatters  of  education.\n\n(2)  To  carry  on  sustained  agitation  on  educational \nquestions.\n\n(3)  To  take  all  practical  steps  for  the  spread  of \neducation  in   Gujarat.\n\nI  shall  endeavour  to  the  best  of  my  ability  to  place \nbefore  you  my  thoughts  on  these  objects  and  the  conclu- \nsions I  have  arrived  at.",
+          "metadata": {
+            "source_key": "gandhi_speeches_writings_1922",
+            "figure_slug": "mahatma-gandhi",
+            "source_type": "collected_writings_and_speeches",
+            "source_title": "Speeches and Writings of M. K. Gandhi",
+            "embedding_model": "text-embedding-3-small",
+            "publication_date": "1922-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}

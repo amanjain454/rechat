@@ -1,0 +1,1454 @@
+﻿id	question	expected_answer_type	expected_sources	generated_answer	retrieved_sources	source_passages	retrieval_relevance_score	source_coverage_score	citation_correctness_score	groundedness_score	answer_quality_score	insufficient_evidence_handled	overall_pass	failure_category	review_notes
+gandhi_001	What did Gandhi mean by nonviolence?			Gandhi meant nonviolence as more than simply refusing to use physical force. It required:
+
+- **Controlling anger**, rather than allowing it to become destructive violence; he saw disciplined self-control as a way of preserving and directing collective energy. [1][3]
+- **Rejecting violence, disorder, plunder, and destruction** even while opposing an unjust government. [1][2]
+- **Resisting injustice through “soul force”**—courageously accepting suffering, withdrawing cooperation, and refusing to support unjust institutions rather than responding with force. [3][4]
+- **Practicing nonviolence in thought, speech, and action**, not merely using it as a convenient tactic. [5]
+
+Thus, for Gandhi, nonviolence was a courageous, disciplined form of resistance rooted in self-sacrifice, love, and moral opposition to injustice—not passivity or weakness. [1][4]	[1] Freedom's Battle | gandhi_freedoms_battle_1922_0312 | similarity=0.5773
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0105 | similarity=0.5684
+[3] Freedom's Battle | gandhi_freedoms_battle_1922_0313 | similarity=0.5669
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0561 | similarity=0.5339
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1449 | similarity=0.5319	[1] Freedom's Battle
+SPEECH AT MUZAFFARABAD
+
+Before a crowded meeting of Mussalmans in the Muzaffarabad, Bombay, held
+on the 29th July 1920, speaking on the impending non-co-operation which
+commenced on the 1st of August, Mr. Gandhi said: The time for speeches
+on non-co-operation was past and the time for practice had arrived. But
+two things were needful for complete success. An environment free from
+any violence on the part of the people and a spirit of self-sacrifice.
+Non-co-operation, as the speaker had conceived it, was an impossibility
+in an atmosphere surcharged with the spirit of violence. Violence was an
+exhibition of anger and any such exhibition was dissipation of valuable
+energy. Subduing of one's anger was a storing up of national energy,
+which, when set free in an ordered manner, would produce astounding
+results. His conception of non-co-operation did not involve rapine,
+plunder, incendiarism and all the concomitants of mass madness. His
+scheme presupposed ability on their part to control all the forces of
+evil. If, therefore, any disorderliness was found on the part of the
+people which they could not control, he for one would certainly help the
+Government to control them. In the presence of disorder it would be for
+him a choice of evil, and evil through he considered the present
+Government to be, he would not hesitate for the time being to help the
+Government to control disorder. But he had faith in the people. He
+believed that they knew that the cause could only be won by non-violent
+methods. To put it at the lowest, the people had not the power, even if
+they had the will, to resist with brute strength the unjust Governments
+of Europe who had, in the intoxication of their success disregarding
+every canon of justice dealt so cruelly by the only Islamic Power
+in Europe.
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+The  Non  Co-opekation  Pbogbamme
+
+And  what  was  the  Non-Co-operation  programme  that 
+Mr,  Gandhi  had  worked  out  for  the  adoption  of  the  country 
+for  rectifying  the  wrongs  done  to  Muslim  sentiment  ?  He 
+enunciated  the  four  stages  in  the  programme  of  Non -Co- 
+operation in  clear  and  unambiguous  terms.
+
+The  first  was  the  giving  up  of  titles  and  honorary- 
+offices  ;  the  second  was  the  refusal  to  serve  Government  in 
+paid  appointments  or  to  participate  in  any  manner  in  the- 
+working  of  the  existing  machinery  of  civil  and  judicial 
+administration.  The  third  was  to  decline  to  pay  taxes  and' 
+the  last  was  to  ask  the  police  and  the  military  to  withdraw 
+■co-operation  from  the  Government.  From  the  first  Mr. 
+Gandhi  realised  the  full  scope  of  the  movement  and  he  had 
+no  doubt  of  its  far-reaching  efiects.  It  cannot  therefore 
+be  said  that  he  started  the  movement  in  a  fit  of  indigna- 
+tion. Far  from  it  he  had  worked  out  his  programme  to 
+the  farthest  limits  of  its  logic  and  had  a  clear  grasp  of  all 
+its  implications.  From  time  to  time  he  set  right  many  a 
+misconception  in  the  mind  of  the  non-  co-operationists,  such 
+for  instance,  in  regard  to  the  position  of  the  non  co- 
+operationist  Vakil.  There  is  no  ambiguity  in  what  Mr. 
+Gandhi  said.  The  Vakil  should  quietly  wash  his  hands  oflT 
+the  court,  cases  and  all,  Mr.  Gandhi  took  care  to  explain 
+that  no  stage  would  be  taken  until'he  had  made  suie  that 
+he  was  on  firm  ground.  That  is,  he  would  not  embark  on 
+the  last  two  stages  till  he  bad  created  an  indigenous 
+panchayat  to  dispense  justice  and  an  organization  of 
+volunteers  to  maintain  peace  and  order.  In  any  case, 
+violence  should  be  completely  avoided.
+
+---
+
+[3] Freedom's Battle
+Before a crowded meeting of Mussalmans in the Muzaffarabad, Bombay, held
+on the 29th July 1920, speaking on the impending non-co-operation which
+commenced on the 1st of August, Mr. Gandhi said: The time for speeches
+on non-co-operation was past and the time for practice had arrived. But
+two things were needful for complete success. An environment free from
+any violence on the part of the people and a spirit of self-sacrifice.
+Non-co-operation, as the speaker had conceived it, was an impossibility
+in an atmosphere surcharged with the spirit of violence. Violence was an
+exhibition of anger and any such exhibition was dissipation of valuable
+energy. Subduing of one's anger was a storing up of national energy,
+which, when set free in an ordered manner, would produce astounding
+results. His conception of non-co-operation did not involve rapine,
+plunder, incendiarism and all the concomitants of mass madness. His
+scheme presupposed ability on their part to control all the forces of
+evil. If, therefore, any disorderliness was found on the part of the
+people which they could not control, he for one would certainly help the
+Government to control them. In the presence of disorder it would be for
+him a choice of evil, and evil through he considered the present
+Government to be, he would not hesitate for the time being to help the
+Government to control disorder. But he had faith in the people. He
+believed that they knew that the cause could only be won by non-violent
+methods. To put it at the lowest, the people had not the power, even if
+they had the will, to resist with brute strength the unjust Governments
+of Europe who had, in the intoxication of their success disregarding
+every canon of justice dealt so cruelly by the only Islamic Power
+in Europe.
+
+In non-co-operation they had a matchless and powerful weapon. It was a
+sign of religious atrophy to sustain an unjust Government that supported
+an injustice by resorting to untruth and camouflage. So long therefore
+as the Government did not purge itself of the canker of injustice and
+untruth, it was their duty to withdraw all help from it consistently
+with their ability to preserve order in the social structure. The first
+stage of non-co-operation was therefore arranged so as to involve
+minimum of danger to public peace and minimum of sacrifice on the part
+of those who participated in the movement. And if they might not help an
+evil Government nor receive any favours from it, it followed that they
+must give up all titles of honour which were no longer a proud
+possession. Lawyers, who were in reality honorary officers of the Court,
+should cease to support Courts that uphold the prestige of an unjust
+Government and the people must be able to settle their disputes and
+quarrels by private arbitration. Similarly parents should withdraw their
+children from the public schools and they must evolve a system of
+national education or private education totally independent of the
+Government. An insolent Government conscious of its brute strength,
+might laugh at such withdrawals by the people especially as the Law
+courts and schools were supposed to help the people, but he had not a
+shadow of doubt that the moral effect of such a step could not possibly
+be lost even upon a Government whose conscience had become stifled by
+the intoxication of power.
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+thoughts  of  the  audience  to  the  soul  resistance  of  Indians- versus  brute  force  in  south  Africa. He  insisted  that  it was  completely  a  mistake  to  believe  that  Indians  were incapable  of  lengthened  resistance  for  a  principle  ;  in their  fearlessness  of  suffering  they  were  second  to  none in  the  world. Passive  resistance  had  been  called  a weapon  of  the  weak,  but  Mr. Gandhi  maintained  that  it required  courage  higher  than  that  of  a  soldier  on  the battlefield,  which  was  often  the  impulse  of  the  moment ; for  passive  resistance  was  continuous  and  sustained  :  it meant  physical  suffering. Some  people  were  inclined to  think  it  too  difficult  to  be  carried  out  to-day,  but  those who  held  that  idea  were  not  moved  by  true  courage— Again  referring  to  Oriental  teaching,  Mr. Gandhi  said that  the  teaching  of  the  "  Lord's  Song"  was,  from  the beginning,  the  necessity  of  fearlessness. He  touched  on the  question  of  physical  force  while  insisting  that  it . was  not  thought  of  by  Indians  in  the  Transvaal. He  does does  not  want  to  share  in  liberty  for  India  that  is gained  by  violence  and  bloodshed,  and  insists  that  no country  is  so  capable  as  India  f  or  wielding  soul  force. Mr. Gandhi  did  not  approve  of  the  militant  tactics  of the  suffragettes  for  the  reason  that  they  were  meeting body  force  with  body  force,  and  not  using  the  higher power  of  soul  force  .•  violence  begot  violence. He  main- tained, too,  that  the  association  of  Britain  and  India — must  be  a  mutual  benefit,  ■  if  India — eschewing violence — did  not  depart  from  her  proud  position  of  be- ing the  giver  and  the  teacher  of  religion. "If  the  world believes  in  the  existence  of  the  soul."  He  said  in  con- clusion, "it  must  be  recognised  that  soul  force  is  better
+
+than  body  force  :  it  is  the  sacred  principle  of  love  which moves  mountains. On  us  is  the  responsibility  of  living
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+REPLY  TO  CRITICS.
+
+If  the  Pardoli  decisions  offended  a  few  zealous  followers  of 
+IMr.  Gandhi,  the  Delhi  resolutions  were  condemned  by  a  large 
+section  of  the  public.  Congressmen  were  uncomfortable  at  the 
+sudden  and  incessant  changes  of  programme.  Doubts  as  to  the 
+validity  'of  the  principles  of  non-violence  were  openly  discussed, 
+tsome  adhering  to  it  as  a  mere  policy  and  as  policy,  liable  to  change. 
+To  these  Air.  Gandhi  replied: — ]
+
+I  am  sorry  that  I  find  a  nervous  fear  among  some 
+Hindus  and  Mahomedans  that  I  am  undermining  their 
+faith  and  that  I  am  even  doing  irreparable  harm  to 
+India  by  my  uncompromising  preaching  of  non-violence. 
+They  seem  almost  to  imply  that  violence  is  their  creed. 
+I  touch  a  tender  spot  if  I  talk  about  extreme  non-violence 
+jn  their  presence.  They  confound  me  with  texts  from 
+the  Mahabharata  and  the  Koran  eulogising  or  permit- 
+ting violence.  Of  the  Mahabharata  I  can  write  without 
+■jestraint;  but  the  most  devout  Mahomedau  will  not, 
+J  hope,  deny  me  the  privilege  of  understanding 
+the  message  of  the  Prophet.  I  make  bold  to  say 
+that  violence  is  the  creed  of  no  religion  and  that 
+whereas  non-violence  in  most  cases  is  obligatory  in 
+.all,  violence  is  merely  permissible  in  some  cases.  But 
+I  have  not  put  before  India  the  final  form  of  non- 
+violence. The  non-violence  that  I  have  preached  from 
+■Congress  platforms  is  non-violence  as  a  policy.  But  even 
+•policies  require  honest  adherence  in  thought,  word  and 
+•deed.  If  I  believe  that  honesty  is  the  best  policy,  surely 
+whilst  I  so  believe,  I  must  be  honest  in  thought,  word 
+.and  deed ;  otherwise  I  become  an  imposter.  Noa- 
+■"violence   being  a   policy    means   that   it  can    upon    due
+
+704  NON-CO-OPERATION	5	5	5	5	5	NOT_APPLICABLE	PASS		Strong retrieval and synthesis. The answer accurately distinguishes nonviolence from passivity and the citations support the major claims.
+gandhi_002	Why did Gandhi believe that means and ends were connected?			Gandhi believed means and ends were connected because the way people pursued a goal shaped the result they could achieve. A just society could not be created through hatred, coercion, or violence; it had to be pursued through truth, love, nonviolence, and moral self-discipline. The sources describe truth as requiring freedom, with “all forms of force or coercion” ruled out, and identify love, truth, and nonviolence as interchangeable principles [3]. They also summarize his ideal as “conquering hate by love” and achieving the triumph of right over might [1].
+
+Thus, Gandhi’s methods were not merely practical tactics: they had to embody the moral character of the desired end. His response to violence in the name of non-cooperation—self-chastisement rather than retaliation—illustrates this connection between moral means and moral ends [3].	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.5709
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0129 | similarity=0.5473
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1770 | similarity=0.5402
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1752 | similarity=0.5333
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0150 | similarity=0.5322	[1] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+34  M.  K.   GANDHI
+
+THE   ETHICS   OP   DESTEUCTION
+
+Another  feature  of  Mr.  Gandhi's  activity  which  for  a: 
+a  time  threw  a  baleful  light  over  the  movement  was  the> 
+cult  of  destruction,  as  typefied  in  the  burning  of  foreign 
+cloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, 
+several  others,  horrified  at  the  wanton  waste,  pointed  out 
+from  time  to  time  the  evil  effects  of  this  burning  business, 
+Mr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no 
+such  counsel  but  continued  literally  to  feed  the  flames.. 
+With  that  cultivated  sense  of  distinction  between  the  doer 
+and  the  thing  done,  which  is  ever  present  in  men 
+such  as  he,  there  might  be  some  efficacy  in 
+this  form  of  purification  and  self-denial.  But  many  were 
+the  critics  who  held  that  his  honfvre  mania  was  the  surest- 
+way  to  rouse  all  the  evil  passions  of  the  multitude  and  as- 
+surely  lead  to  hatred  and  civil  strife.
+
+The  Bombay  Riots
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+To  understand  Mr.  Gandhi's  view  of  life,  attention  milst  be 
+fixed  on  the  rules  he  has  laid  down  for  the  regulation  of  bis 
+^hmedabad  institution.  Its  name,  Satyagrahasrama,  means  the 
+hermitage  of  the  determined  practice  of  truth  or  the  abode  of  soul- 
+force.  The  Asrama  is  still  small,  Ic  has  had  no  real  chance  uC 
+proving  its  vitality,  for  ever  since  its  establishment  other  things 
+have  claimed  the  energies  of  its  founder.  But  the  attainment  of 
+its  objects  is  oouditioned  by  the  inorease  of  its  numbers  and  the 
+^coeptanoe  by  the  community  at  large  of  these  austere  ideals  as  at 
+present  exemplified  in  ibe  lives  of  a  fe,T  apostles,  No  eatimate  can 
+be  formed  of  the  prospective  inflaenoe  of  the  new  gospel  without 
+an  ezaminaiiou  of  its  real  nature.
+
+Truth  in  the  highest  sense  is  possible  only  where  the  individqal 
+enjoys  complete  freedom.  All  forms  of  force  oc  ooerjions  are  thus 
+at  once  barred.  Compulsion,  authority,  government,  these  are  an- 
+athema marantha  to  one  who  at  bottom  is  a  philsophioal  anarchist. 
+In  fact,  he  describes  the  essence  of  his  dootrins  sometimes  as  love. 
+Sometimes  as  truth,  sometimes  as  noovioleaoa  (ahimsa),  these 
+ftirms  are  in  his  opinion  interchangeable:  For  organized  govern- 
+maot  in  the  ideal  world,  is  justifiable.  The  merit  of  the  British 
+Government  is  that  it  governs  the  least.  Even  a  family  and  a 
+eohool  must  trust  entirely  to  the  power  of  love  and  moral 
+reasoning.  Flagrant  misoonduct  he  deals  with  by  himself 
+{asting  for  a  certain  number  of  days,  the  guilty  party  being  in- 
+variably brought  to  a  st^ie  of  contrition  within  that  period.  Some- 
+times ago  he  applied  this  remedy  to  end  a  serious  strike  in  a  mill, 
+the  employers  coming  to  reason  for  tear  of  incurring  sin,  Within 
+the  last  few  weeka  the  violence  practised  by  some  persons  in 
+Bombay  in  the  name  of  non-co-operation  on  the  occasion  of  the 
+Prince  of  Wales'  visit  entailed  this  form  of  eelf-chastisement  on 
+his  part,  and  by  all  aooounts  it  had  the  desired  result.
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+■M-  1^^*'°^*'.  ""^^  *■*  °°*'°  personal  opinion  of  the  Indian  le.ader). 
+M.  K.  Gandhi,  there  oan  be  no  doubt  that  be  is  a  remarkable  man. 
+Kemaikable  because  his  aianoard  of  conduct  and  method  of  action 
+are  so  entirely  different  from  those  of  other  Indian  leaders.  States- 
+men and  politioians  are  seldom  guided  by  the  motives  which 
+compel  Gandhi  to  action,  and  the  very  fact  that  in  him  we  see  a 
+man  who  wields  enormous  influence  over  his  countrymen  by  a 
+character— the  exaot  antithesis  of  the  ordinary  political  leader — 
+gives  to  his  personality  a  peculiar  interest.  One  Governor  of.  a 
+British  Province  in  the  East  has  described  him  as  "  a  dangerous 
+and  misguided  saint."  Everyone,  whether  fee  or  friend,  agrees  in 
+regarding  him  as  a  saint.  And  it  is  because  of  his  evident  eaintli- 
+ness  of  character  that  be  has  such  an  unparalleled  icflueuce  in 
+India  at  the  present  day,
+
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+64  M.   K.  GANDHI
+
+be  well  founded.  And  so  the  three  great  grievances 
+for  which  Mr.  Gandhi  has  been  fighting — are  griev- 
+ances admitted  by  all  to  be  just.  In  the  opinion 
+of  Mr.  Gandhi  and  most  of  his  countrymen 
+there  would  never  have  arisen  these  festering  sores 
+'  if  we  were  in  our  country  what  others  are  in  their 
+own,'  if  in  short,  we  too  had  been  given  ''  the  Self- 
+determination,"  for  which  elsewhere  so  much  blood  and 
+treasure  have  been  sacrificed.  The  whole  question  there- 
+fore reduces  itself  to  one  dominant  problem — the  Problem 
+of  8waraj.  And  the  problem  of  Mr.  Gandhi  is  no  less  than 
+that.  But  for  the  lost  faith  of  the  people  in  the  sincerity 
+of  the  British,  even  this  question  would  not  have  assumed 
+such  an  acute  form  as  we  find  it  to-day.
+
+You  cannot  solve  this  problem  by  clapping  its  best, 
+brightest  and  noblest  exponent  even  though  bis  methods 
+may  be  novel  and  his  activities  inconvenient  and  some- 
+times dangerous.  Sir  John  Rees  was  not  far  wrong 
+when  he  observed  that  "  Gandhi  in  Jail  might  prove  to  be 
+more  dangerous  than  Gandhi  out  of  it."  There  is  a 
+world  of  significance  in  the  warning  of  Professor  Gilbert 
+Murray : —
+
+"Persons  in  power  should  be  very  careful  when  they  deal 
+with  a  man  who  cares  nothing  for  sensual  pleasures,  nothing  for 
+riches,  nothing  for  comfort  or  praise  or  promises  but  simply 
+determines  to  do  what  he  believes  to  be  right.  He  is  a  danger- 
+ous and  uncomfortable  enemy  because  his  body,  which 
+you  can  always  conquer,  gives  you  so  little  purchase  upon  his 
+soul."
+
+THE
+
+South  African  Indian  Question
+
+THE  BEGINNING  OF  THE  STRUGGLE	4	3	3	4	4	NOT_APPLICABLE	PASS		The answer is plausible and mostly grounded, but the passages do not explicitly articulate the means-and-ends principle. Several passages are third-party descriptions rather than direct Gandhi statements.
+gandhi_003	What were Gandhi's views on industrialization and machinery?			Gandhi opposed industrialization in the modern, large-scale sense, especially when it displaced village livelihoods and created poverty, idleness, and dependence. He favored simpler, decentralized production—above all, household hand-spinning—as a supplementary occupation for India’s peasants. He argued that gigantic textile mills would be like replacing every family stove with a few huge bakeries: efficient in one sense, but economically damaging to ordinary people. [2]
+
+His criticism was not an absolute rejection of all machinery. Gandhi stated that he had “nothing to say against” developing other Indian industries through machinery; his objection was specifically to using gigantic mills to supply India’s cloth and to the broader machinery-driven industrial system of modern civilization. [2]
+
+More broadly, he associated excessive machinery, luxury, and industrial civilization with social harm and the failures of modern society. He therefore advocated simplicity of life and a less complicated “machinery of living,” rather than a return to machinery-free primitivism. [1][3]	[1] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0002 | similarity=0.5986
+[2] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0095 | similarity=0.5451
+[3] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0001 | similarity=0.5379
+[4] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0090 | similarity=0.5307
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0129 | similarity=0.5127	[1] The Wheel of Fortune
+Many critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: "Ye cannot put old wine into new bottles." The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so
+
+evidently has decided to throw on the scrap-heap? Such attempts are contrary to the teaching of past history. But anything, which tends to reach the common roots of all civilisations, should be encouraged. In order that the spiritual civilisation of the Future may have a real chance of growing in an atmosphere congenial to it, Mahatma Gandhi's demonstration of the right path should be welcomed. His emphasis on simplicity of life and on the simplification of the machinery of living must be realised as a supremely essential condition of the coming of the new Era. In the civilisation of the Future, an Era of natural harmonious living will be inaugurated, and artificial, luxurious and pompous living will be entirely rooted out.
+
+---
+
+[2] The Wheel of Fortune
+You know the great Scientist Dr. P. C. Ray, but you may not know that he
+has also become an enthusiast on behalf of the spinning wheel. India
+does not need to be industrialized in the modern sense of the term. It
+has 7,50,000 villages scattered over a vast area 1,900 miles long, 1,500
+miles broad. The people are rooted to the soil, and the vast majority
+are living a hand-to-mouth life. Whatever may be said to the contrary,
+having travelled throughout the length and breadth of the land with eyes
+open, and having mixed with millions, there can be no doubt that
+pauperism is growing. There is no doubt also that the millions are
+living in enforced idleness for at least 4 months in the year.
+Agriculture does not need revolutionary changes. The Indian peasant
+requires a supplementary industry. The most natural is the introduction
+of the spinning wheel, not the hand-loom. The latter cannot be
+introduced in every home, whereas the former can, and it used to be so
+even a century ago. It was driven out not by economic pressure but by
+force deliberately used as can be proved from authentic records. The
+restoration, therefore, of the spinning wheel solves the economic
+problem of India at a stroke. I know that you are a lover of India, that
+you are deeply interested in the economic and moral uplift of my
+country. I know too that you have great influence. I would like to
+enlist it on behalf of the spinning wheel. It is the most effective
+force for introducing successful Co-Operative Societies. Without honest
+co-operation of the millions, the enterprise can never be successful,
+and as it is already proving a means of weaning thousands of women from
+a life of shame, it is as moral an instrument as it is economic.
+
+I hope you will not allow yourself to be prejudiced by anything you
+might have heard about my strange views about machinery. I have nothing
+to say against the development of any other industry in India by means
+of machinery but I do say that to supply India with cloth manufactured
+either outside or inside through gigantic mills is an economic blunder
+of the first magnitude just as it would be to supply cheap bread
+through huge bakeries established in the chief centres in India and to
+destroy the family stove.
+
+---
+
+[3] The Wheel of Fortune
+DAWN OF A NEW ERA
+
+Many critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: "Ye cannot put old wine into new bottles." The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so
+
+---
+
+[4] The Wheel of Fortune
+[A certain correspondent from Sindh writing to Mahatma Gandhi puts the
+question, "Will the spinning wheel solve the problem of India's poverty?
+If it will, how?" Here is his answer.]
+
+I am more than ever convinced that without the spinning wheel the problem of India's poverty cannot be solved. Millions of India's peasants starve for want of supplementary occupation. If they have spinning to add to their slender resources, they can fight successfully against pauperism and famine. Mills cannot solve the problem. Only hand-spinning--and nothing else--can. When India was forced to give up hand-spinning, she had no other occupation in return. Imagine what would happen to a man who found himself suddenly deprived of a quarter of his bare livelihood. Over eighty-five percent of Her population have more than a quarter of their time lying idle. And, therefore, even apart from the terrible drain rightly pointed out by the Grand Old Man of India, she has steadily grown poorer because of this enforced idleness. The problem is how to utilise these billions of hours of the nation without disturbing the rest. Restoration of the spinning wheel is the only possible answer. This has nothing to do with my special views on machinery or with the boycott of foreign goods in general, India is likely to accept the answer in full during this year. It is madness to tinker with the problem. I am writing this in Puri in front of the murmuring waves. The picture of the crowd of men, women, and children, with their fleshless ribs under the very shadow of Jagannath, haunts me. If I had the power, I would suspend every other activity in schools, and colleges, and everywhere else, and popularise spinning; prepare out of these lads and lasses spinning teachers: inspire every carpenter to prepare spinning wheels; and ask the teachers to take these life-going machines to every home, and teach them spinning. If I had the power, I would stop an ounce of cotton from being exported and would have it turned into yarn in these homes. I would dot India with depots for receiving this yarn and distributing it among weavers. Given sufficient
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+34  M.  K.   GANDHI
+
+THE   ETHICS   OP   DESTEUCTION
+
+Another  feature  of  Mr.  Gandhi's  activity  which  for  a: 
+a  time  threw  a  baleful  light  over  the  movement  was  the> 
+cult  of  destruction,  as  typefied  in  the  burning  of  foreign 
+cloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, 
+several  others,  horrified  at  the  wanton  waste,  pointed  out 
+from  time  to  time  the  evil  effects  of  this  burning  business, 
+Mr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no 
+such  counsel  but  continued  literally  to  feed  the  flames.. 
+With  that  cultivated  sense  of  distinction  between  the  doer 
+and  the  thing  done,  which  is  ever  present  in  men 
+such  as  he,  there  might  be  some  efficacy  in 
+this  form  of  purification  and  self-denial.  But  many  were 
+the  critics  who  held  that  his  honfvre  mania  was  the  surest- 
+way  to  rouse  all  the  evil  passions  of  the  multitude  and  as- 
+surely  lead  to  hatred  and  civil  strife.
+
+The  Bombay  Riots	5	5	4	4	5	NOT_APPLICABLE	PASS		Excellent retrieval from The Wheel of Fortune. The nuance that Gandhi did not reject all machinery is well supported. Some broader civilizational claims rely on editorial framing.
+gandhi_004	How did Gandhi describe the idea of self-rule or swaraj?			Gandhi described **swaraj** as self-government by the people of India—specifically, “Parliamentary Government of India in the modern sense,” obtained either with or without British cooperation [3]. The Indian National Congress’s aim, he said, was to achieve this “by all legitimate and peaceful means” [2].
+
+He also presented swaraj as more than a change of rulers: it required national self-respect, discipline, self-sacrifice, organization, courage, and economic self-reliance through swadeshi [4]. In practice, Indians were to assert themselves through determination and sacrifice while adopting non-cooperation and non-violence [3]. Thus, swaraj meant both political self-rule and the capacity of Indians to govern and sustain themselves.	[1] Freedom's Battle | gandhi_freedoms_battle_1922_0130 | similarity=0.6025
+[2] Freedom's Battle | gandhi_freedoms_battle_1922_0154 | similarity=0.5952
+[3] Freedom's Battle | gandhi_freedoms_battle_1922_0152 | similarity=0.5570
+[4] Freedom's Battle | gandhi_freedoms_battle_1922_0122 | similarity=0.5558
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0079 | similarity=0.5480	[1] Freedom's Battle
+SWARAJ MY IDEAL
+
+The following is a fairly full report of Mr. Gandhi's important speech
+at Calcutta on the 13th December 1920:--
+
+The very fact, that so many of you cannot understand Hindi which is
+bound to be the National medium of expression throughout Hindustan in
+gatherings of Indians belonging to different parts of the land, shows
+the depth of the degradation to which we have sunk, and points to the
+supreme necessity of the non-co-operation movement which is intended to
+lift us out of that condition. This Government has been instrumental in
+degrading this great nation in various ways, and it is impossible to be
+free from it without co-operation amongst ourselves which is in turn
+impossible without a national medium of expression.
+
+---
+
+[2] Freedom's Battle
+"Supposing that the British Government wish to retire because India is
+not a paying concern, what do you think will then be the position
+of India?"
+
+Mr. Gandhi answered: "At that stage surely it is easy to understand that
+India will then have evolved either outstanding spiritual height or the
+ability to offer violence, against violence. She will have evolved an
+organising ability of a high order, and will therefore be in every way
+able to cope with any emergency that might arise." "In other words,"
+observed the _Times_ representative, "you expect the moment of the
+British evacuation, if such a contingency arises, will coincide with the
+moment of India's preparedness and ability and conditions favourable for
+India to take over the Indian administration as a going concern and work
+it for the benefit and advancement of the Nation?"
+
+Mr. Gandhi answered the question with an emphatic affirmative. "My
+experience during the last months fills me with the hope," continued Mr.
+Gandhi, "that within the nine months that remain of the year in which I
+have expected Swaraj for India we shall redress the two wrongs and we
+shall see Swaraj established in accordance with the wishes of the people
+of India."
+
+"Where will the present Government be at the end of the nine months?"
+Asked the _Times_ representative.
+
+Mr. Gandhi, with a significant smile, said: "The lion will then lie with
+the lamb."
+
+_Young India, December, 1920._
+
+THE ATTAINMENT OF SWARAJ
+
+Mr. Gandhi in moving his resolution on the creed before the Congress,
+said, "The resolution which I have the honour to move is as follows: The
+object of the Indian National Congress is the attainment of Swarajya by
+the people of India by all legitimate and peaceful means."
+
+---
+
+[3] Freedom's Battle
+SWARAJ IN NINE MONTHS
+
+Asked by the _Times_ representative as to his impressions formed as a
+result of his activities during the last three months, Mr. Gandhi
+said:--"My own impression of these three months' extensive experience is
+that this movement of non-co-operation has come to stay, and it is most
+decidedly a purifying movement, in spite of isolated instances of
+rowdyism, as for instance at Mrs. Besant's meeting in Bombay, at some
+places in Delhi, Bengal, and even in Gujarat. The people are
+assimilating day after day the spirit of non-violence, not necessarily
+as a creed, but as an inevitable policy. I expect most startling
+results, more startling than, say, the discoveries of Sir J.C. Bose, or
+the acceptance by the people of non-violence. If the Government could be
+assured beyond any possibility of doubt that no violence would ever be
+offered by us the Government would from that moment alter its character,
+unconsciously and involuntarily, but nonetheless surely on that
+account."
+
+"Alter its character,--in what, direction?" asked the _Times_
+representative.
+
+"Certainly in the direction which we ask it should move--that being in
+the direction of Government becoming responsive to every call of
+the nation."
+
+"Will you kindly explain further?" asked the representative.
+
+"By that I mean," said Mr. Gandhi, "people will be able by asserting
+themselves through fixed determination and self-sacrifice to gain the
+redress of the Khilafat wrong, the Punjab wrong, and attain the Swaraj
+of their choice."
+
+"But what is your Swaraj, and where does the Government come in
+there--the Government which, you say will alter its character
+unconsciously?"
+
+"My Swaraj," said Mr. Gandhi, "is the Parliamentary Government of India
+in the modern sense of the term for the time being, and that Government
+would be secured to us either through the friendly offices of the
+British people or without them."
+
+"What do you mean by the phrase, 'without them!'" questioned the
+interviewer.
+
+---
+
+[4] Freedom's Battle
+And is it such an impracticable proposition to expect parents to
+withdraw their children from schools and colleges and establish their
+own institutions or to ask lawyers to suspend their practice and devote
+their whole time attention to national service against payment where
+necessary, of their maintenance, or to ask candidates for councils not
+to enter councils and lend their passive or active assistance to the
+legislative machinery through which all control is exercised. The
+movement of non-co-operation is nothing but an attempt to isolate the
+brute force of the British from all the trappings under which it is
+hidden and to show that brute force by itself cannot for one single
+moment hold India.
+
+But I frankly confess that, until the three conditions mentioned by me
+are fulfilled, there is no Swaraj. We may not go on taking our college
+degrees, taking thousands of rupees monthly from clients for cases which
+can be finished in five minutes and taking the keenest delight in
+wasting national time on the council floor and still expect to gain
+national self-respect.
+
+The last though not the least important part of the Maya still remains
+to be considered. That is Swadeshi. Had we not abandoned Swadeshi, we
+need not have been in the present fallen state. If we would get rid of
+the economic slavery, we must manufacture our own cloth and at the
+present moment only by hand-spinning and hand weaving.
+
+All this means discipline, self-denial, self-sacrifice, organising
+ability, confidence and courage. If we show this in one year among the
+classes that to-day count, and make public opinion, we certainly gain
+Swaraj within one year. If I am told that even we who lead have not
+these qualities in us, there certainly will never be Swaraj for India,
+but then we shall have no right to blame the English for what they are
+doing. Our salvation and its time are solely dependent upon us.
+
+BRITISH RULE--AN EVIL
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+You  have  successfully  demonstrated  how  you  can 
+resist  Government  with  civility,  and  how  you  can  re- 
+tain your  own  respect  without  hurting  theirs.  I  now 
+place  before  you  an  opportunity  of  proving  that  you 
+bear  no  hostility  to  Government  in  spite  of  your  strenuous  flght 
+with  them.
+
+You  are  all  Home  Rulers,  some  of  you  are  members  of 
+Home  Rule  Leagues.  One  meaning  of  Home  rule  is  that  we 
+should  become  partners  of  the  Empire.  To-day  we  are  a  subject 
+people.  We  do  not  enjoy  all  the  rights  of  Englishmen.  We 
+are  not  to-day  partners  of  the  Empire  as  are  Canada,  South 
+Africa  and  Australia.  We  are  a  Dependency.  We  want  the 
+rights  of  Enelishmen,  and  we  aspire  to  be  as  much  partners  of 
+the  Empire  as  the  Dominions  Overseas.  We  wish  for  the  time 
+when  we  may  aspire  to  the  Viceregal  office.  To  bring  such  a 
+state  of  things  we  should  have  the  ability  to  defend  ourselves, 
+that  is  the  ability  to  bear  arms  and  to  use  them.  As  long  as 
+we  have  to  look  to  Englishmen  for  our  defence,  as  long  as  we 
+are  not  free  from  the  fear  of  the  military,  so  long  we  cannot  be 
+regarded  as  equal  partners  with  Englishmen.  It,  therefore,  be- 
+hoves us  to  learn  the  use  of  arms  and  to  acquire  the  ability  to 
+defend  ourselves.  If  we  want  to  learn  the  use  of  arms  With  the 
+greatest  possible  despatch,  it  is  our  duty  to  enlist  ourselves  in 
+the  Army.
+
+M.  K.    GANDHI  33.
+
+The  easiest  and  the  straightest  way  to  win  Swiwajya, 
+sai4  Mr.  Gandhi,  is  to  participate  in  the  defence  of  the 
+Empire.  This  argument,  doubtless,  went  home,  and  he- 
+appealed  in  the  following  words  : —	5	5	5	5	5	NOT_APPLICABLE	PASS		Direct and well-supported explanation of swaraj, combining political self-government with discipline, self-respect, and economic self-reliance.
+gandhi_005	What role did religion play in Gandhi's political thinking?			Religion was central to Gandhi’s political thinking, not separate from it. He described himself as “at heart a religious man,” even though he appeared publicly as a politician [2]. His religious outlook emphasized moral responsibility, duty, fearlessness before God, and service to others [2].
+
+This shaped his political methods and goals. He believed political struggle should be nonviolent, disciplined, and willing to accept imprisonment rather than use force [3]. He also sought to overcome hatred through love and to establish the victory of moral right over physical power [4]. His religious perspective was broad rather than narrowly sectarian: it was rooted in Hinduism but influenced by and sympathetic to other traditions [1].	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1693 | similarity=0.6065
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1789 | similarity=0.5986
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1692 | similarity=0.5764
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.5493
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0129 | similarity=0.5435	[1] Speeches and Writings of M. K. Gandhi
+The  folUwitig  account  of  Mr.  Gandhi's  religious  views  from 
+the  pen  of  the  late  Bev.  Joseph  Dolie  brings  cut  clearly  the  essen- 
+tials of  Hinduism  as  conceived  by  Mr,  Gandhi :— ^
+
+Mr,  Gandhi's  leligioua  viens,  and  his  place  in  the  theologioal 
+woild,  have  saluially  been  a  eubjeot  of  much  diecUBEiou  here.  A 
+{en  days  ago  I  viaa  told  that  "he  is  a  Buddhist."  Not  long  sinoe 
+a  nenspapet  desotibed  him  as  "a  ChristiaD  Mubammadan,"  au  ex- 
+ttaotdinaty  mixture  indeed.  Others  imagine  that  he  npiships 
+idols,  and  would  be  quite  prepared  to  find  a  shrine  in  big  tffioe.  oc 
+discover  the  trunk  of  Gunpatt;  projecting  Irom  among  his  books! 
+Not  a  lew  belie'ved  him  to  be  a  Theosophist.  I  question  whether 
+■  an;  Bjslem  of  religion  can  absolutely  hold  him.  His  vi^ws  are  too 
+oloEely  allied  to  Chriatiaoity  to  be  entirely  Hindu  ;  and  too  deeply 
+Eaturated  with  Hindnicm  to  be  oalle^  Chiiatiao,  while  his  sym- 
+{iBtbiea  are  so  wide  and  oatholio,  that  one  would  imagine  "he  has 
+teacfaed  a  point  where  the  formulae  of  sects  are  meaningless,"'
+
+One  night,  when  the  house  was  still,  we  argued  out  the 
+matter  into  the  morning,  and  these  are  the  results.
+
+His  oonviotion  is  that  old  Hinduism,  the  Hinduism  of  the 
+earliest  leoords,  was  a  pure  faith,  free  from  idolatry  ;  that  the 
+spiritual  faith  of  India  has  been  corrupted  by  materialism,  and 
+because  of  this  she  has  lost  her  place  in  the  van  of  the  nations  ; 
+that,  through  the  ages  God,  pervading  all,  has  manifested  Him- 
+self in  difierent  forms,  becoming  incarnate,  for  purposes  of 
+salvation,  with  the  object  of  leading  men  back  into  the  right  path. 
+The  Oita  makes  Krishna  eay  ; —
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+phould  make  the  people  fear  none  and  aothiag  but  God — no 
+cowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* 
+piinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of 
+the  Act,  against  voluntary  registration,  having  been  given,  it  is 
+the  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and 
+the  Colony  to  the  uttermost."
+
+To  assume  responsibilities,  to  recognise  obligations,  was  always 
+Mr.  Gandhi's  main  thought'  in  his  relations  with  the  European 
+colonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights 
+cannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe 
+his  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- 
+bearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal 
+authorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of 
+public  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- 
+munit'y.  He  always  felt  that  the  only  possible  road  to  progress 
+was  by  compelling  the  European  colonists  to  reocgnise  the  real 
+Worth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- 
+seited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his 
+action  in  advising  his  fellow-countrymen  to  continue  the  struggle 
+(or  Ihe  preservation  of  their  manhood,
+
+Mr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself 
+against  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare 
+whose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his 
+general  attitude  may  be  briefly  summed  up  in  the  fallowing  state- 
+ments he  ouce  made  to  the  writer  ;"  Most  religious  men  I  have 
+met  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of 
+a  politioian,  am  at  heart  a  religious  man,"
+
+HINDU-MUSLIM  BBOTHEBHOOD
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+What  mUBt  we  then  do  ?  Surely  remain  non-violenb- 
+and  yet  strccig  enough  to  offer  as  many  willing  viotims- 
+as  tbe  GoTernment  may  require  for  imprisonment.  Oar- 
+work  must  continue  with  clock-work  regularity.  Eaob 
+province  must  elect,  its  own  succession  of  leaders.  Lalajv 
+has  set  a  brilliant  example  by  making  all  the  necessary 
+arrangements,  Tbe  chairman  and  tbe  secretary  must- 
+be  given  in  each  province  emergency  powers.  The- 
+exeoutive  committees  must  be  tbe  smallest  possible. 
+Every  Congressman  must  be  a  volunteer.
+
+Whilst  we  must  sot  avoid  arrest  we  must  not 
+provoke  it  by  giving  unnecessary  offence.
+
+We  must  vigorously  prosecute  the  Swadeshi' 
+campaign  till  we  are  fully  organised  for  the  manufacture- 
+of  ali  tbe  band-spun  Khadi  we  require  and  have  brought 
+about  a  complete  boycott  of  foreign  cloth.
+
+We  must  hold  the  Congress  at  any  oost  in  spite  of 
+the  arrest  of  every  one  of  the  leaders  unless  tbe  Govern- 
+ment dissolve  it  by  force.  And  if  we  are  neither  cowed 
+down  nor  provoked  to  violence  but  are  able  to  continue 
+national  work,  we  have  certainly  attained  Swaraj.  For 
+no  power  on  earth  can  stop  the  onward  march  of  a- 
+peaceful,  detenuined  and  godly  people-
+
+APPENDIX  I
+
+I.    Mb.  GANDHI'S  RELIGION  ',
+
+The  folUwitig  account  of  Mr.  Gandhi's  religious  views  from 
+the  pen  of  the  late  Bev.  Joseph  Dolie  brings  cut  clearly  the  essen- 
+tials of  Hinduism  as  conceived  by  Mr,  Gandhi :— ^
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+34  M.  K.   GANDHI
+
+THE   ETHICS   OP   DESTEUCTION
+
+Another  feature  of  Mr.  Gandhi's  activity  which  for  a: 
+a  time  threw  a  baleful  light  over  the  movement  was  the> 
+cult  of  destruction,  as  typefied  in  the  burning  of  foreign 
+cloth.  KabiEdranath  Tagore  and  0.  F.  Andrews  and, 
+several  others,  horrified  at  the  wanton  waste,  pointed  out 
+from  time  to  time  the  evil  effects  of  this  burning  business, 
+Mr.  Gandhi,  mercilessly  logical  as  ever,  would  heed  no 
+such  counsel  but  continued  literally  to  feed  the  flames.. 
+With  that  cultivated  sense  of  distinction  between  the  doer 
+and  the  thing  done,  which  is  ever  present  in  men 
+such  as  he,  there  might  be  some  efficacy  in 
+this  form  of  purification  and  self-denial.  But  many  were 
+the  critics  who  held  that  his  honfvre  mania  was  the  surest- 
+way  to  rouse  all  the  evil  passions  of  the  multitude  and  as- 
+surely  lead  to  hatred  and  civil  strife.
+
+The  Bombay  Riots	4	4	4	4	5	NOT_APPLICABLE	PASS		Good synthesis of religion and politics. Some evidence is third-party commentary, so direct and editorial passages should eventually be distinguished.
+gandhi_006	What did Gandhi believe about civil disobedience?			Gandhi believed civil disobedience could be a powerful remedy against injustice, but only when practiced openly, nonviolently, and with a willingness to endure suffering and imprisonment rather than resist violently. He viewed it as “peaceful rebellion,” based on the moral force of innocent suffering [3].
+
+He was especially cautious about **mass** civil disobedience. It required a calm atmosphere, disciplined and informed participants, and strict conditions; otherwise it could lead to bloodshed or disorder [1][2][4]. He therefore urged patience and preparation before launching large-scale campaigns [3]. For individuals, however, he believed disobedience could become a duty when obeying the law would violate conscience or deny God [4]. In practice, this meant openly breaking an unjust order while accepting its legal penalty, as he did in Champaran [5].	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1327 | similarity=0.6456
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0132 | similarity=0.6031
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1333 | similarity=0.5932
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1328 | similarity=0.5914
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0060 | similarity=0.5693	[1] Speeches and Writings of M. K. Gandhi
+•636  NON-CO-OPERATION
+
+to  greater  cordon  than  the  Government  will  be  to  make 
+India  more  slave  than  she  is  now.
+
+Swaraj  is  freedom  for  every  one,  the  smallest 
+among  us,  to  do  as  he  likes  without  any  physical  inter- 
+nerence  with  his  liberty.  Non-violent  non-co-operation 
+is  the  method  whereby  we  cultivate  the  freest  public 
+opinion  and  get  it  enforced.  When  there  is  complete 
+freedom  of  opinion,  that  of  the  majority  must  prevail. 
+If  we  are  in  a  minority,  we  can  prove  worthy  of  our 
+religion  by  remaining  true  to  it  in  the  fact  of  coercion. 
+The  Prophet  submitted  to  the  coercion  of  the  majority 
+^nd  remained  true  to  his  faith.  And  when  he  found 
+himself  in  a  majority  he  declared  to  his  followers  that 
+there  should  be  no  compulsion  in  religion.  Let  us  not 
+Again  either  by  verbal  or  physical  violenc'e  depart  from 
+the  injunction,  and  by  our  own  folly  further  cut  back 
+the  hands  of  the  clock  of  progress.
+
+CIVIL  DISOBEDIENCE.
+
+[Though  the  author  of  the  Civil  Disobedience  move- 
+ment in  India,  Mr.  Gandhi  was  always  alive  to  its 
+dangers.  He  therefore  insisted  that  his  conditions  should 
+be  fulfilled  in  toto  before  any  Talul^a  could  embark  on  a 
+campaign  of  Civil  Disobedience.  He  was  always  very 
+sautious  in  permitting  Civil  Disobedience  as  will  be  seen 
+from  the  following  article  in  Young  India.  He  restrain- 
+ed at  a  certain  stage,  the  majority  of  the  Congress  Com- 
+mittee from  a  rushing  and  perilous  programme.^
+
+Civil  disobedience  was  on  the  lips  of  every  one  of 
+the  members  of  the  All-India  Congress  Committee.  Not 
+having  really  over  tried  it,  every  one  appeared  to  be 
+enamoured  of    it    from    a    mistaken    belief    in  it    as  a
+
+CIVIL    DISOBEDIENCE  637
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+And  then  Mr,  Gandhi  drove  the  moral  home  to  the 
+gathering  as  also  to  the  eager  and  anxious  public  all  over 
+India,
+
+Warned  by  the  disasters  at  Bombay  and  the  Moplab 
+rebellion  which  was  still  going  on  in  Malabar,  it  was  ex- 
+pected that  Mr.  Gandhi  would  reconsider  his  position  and' 
+stop  short  of  the  extreme  steps  in  Non- Co  operation.  But 
+that  was  not  to  be.  The  Congress  had  by  this  time  become 
+an"  organ  for  registering  his  decrees.  And  the  Committee 
+met  frequently  to  devise  methods  in  pursuance  of  Non-Co- 
+operation. Thundering  resolutions,  alternating  with  hopes- 
+and  warnings,  came  in  quick  succession.  Province  after 
+Province  vied  with  one  another  for  the  exciting  novelty  of 
+civil  disobedience.
+
+Though  the  author  of  the  Civil  Disobedience  move- 
+ment in  India,  Mr.  Gandhi  was  always  alive  to  its  dangers,. 
+He  therefore  insisted  that  his  conditions  should  be  fulfilled 
+in  toto  before  any  Taluka  could  embark  on  a  campaign  o£
+
+56  M.   K.   GANDHI
+
+"Civil    Disobedience.       And    those    conditions   were   very 
+.rigorous  indeed.
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+:them,  to  be  fired  all  of  a  sudden   for  civil   disobedience.
+
+Disobedience  to  be  civil  has  to  be  open  and  non-violent.
+
+Complete  civil  disobedience  is  a  state  of  peaceful 
+rebellion — a  refusal  to  obey  every  single  State-made 
+Jaw,  It  is  certainly  more  dangerous  than  an  armed 
+rebellion.  For  it  can  never  be  down  if  the  civil  re- 
+sisters  are  prepared  to  face  extreme  hardship.  It  is 
+based  upon  an  implicit  belief  in  the  absolute  efficacy 
+of  innocent  sufTering.  By  noiselessly  going  to  prison  a 
+civil  resister  ensures  a  calm  atmosphere.  The  wrongdoer 
+wearies  of  wrong-doing  in  the  absence  of  resistance. 
+AH  pleasure  is  lost  when  the  victim  betrays  no  resi- 
+stance. A  full  grasp  of  the  conditions  of  successful  civil 
+rresistance  is  necessary  at  least  on  the  pan  of  the  repre- 
+sentatives of  the  people  before  we  can  launch  out  on  an 
+enterprise  of  such  magnitude.  The  quickest  remedies 
+-are  always  fraught  with  the  greatest  danger  and  require 
+the  utmost  skill  in  handling  them.  It  is  my  firm 
+•conviction  that  if  we  bring  about  a  successful  boycott 
+of  foreign  cloth  we  shall  have  produced  an  atmosphere 
+that  would  enable  us  to  inaugurate  civil  disobedience  on 
+.a  scale  that  no  Government  can  resist.  I  would  therefore
+
+640  NON-CO-OPERATION
+
+urge  patience  and  determined  concentration  on  Swadeshi 
+upon  those  who  are  impatient  to  embark  on  mass  civil 
+disobedience.
+
+THE  MOPLAH  OUTBREAK.
+
+[Mr,  Gandhi  addressed  the  following  appeal  to  the- 
+Liberals  on  Nov.  21  \ — ]
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+CIVIL    DISOBEDIENCE  637
+
+soverign  remedy  for  present  day  ills.  I  feel  sure  that 
+it  can  be  made  such  if  we  can  produge  the  necessary 
+atmosphere  for  it.  For  individuals  there  always  is  that 
+atmosphere  except  when  their  civil  disobedience  is- 
+certain  to  lead  to  bloodshed.  I  discovered  this  exception, 
+during  the  Satyagraha  days.  But  even  so  a  call  may; 
+come  which  one  dare  not  neglect,  cost  it  what  it  may^ 
+I  can  clearly  see  that  time  is  coming  to  me  when  I  must 
+refuse  obedience  to  every  single  State-made-law  even 
+though  there  may  be  a  certainty  of  bloodshed.  When 
+neglect  of  the  call  means  a  denial  of  God,  civil  disobe- 
+dience becomes  a  peremptory  duty.
+
+Mass  civil  disobedience  stands  on  a  different  footing. 
+It  can  only  be  tried  in  a  calm    atmosphere.     It  must  be 
+the  calmness  of  strength  not   weakness,   knowledge  not 
+ignorance.     Individual    civil    disobedience    may  be  and: 
+often  is  vicarious.     Mass  civil  disobedience   may  be  and' 
+often  is  selfish    in    the    sense  that    individuals    expect- 
+personal  gain  from  their    disobedience.     Thus  in  South 
+Africa,  Kallenbach  and   Polak    offered  vicarious    civil' 
+disobedience.     They  had    nothing  to    gain.    Thousands- 
+offered  it  because    they    expected    personal  gain  also  in. 
+the  shape  say  of  the    removal    of  the    annual    poll-tax 
+levied  upon    ex-indentured    men    and  their    wives  and. 
+grown  up  children.    It  is  sufficient  in  mass   civil  disobe- 
+dience if  the  resisters    understand    the     working  of  the- 
+doctrine.
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+ME.    GANDHI    IN    CHAMPARAN
+
+Then  came  the  Champaran  incident  which  has  since 
+become  historic.  In  the  Lucknow  Congress  of  December 
+1916,  Mr.  Gandhi,  though  pressed  by  some  of  the  citizens 
+of  Behar,  declined  to  talk  about  the  grievances  of  the 
+labourers  in  the  Behar  plantations  without  first-hand 
+knowledge  of  the  real  state  of  afiairs.  This  he  resolved  to 
+acquire  soon  after  the  Congress  session  :  nnd  in  response 
+■to  an  insistent  public  demand,  to  inquire  into  the 
+conditions  under  which  Indians  work  in  the  indigo 
+plantations,  Mr  Gandhi  was  in  Muzaffarpur  on  the 
+15th  April  1917,"  whence  he  took  the  mid-day  train  for 
+Motihari,  Next  day  he  was  served  with  a  notice  from  the 
+Champaran  District  Magistrate  to  quit  the  district  "  by 
+the  next  available  train  "  as  his  presence  "  will  endanger 
+the  public  peace  and  may  lead  to  serious  disturbance  which 
+may  be  accompanied  by  loss  of  life."  But  the  local 
+authorities  in  issuing  this  mandate  counted  without  the 
+host.     For  Mr.  Gandhi,   who   had    initiated    the  Passive
+
+M.   K.   GANDHI  2$
+
+fleBista.nce  Movement  in  South  Africa,  replied  in  a  way 
+that  did  not  surprise  those  who  had  known  him  : —
+
+Out  of  a  sense  of  public  responsibility,  I  feel  it  to  be  my 
+•duty  to  say  that  I  am  unable  to  leave  this  district,  but  if  it  so 
+pleases  the  authorities,  I  shall  submit  to  the  order  by  suffering 
+the  penalty  of  disobedience.
+
+i  most  emphatically  repudiate  the  Commissioner's  sugges- 
+tion that  "  my  object  is  likely  to  be  agitation."  Hy  desire  is 
+.purely  and  simply  for  "  a  genuine  search  for  knowledge  "  and 
+this  I  shall  continue  to  satisfy  so  long  as  I  am  left  free^	5	5	5	5	5	NOT_APPLICABLE	PASS		Strong retrieval and answer. The distinction between individual and mass civil disobedience, nonviolence, openness, preparation, and acceptance of punishment is well supported.
+gandhi_007	How did Gandhi view the relationship between personal discipline and public leadership?			Gandhi viewed personal discipline as the foundation of effective public leadership. His austere, ascetic life and loyalty to moral principles gave him unusual influence over the public [1][3]. He believed a leader should apply accepted principles fearlessly, resist popular pressure, and accept personal hardship rather than ask followers to bear risks he avoided [3][4].  
+
+He also connected discipline with responsibility: people could fully exercise their rights only when they were developed and responsible, and public leaders should recognize obligations and serve the wider community [2]. Thus, leadership required moral self-control, courage, directness, and willingness to lead by personal example rather than by rhetoric or popularity [2][4].	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1752 | similarity=0.5769
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1789 | similarity=0.5636
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.5620
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0108 | similarity=0.5618
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0107 | similarity=0.5464	[1] Speeches and Writings of M. K. Gandhi
+■M-  1^^*'°^*'.  ""^^  *■*  °°*'°  personal  opinion  of  the  Indian  le.ader). 
+M.  K.  Gandhi,  there  oan  be  no  doubt  that  be  is  a  remarkable  man. 
+Kemaikable  because  his  aianoard  of  conduct  and  method  of  action 
+are  so  entirely  different  from  those  of  other  Indian  leaders.  States- 
+men and  politioians  are  seldom  guided  by  the  motives  which 
+compel  Gandhi  to  action,  and  the  very  fact  that  in  him  we  see  a 
+man  who  wields  enormous  influence  over  his  countrymen  by  a 
+character— the  exaot  antithesis  of  the  ordinary  political  leader — 
+gives  to  his  personality  a  peculiar  interest.  One  Governor  of.  a 
+British  Province  in  the  East  has  described  him  as  "  a  dangerous 
+and  misguided  saint."  Everyone,  whether  fee  or  friend,  agrees  in 
+regarding  him  as  a  saint.  And  it  is  because  of  his  evident  eaintli- 
+ness  of  character  that  be  has  such  an  unparalleled  icflueuce  in 
+India  at  the  present  day,
+
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+phould  make  the  people  fear  none  and  aothiag  but  God — no 
+cowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* 
+piinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of 
+the  Act,  against  voluntary  registration,  having  been  given,  it  is 
+the  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and 
+the  Colony  to  the  uttermost."
+
+To  assume  responsibilities,  to  recognise  obligations,  was  always 
+Mr.  Gandhi's  main  thought'  in  his  relations  with  the  European 
+colonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights 
+cannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe 
+his  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- 
+bearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal 
+authorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of 
+public  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- 
+munit'y.  He  always  felt  that  the  only  possible  road  to  progress 
+was  by  compelling  the  European  colonists  to  reocgnise  the  real 
+Worth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- 
+seited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his 
+action  in  advising  his  fellow-countrymen  to  continue  the  struggle 
+(or  Ihe  preservation  of  their  manhood,
+
+Mr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself 
+against  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare 
+whose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his 
+general  attitude  may  be  briefly  summed  up  in  the  fallowing  state- 
+ments he  ouce  made  to  the  writer  ;"  Most  religious  men  I  have 
+met  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of 
+a  politioian,  am  at  heart  a  religious  man,"
+
+HINDU-MUSLIM  BBOTHEBHOOD
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+the  impracticability  of  his  scheme  and  the  dangers  involved in  it. Many  Liberal  League  organisations  implored  Mr. Gandhi  not  to  lead  the  country  to  a  repetition  of  the Punjab  tragedy. Moderate  leaders  like  Sir  Narayan  Chan- davarkar  argued  the  futility  of  methods  leading  to anarchy  and  chaos. But  the  most  amusing,  even at  such  serious  times,  was  the  attitude  of  some Congressmen. These  were  variously  divided. All  hailed Non- Co- operation  in  theory. But  when  the  time came  for  practising  it,  they  flooded  the  country  with  a mass  of  literature  of  the  most  tortuous  kind  ;  casuistry  was dealt  in  abundance. Aspirants  after  Council  honours refused  to  commit  what  they  called  "political  suicide"  by "boycotting  the  New  Councils". Others  affected  to  believe in  the  possibilities  of  further  efforts  of  constitutional  agita- tion. Still  others  detected  illegalities  in  some  stages  of Non- Co-operation. And  yet  some  would  not  commit themselves  but  await  the  verdict  of  the  Special  Congress, _A  minority  would  contest  at  the  elections  only  to  resign again  and  yet  some  others  would  join  the  New  Councils just  to  wreck  the  Reforms  ! What  a  cloud  of  words  and mystification  of  meaning ! To  all  this  warfare  of  words Mr. Gandhi's  own  direct  and  simple  statements  are  in refreshing  contrast. He  spoke  and  wrote  strongly  on  the subject. There  could  be  no  doubt  of  bis  intentions  or  his iplans. There  was  no  ambiguity  in  bis  language. His words  went  straight  as  a  bullet  and  he  had  a  wholesome scorn  of  diplomatic  reserves  in  opinion. Whatever  one ■may  think  of  his  views  Mr. Gandhi's  leadership  was faultless  and  he  held  his  ground  with  the  fervour  of  faith. In  no  case  would  he  play  to  the  gallery  nor  make  light
+
+of  his  cherished  convictions  even  if  he  found  the  whole mass  of  the  people  ranged  against  him. He  would  not  be led  away  by  the  passing  gusts  of  popular  frenzy  'and  he has  a  wholesome  contempt  for  sycophancy  of  any  kind, even  to  the  people. He  has  a  noble  way  of  bearing  the brunt  of  all  toil  and  trouble. He  would  not  like  many ■other  "leaders"  throw  the  followers  into  the  fray  while they  continue   to  remain   in   comparative   security. He
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+44  M.   K.  GANDHI
+
+the  impracticability  of  his  scheme  and  the  dangers  involved in  it. Many  Liberal  League  organisations  implored  Mr. Gandhi  not  to  lead  the  country  to  a  repetition  of  the Punjab  tragedy. Moderate  leaders  like  Sir  Narayan  Chan- davarkar  argued  the  futility  of  methods  leading  to anarchy  and  chaos. But  the  most  amusing,  even at  such  serious  times,  was  the  attitude  of  some Congressmen. These  were  variously  divided. All  hailed Non- Co- operation  in  theory. But  when  the  time came  for  practising  it,  they  flooded  the  country  with  a mass  of  literature  of  the  most  tortuous  kind  ;  casuistry  was dealt  in  abundance. Aspirants  after  Council  honours refused  to  commit  what  they  called  "political  suicide"  by "boycotting  the  New  Councils". Others  affected  to  believe in  the  possibilities  of  further  efforts  of  constitutional  agita- tion. Still  others  detected  illegalities  in  some  stages  of Non- Co-operation. And  yet  some  would  not  commit themselves  but  await  the  verdict  of  the  Special  Congress, _A  minority  would  contest  at  the  elections  only  to  resign again  and  yet  some  others  would  join  the  New  Councils just  to  wreck  the  Reforms  ! What  a  cloud  of  words  and mystification  of  meaning ! To  all  this  warfare  of  words Mr. Gandhi's  own  direct  and  simple  statements  are  in refreshing  contrast. He  spoke  and  wrote  strongly  on  the subject. There  could  be  no  doubt  of  bis  intentions  or  his iplans. There  was  no  ambiguity  in  bis  language. His words  went  straight  as  a  bullet  and  he  had  a  wholesome scorn  of  diplomatic  reserves  in  opinion. Whatever  one ■may  think  of  his  views  Mr. Gandhi's  leadership  was faultless  and  he  held  his  ground  with  the  fervour  of  faith. In  no  case  would  he  play  to  the  gallery  nor  make  light	4	4	4	4	5	NOT_APPLICABLE	PASS		A clear, useful answer supported by the passages. Retrieval includes overlapping commentary and relies more on descriptions of Gandhi than on direct first-person statements.
+gandhi_008	What did Gandhi say about economic inequality and poverty?			The available sources provide only limited evidence on this specific question. Gandhi questioned the idea that unlimited material advancement automatically meant genuine progress. He contrasted “economic progress,” understood as unlimited material improvement, with “real progress,” which he identified with moral progress, and asked whether the two might conflict [2].
+
+The sources also show his concern about economic exploitation: he criticized indentured labor as a system in which capital was given artificial advantages over labor and employers were made supreme [5]. More broadly, the passages portray him as valuing moral principles over wealth, comfort, and personal gain [3][4].	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0678 | similarity=0.5209
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0679 | similarity=0.5110
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0150 | similarity=0.4875
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.4778
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0436 | similarity=0.4743	[1] Speeches and Writings of M. K. Gandhi
+good  to    his   country,  does  not   mind   killing  off  a  fe'w
+
+•officials.     All  these  are  actuated    by  hatred,    cowardice
+
+,and  fear.  Here  the    love   of  the  cow  or   the  country  is  a
+
+vague  thing  intended  to  satisfy  one's  vanity,  or  soothe  a
+
+:stinging  conscience.
+
+Ahimsa  truly  understood,   is  in  my  humble   opinion  a
+
+286  EARLIER   INDIAN   SPEECHES
+
+panacea  for  all  evils  mundane  and  extra-mundane.  We 
+can  never  overdo  it.  Just  at  present  we  are  not  doing 
+it  at  all.  Ahimasa  does  not  displace  the  practice 
+of  other  virtues,  but  renders  their  practice  im- 
+peratively necessary  before  it  can  be  practised  even  in 
+its  rudiments.  Mahavira  and  Buddha  were  soldiers,  and 
+so  was  Tolstoy.  Only  they  saw  deeper  and  truer  into 
+their  profession,  and  found  the  secret  of  a  true,  happy, 
+honourable  and  godly  life.  Let  us  be  joint  sharers  with 
+these  teachers,  and  this  land  of  ours  will  once  more  be 
+the  adode  of  Gods.
+
+ENCONOMIC  vs.  MORAL  PROGRESS
+
+The  following  is  a  lecture  delivered  by  Mr.  Gandhi 
+at  a  meeting  of  the  Muir  Central  College  Economic 
+Society,  held  at  Allahabad,  on  Friday,  22nd  December, 
+1916.
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+The  following  is  a  lecture  delivered  by  Mr.  Gandhi 
+at  a  meeting  of  the  Muir  Central  College  Economic 
+Society,  held  at  Allahabad,  on  Friday,  22nd  December, 
+1916.
+
+Does  economic  progress  clash  with  real  progress? 
+By  economic  progress,  I  take  it,  we  mean  material 
+advancement  without  limit,  and  by  real  progress  we 
+mean  moral  progress,  'which  again  is,  the  same  thing 
+as  progress  of  the  permanent  element  in  us.  The 
+subject  may  therefore  be  stated  thus  ;  Does  not  moral 
+progress  increase  in  the  same  proportion  as  material 
+progress?  I  know  that  this  is  a  wider  proposition 
+than  the  one  before  us.  But  I  venture  to  think  that  we 
+always  mean  the  large  one  even  when  we  lay  down  the 
+smaller.  For  we  know  enough  of  science  to  realize 
+that  there  is  no  such  thing  as  perfect  rest  or  repose  in 
+this  visible  universe  of  ours.  If,  therefore,  material 
+progress  does   not   clash    with    moral    progress,  it  must
+
+ECONOMIC  VS.  MORAL  PROGRESS  287"
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+64  M.   K.  GANDHI
+
+be  well  founded.  And  so  the  three  great  grievances 
+for  which  Mr.  Gandhi  has  been  fighting — are  griev- 
+ances admitted  by  all  to  be  just.  In  the  opinion 
+of  Mr.  Gandhi  and  most  of  his  countrymen 
+there  would  never  have  arisen  these  festering  sores 
+'  if  we  were  in  our  country  what  others  are  in  their 
+own,'  if  in  short,  we  too  had  been  given  ''  the  Self- 
+determination,"  for  which  elsewhere  so  much  blood  and 
+treasure  have  been  sacrificed.  The  whole  question  there- 
+fore reduces  itself  to  one  dominant  problem — the  Problem 
+of  8waraj.  And  the  problem  of  Mr.  Gandhi  is  no  less  than 
+that.  But  for  the  lost  faith  of  the  people  in  the  sincerity 
+of  the  British,  even  this  question  would  not  have  assumed 
+such  an  acute  form  as  we  find  it  to-day.
+
+You  cannot  solve  this  problem  by  clapping  its  best, 
+brightest  and  noblest  exponent  even  though  bis  methods 
+may  be  novel  and  his  activities  inconvenient  and  some- 
+times dangerous.  Sir  John  Rees  was  not  far  wrong 
+when  he  observed  that  "  Gandhi  in  Jail  might  prove  to  be 
+more  dangerous  than  Gandhi  out  of  it."  There  is  a 
+world  of  significance  in  the  warning  of  Professor  Gilbert 
+Murray : —
+
+"Persons  in  power  should  be  very  careful  when  they  deal 
+with  a  man  who  cares  nothing  for  sensual  pleasures,  nothing  for 
+riches,  nothing  for  comfort  or  praise  or  promises  but  simply 
+determines  to  do  what  he  believes  to  be  right.  He  is  a  danger- 
+ous and  uncomfortable  enemy  because  his  body,  which 
+you  can  always  conquer,  gives  you  so  little  purchase  upon  his 
+soul."
+
+THE
+
+South  African  Indian  Question
+
+THE  BEGINNING  OF  THE  STRUGGLE
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+Gandhi  thought  the  mental  state  of  thosa  recruitera must   be    miserable,  who  could    send    so    many  of  their countrymen  as  semi-slaves. After  having  seen  what  the recruiting  agents  did  and  after  having  read  the  many  groaa
+
+THE  INIQUfli^IES -OP  3CHB  iNDBNTOTB  8Y8IEM    14'7
+
+tnis-statemebtB  they  made,  he  was  not  surprised  that  tibou' 
+«tLtids''and  thoaaandB  of  their  oountrymsn  wer'^  beoomiog 
+ibdentared  labourers.  The  Oommiasiobers  deToted  several 
+'Pages  to  bhe  ioamorality  prevailing  oa  the  estates.  It  was 
+uob  forty  women  for  sisty  men  ;  bub  the  statement  was 
+made  than  these  men  did  not  marry  these  womeo,  but  kept 
+them,  aud  that  many  of  these  women  were  prostitutes. 
+Mr.  Gaadhi  said  he  would  deoline  togend  his  ohildrea 
+under  suoh  ao  indenture,  if  he  was  worthy  of  his  salt,  out 
+<>f  the  oouatry.  Bat  thousands  of  men  and  Women  had 
+gone.      What  did  thsy  think  of  that  in  India?
+
+The  oouditions  were  that  rigorous  provisions  should 
+b'a  either  expunged  from  the  Ordinances  br  that  the  Pro- 
+teotor  should  oontrol  employers.  As  for  the  ragulationa 
+made  to  protect  these  labourers  they  oould  take  it  from 
+him,  Mr.  Gandhi  said,  that  there  were  a  great  many 
+:B.iW8  in  them  and  a  ooach  and  four  could  be  easily 
+driven  through  these.  The  aim  of  the  rules  was  to 
+make  the  employer  supreme.  Here  was  capital  ranged 
+against  labour  with  arbifioial  props  for  capital  and  nob 
+labour.	2	2	5	5	3	YES	FAIL	missing_evidence	Retrieval missed direct poverty and village-economy passages from The Wheel of Fortune. The answer was grounded in the returned evidence but incomplete for the question.
+gandhi_009	How did Gandhi think India's villages should contribute to national development?			Gandhi believed India’s villages should be the foundation of national development through **local self-government, self-reliance, and cooperation**.
+
+- Villagers should manage their own affairs through **village panchayats**, making them a living force in India’s self-government. [1]
+- Villages should use their organizational abilities to resist oppression and preserve their **dignity and independence**. [1][2]
+- They should become economically self-sufficient by producing necessities locally—especially through spinning and weaving—so that they would not depend on imports or suffer exploitation. [2]
+- Development should also spread education through India’s own languages, improve sanitation, and connect educated people with the rural masses. Gandhi believed this would make national knowledge available to ordinary villagers and strengthen the country as a whole. [1]
+
+Thus, villages were not merely recipients of development; Gandhi saw them as active, organized communities whose self-reliance and democratic participation could build Swaraj.	[1] Third Class in Indian Railways | gandhi_third_class_indian_railways_0016 | similarity=0.5128
+[2] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0089 | similarity=0.5012
+[3] The Wheel of Fortune | gandhi_wheel_of_fortune_1922_0002 | similarity=0.4998
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.4986
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0564 | similarity=0.4928	[1] Third Class in Indian Railways
+I have sought your help in religious matters, which it is yours to give in a special sense. But I make bold to seek it even in political matters. I do not believe that religion has nothing to do with politics. The latter divorced from religion is like a corpse only fit to be buried. As a matter of fact, in your own silent manner, you influence politics not a little. And I feel that, if the attempt to separate politics from religion had not been made as it is even now made, they would not have degenerated as they often appear to have done. No one considers that the political life of the country is in a happy state. Following out the Swadeshi spirit, I observe the indigenous institutions and the village panchayats hold me. India is really a republican country, and it is because it is that, that it has survived every shock hitherto delivered. Princes and potentates, whether they were Indian born or foreigners, have hardly touched the vast masses except for collecting revenue. The latter in their turn seem to have rendered unto Caesar what was Caesar's and for the rest have done much as they have liked. The vast organisation of caste answered not only the religious wants of the community, but it answered to its political needs. The villagers managed their internal affairs through the caste system, and through it they dealt with any oppression from the ruling power or powers. It is not possible to deny of a nation that was capable of producing the caste system its wonderful power of organisation. One had but to attend the great Kumbha Mela at Hardwar last year to know how skilful that organisation must have been, which without any seeming effort was able effectively to cater for more than a million pilgrims. Yet it is the fashion to say that we lack organising ability. This is true, I fear, to a certain extent, of those who have been nurtured in the new traditions. We have laboured under a terrible handicap owing to an almost fatal departure from the Swadeshi spirit.
+
+We, the educated classes, have received our education through a foreign tongue. We have therefore not reacted upon the masses. We want to represent the masses, but we fail. They recognise us not much more than they recognise the English officers. Their hearts are an open book to neither. Their aspirations are not ours. Hence there is a break. And you witness not in reality failure to organise but want of correspondence between the representatives and the represented. If during the last fifty years we had been educated through the vernaculars, our elders and our servants and our neighbours would have partaken of our knowledge; the discoveries of a Bose or a Ray would have been household treasures as are the Ramayan and the Mahabharat. As it is, so far as the masses are concerned, those great discoveries might as well have been made by foreigners. Had instruction in all the branches of learning been given through the vernaculars, I make bold to say that they would have been enriched wonderfully. The question of village sanitation, etc., would have been solved long ago. The village panchayats would be now a living force in a special way, and India would almost be enjoying self-government suited to its requirements and would have been spared the humiliating spectacle of organised assassination on its sacred soil. It is not too late to mend. And you can help if you will, as no other body or bodies can.
+
+---
+
+[2] The Wheel of Fortune
+instances of whole villages taking a legitimate pride in the fact that they had to import nothing but salt in the whole round of the six seasons. With such conditions, there could be no drain, no exploitation and therefore no Para-raj. A little village could make terms with the rulers of the land consistent with its self-respect, dignity and independence. Is our love of luxury so inveterate, that we cannot control it even for the sake of Swaraj?
+
+_Y. I.--6th July 1921._
+
+THE WHEEL OF FORTUNE
+
+[A certain correspondent from Sindh writing to Mahatma Gandhi puts the
+question, "Will the spinning wheel solve the problem of India's poverty?
+If it will, how?" Here is his answer.]
+
+---
+
+[3] The Wheel of Fortune
+Many critics and some friends of Mahatma Gandhi have found fault with his desire to introduce simpler methods of spinning and weaving and to do away with much of the complicated machinery of Modern Civilisation. The reason why they object is that they fear such methods mean not progress towards a higher state but relapse into a primitive condition of civilisation or even of barbarism. His denunciation of the age of machinery and of the Industrial System has been criticised by many as the ravings of a visionary and of one who is merely an impracticable idealist. This is a strange criticism to come from those who give their allegiance to a form of civilisation or 'Culture' which has led to the unprecedented horrors of the late European War and the century-old disgraces of the Industrial System. Is this present modern civilisation so very desirable that we should wish it to continue in perpetuity? Every civilisation in the History of Man has reached a certain point after which there has been one possibility only for it and that was absolute relapse into semi-darkness in order to give place to a new and higher civilisation. The common starting point of all the civilisations is a kind of night-time. In order that the Babylonian (or Despotic) Civilisation might give way to the Roman (or Heroic), and the Roman give way to the Modern (or Intellectual) Civilisation, it was necessary for each in turn to sink completely into this common night-time. Without this entire destruction of the ancient structure, there would have been only a patchwork of the old, and not a harmonious building of the New. As Christ said: "Ye cannot put old wine into new bottles." The debris of the Past has to be cleared away in order to make way for the structure of the Future. Now with regard to Modern Civilisation, all the signs of the times show that it has failed lamentably and is gradually tottering to a dishonoured grave. Why make any attempts to prop up what Nature so
+
+evidently has decided to throw on the scrap-heap? Such attempts are contrary to the teaching of past history. But anything, which tends to reach the common roots of all civilisations, should be encouraged. In order that the spiritual civilisation of the Future may have a real chance of growing in an atmosphere congenial to it, Mahatma Gandhi's demonstration of the right path should be welcomed. His emphasis on simplicity of life and on the simplification of the machinery of living must be realised as a supremely essential condition of the coming of the new Era. In the civilisation of the Future, an Era of natural harmonious living will be inaugurated, and artificial, luxurious and pompous living will be entirely rooted out.
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+out  this  sacred  law  ;  we  are  not  concerned  with  results," Mr. Gandhi  protested  against  the  mad  rush  of  to- daVj  and,  instead  of  blessing  the,  means  by  which modern  science  has  made  this  mad  rush  possible,  that is,  railways,  motors,  telegraph,  telephone,  and  even  ther coming  flying  machines,  he  declared  that  they  were- diverting  man's  thoughts  from  the  main  purpose  of  life  ; bodily  comfort  stood  before  soul  growth  ;  man  had  no time  to-day  even  to  know  himself  ;  he  preferred  a  news- paper or  sport  or  other  things  rather  than  to  be  left alone  with  himself  for  thought. He  claimed  Ruskin  as- on  his  side  in  this  expression  of  protest  against  th^ drive  and  hurry  of  modern  civilisation. He  did  not describe  this  development  of  material  science  as  ex- clusively British,  'but  he  considered  that  its  effect  in India  had  been  baneful  in  many  ways. He  instanced the  desecration  of  India's  holy  places,  which  he  said, were  no  longer  holy,  because  the  fatal  facility  of locomotion  had  brought  to  those  places  people  whose only  aim  was  to  defraud  the  unsophisticated :  such people,  in  the  olden  days  when  pilgrimages  meant  long and  wearisome  walking  through  jungles,  crossing  rivers,. and  encountering  many  dangers,  had  not  the  stamina  to reach  the  goal. Pilgrimages  in  those  days  could  only be  undertaken  by  the  cream  of  society,  but  they  came to  know  each  other  ;  the  aim  of  the  holy  places  was  to- make  India  holy. Plague  and  famine,  which  existed  in pre-British  days,  were  local  then  ;  to-day,  rapid  locomo- tion had  caused  them  to  spread. To  avoid  the  calamity which  intense  materialism  must  bring,  Mr. Gandhi urged  that  india  should  go  back  to  her  former  holiness which  is  not  yet  lost. The  contact  with  the  West  has
+
+awakened  her  from  the    lethargy    into   which   she    had"	5	5	5	5	5	NOT_APPLICABLE	PASS		Strong multi-source retrieval and synthesis covering village self-government, local production, vernacular education, sanitation, dignity, and self-reliance.
+gandhi_010	What did Gandhi believe about education?			The available sources suggest that Gandhi believed education should be actively expanded and discussed publicly. He supported:
+
+- cultivating public opinion on educational issues;
+- sustained efforts to address those issues; and
+- practical measures to spread education in Gujarat. [5]
+
+The passage also identifies “education through the vernaculars” as the subject of his address, indicating an emphasis on education in local languages. [5]	[1] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0019 | similarity=0.5724
+[2] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1789 | similarity=0.5488
+[3] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_1753 | similarity=0.5459
+[4] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0018 | similarity=0.5365
+[5] Speeches and Writings of M. K. Gandhi | gandhi_speeches_writings_1922_0768 | similarity=0.5335	[1] Speeches and Writings of M. K. Gandhi
+EAELT   LIFE   AND   EDUCATION
+
+Mohandas  Karamchand  Gandhi  was  born  on  the  2nd* 
+(October,  1869.  Though  he  has  a  Brahmin's  spirituality 
+and  desire  to  serve  and  teach,  he  is  not  a  Brahmin.  Though 
+he  has  a  Kshattriya's  courage  and  devotion,  he  is  not  a 
+'Kshattriya.  He  belongs  to  an  old  Bania  family  resident  in 
+'Kathiawar,  politics  being  a  heritage  of  the  family.  His 
+forefathers  were  Dewans  of  the  State  of  Forbandar  in  that 
+Province,  his  father  having  been  Dewan  of  that  State  for 
+25  years,  as  also  of  Rajkote  and  other  States  in 
+Kathiawar,  He  was  likewise,  at  one  time,  a  member 
+-of  the  Rajasthanik  Sabha,  having  been  nominated 
+thereto  by  the  Government  of  Bombay.  Mr,  Gandhi's 
+iather  was  known  to  and  loved  by  all  with  whom  he 
+came  in  contact  and  he  did  not  hesitate,  if  need  came,  to 
+oppose  the  will  of  the  Rana,  of  Forbandar  and  of  the  Foli- 
+tical  Agent,  when  he  thought  that  they  were  adopting  a 
+wrong  or  unwoethy  line  of  conduct.  This  particular  trait 
+has  evidently  descended  to  his  youngest  son.  Mr.  Gandhi's 
+mother  was  an  orthodox  Hindu  lady,  rigid  in  her  obser- 
+vance of  religious  obligations,  strict  in  the  performance  of 
+Jier  duties  as  wife  and  mother,  and  stern  in  determination 
+that  her  children  should  grow  up  good  and  honest  men 
+and  women.  Between  her  jftungest  son  and  herself  exist- 
+ed a  strong  affection  and  her  religious  example  £).nd  influ- 
+ence left  a  lastii^g  impression  upon  his  character.  Mohan- 
+das Gandhi  received  his  education  partly  in  Kathiawar  an4 
+partly  in  London.  It  was  only  with  the  greatest  difficulty 
+that  his  mother  could  be  prevailed  upon  to  consent  to  his 
+^crossing  the  waters,  and  before  doing  so,  she  exacted  from.
+
+6  M.   K.  GANDHI
+
+---
+
+[2] Speeches and Writings of M. K. Gandhi
+phould  make  the  people  fear  none  and  aothiag  but  God — no 
+cowardly  fear,  therefore,  should  deter  the  vast  m»iority  of  sober* 
+piinded  Indians  from  doing  their  auiy,  Tbe  promise  of  repeal  of 
+the  Act,  against  voluntary  registration,  having  been  given,  it  is 
+the  sacred  duty  of  every  true  Indian  to  help  the  Qovernment  and 
+the  Colony  to  the  uttermost."
+
+To  assume  responsibilities,  to  recognise  obligations,  was  always 
+Mr.  Gandhi's  main  thought'  in  his  relations  with  the  European 
+colonists  of  South  Africa  ;  for  he  knew  that  the  oompletest  rights 
+cannot  oe  availed  of  by  uudevelopej  aud  irrespousiole  people,  Henoe 
+his  offers,  on  behalf  of  the  community,  of  ambulance  and  stretcher- 
+bearer  corps,  his  desire  to  afford  the  Ooveroment  and  Municipal 
+authorities  the  utmost  help  at  all  times  lu  ibe  proper  conduct  of 
+public  nfiairs  and  the  governance  and  uplifting  of  the  Indian  oum- 
+munit'y.  He  always  felt  that  the  only  possible  road  to  progress 
+was  by  compelling  the  European  colonists  to  reocgnise  the  real 
+Worth  and  sterlingness  of  character  of  his  compacriocs  and  a  deep- 
+seited  desire  to  secure  mutual  respect  was  at  the  bottom  of  his 
+action  in  advising  his  fellow-countrymen  to  continue  the  struggle 
+(or  Ihe  preservation  of  their  manhood,
+
+Mr,  Gandhi  will  not  hesitate,  when  necessary,  to  set  himself 
+against  the  opinion  of  many  of  his  couocrymeo  or  bjldly  to  deulare 
+whose  is  the  responsibility  for  any  cecognised  evil.  Indeed  his 
+general  attitude  may  be  briefly  summed  up  in  the  fallowing  state- 
+ments he  ouce  made  to  the  writer  ;"  Most  religious  men  I  have 
+met  are  politicians  in  disguise  ;  I,  however,  who  wear  the  guise  of 
+a  politioian,  am  at  heart  a  religious  man,"
+
+HINDU-MUSLIM  BBOTHEBHOOD
+
+---
+
+[3] Speeches and Writings of M. K. Gandhi
+Gandhi  has  heen  able  to  unite  people  of  India  as  they  have 
+never  before  been  united  not  only  because  of  his  unfaltering  loyalty 
+to  a  moral  ideal  and  by  his  austere  and  ascetic  personal  life,  but 
+because  the  British  Government  has  itself  fed  fuel  to  the  fires  of 
+national  aspiration.  Confronting  the  most  powerful  Empire  in 
+existence  stands  one  man,  Gandhi,  who  cares  nothing  for  his  own 
+personal  life,  who  is  uncompromising  and  fearless  in  the  application 
+of  prinoiples  which  he  has  once  accepted,  and  who  .scorns  any 
+longer  to  receive  or  brg'for  favours  from  a  GoveromeDt  which  he 
+regards  as  having  "  forfeited  all  title  to  confidence,  respect  or  sup- 
+port." He  believes  in  conquering  hate  by  love,  in  the  triumph  of 
+tight  over  might,  and  all  the  effort  of  his  public  life  is  directed' 
+towards  persuading  the  masses  of  India  of  the  truth  of  this  ideal. 
+{The  Asian  Revievi.)
+
+Mr.  Percival  Landon
+
+---
+
+[4] Speeches and Writings of M. K. Gandhi
+The  man  is  Mohandas  Karamchand  Gandhi,  Dewan's 
+son,  Barrister-at-Law,  scholar,  student,  cultured  Indian 
+gentleman  "  farmer,  weaver,"  and  leader  of  his  people^ 
+Because  he  preferred  to  obey  the  dictates  of  conscience* 
+because  he  placed  honour  before  comfort  or  even  life  itself' 
+because  he  chose  not  to  accept  an  insult  to  his  Motherland' 
+because  he  strove  so  that  right  should  prevail  and  that  his 
+people  might  have  life,  a  civilised.  Christian  Government 
+in  a  Colony  over  which  waves  the  British  flag,  deemed  that 
+the  best  way  to  overcome  such  dangerous  contumacy  was- 
+te cast  his  body  into  gaol,  where  at  one  time  he  was  com- 
+pelled to  herd  with  and  starve  upon  the  diet  of  the  most 
+degraded  aboriginal  native  felons,  men  barely  emerging 
+from  the  condition  of  brute  beasts,  or  rather,  with  all  their
+
+M.   K.  GANDHI  5
+
+'human  aspirations  and  instincts  crushed  out  of  them  by 
+iihe  treatment  accorded  to  them  under  the  "  civilising  " 
+.process  of  the  Transvaal's  colour  legislation,  And,  again 
+obeying  the  behests  of  conscience,  believing  that  he  best 
+serves  India  so,  he  has  again  chosen  the  refuge  of  prison, 
+convinced  like  Thoreau  that  he  is  freer  than  his  gaolers  or 
+those  who  mourn  for  him,  but  do  not  liberate  themselves 
+from  bondage.
+
+EAELT   LIFE   AND   EDUCATION
+
+---
+
+[5] Speeches and Writings of M. K. Gandhi
+THE  HINDU-MAHOMEDAN  PROBLEM.
+
+The  following  is  an  extract  from  a  Gujarati  letter 
+addressed  by  Mr,  Gandhi,  to  a  Mahomedan  corres- 
+pondent :
+
+I  never  realise  any  distinction  between  a  Hindu  and 
+a  Mahomedan.  To  my  mind,  both  are  sons  of  Mother 
+India.  I  know  that  Hindus  are  in  a  numerical  majority, 
+and  that  they  are  believed  to  be  more  advanced  in  know- 
+ledge and  education.  Accordingly,  they  should  be  glad 
+to  give  way  so  much  the  more  to  their  Mahomedan 
+brethren.  As  a  man  of  truth,  I  honestly  believe  that 
+Hindus  should  yield  up  to  the  Mahomedans  what  the 
+latter  desire,  and  that  they  should  rejoice  in  so  doing- 
+We  can  expect  unity  only  if  such  mutual  large-hearted- 
+ness  is  displayed.  When  the  Hindus  and  Mahomedans 
+act  towards  each  other  as  blood-brothers,  then  alone  can 
+there  be  unity,  then  only  can  we  hope  for  the  dawn  of 
+India.
+
+GUJARAT  EDUCATIONAL  CONFERENCE
+
+The  following  is  the  Presidential  address  to  the 
+Second  Gujarat  Educational  Conference  held  at  Broach 
+in  October  20,  1917,  specially  translated  for  the  "  Indian 
+Review"
+
+EDUCATIOV  THROUGH  THE  VERNACULARS
+
+The  Gujarat  Education  League  that  has  called  us 
+together  has  set  before  it  three  objects  :
+
+(1)  To  cultivate  and  express  public  opinion  on 
+matters  of  education.
+
+(2)  To  carry  on  sustained  agitation  on  educational 
+questions.
+
+(3)  To  take  all  practical  steps  for  the  spread  of 
+education  in   Gujarat.
+
+I  shall  endeavour  to  the  best  of  my  ability  to  place 
+before  you  my  thoughts  on  these  objects  and  the  conclu- 
+sions I  have  arrived  at.	2	2	5	5	3	YES	FAIL	missing_evidence	Four of five retrieved chunks were weakly related to education. Only one passage directly addressed vernacular education and educational reform.

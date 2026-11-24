@@ -22,4 +22,4 @@ def count_tokens(text: str) -> int:
     Count the number of tokens in a text string.
     """
     tokenizer = get_tokenizer()
-    return len(tokenizer.encode(text))
+    return len(tokenizer.encode(text, disallowed_special=()))

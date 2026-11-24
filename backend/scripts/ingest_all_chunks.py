@@ -1,5 +1,6 @@
 import argparse
 import csv
+import io
 import json
 from pathlib import Path
 from typing import Any
@@ -8,57 +9,101 @@ from app.database.client import get_supabase_client
 from app.ingestion.embeddings import EMBEDDING_MODEL, generate_embeddings
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BATCH_SIZE = 50
 
 
-def parse_arguments() -> argparse.Namespace:
-    """Read the figure key and source key from the command line."""
-    parser = argparse.ArgumentParser(description="Generate embeddings and ingest one approved source into Supabase.")
-    parser.add_argument("figure_key", help="Figure folder/inventory key, e.g. gandhi or einstein.")
-    parser.add_argument("source_key", help="Source key from the figure's source inventory.")
-    return parser.parse_args()
+def project_root() -> Path:
+    # This file lives at:
+    #   <project_root>/backend/scripts/ingest_all_chunks.py
+    return Path(__file__).resolve().parents[2]
 
 
-def get_figure_paths(figure_key: str) -> tuple[Path, Path, Path]:
-    """Build the inventory, raw-data, and processed-data paths for a figure."""
-    inventory = PROJECT_ROOT / "data" / "source_inventory" / f"{figure_key}_sources.csv"
-    raw_dir = PROJECT_ROOT / "data" / "raw" / figure_key
-    processed_dir = PROJECT_ROOT / "data" / "processed" / figure_key
-    return inventory, raw_dir, processed_dir
+def inventory_path(figure_key: str) -> Path:
+    return (
+        project_root()
+        / "data"
+        / "source_inventory"
+        / f"{figure_key}_sources.csv"
+    )
 
 
-def is_approved(value: str) -> bool:
-    """Convert common CSV true values into a boolean approval flag."""
-    return value.strip().lower() in {"true", "yes", "1"}
+def raw_dir(figure_key: str) -> Path:
+    return project_root() / "data" / "raw" / figure_key
 
 
-def load_source_record(source_key: str, inventory_file: Path) -> dict[str, str]:
-    """Load one source record from the selected figure's source inventory."""
-    with inventory_file.open(mode="r", encoding="utf-8-sig", newline="") as csv_file:
-        sample = csv_file.read(4096)
-        csv_file.seek(0)
-        dialect = csv.Sniffer().sniff(sample, delimiters=",\t")
-        reader = csv.DictReader(csv_file, dialect=dialect)
-
-        if not reader.fieldnames:
-            raise ValueError("The source inventory has no header row.")
-
-        for row in reader:
-            cleaned_row = {
-                key.strip(): value.strip()
-                for key, value in row.items()
-                if key is not None and value is not None
-            }
-
-            if cleaned_row.get("source_key") == source_key:
-                return cleaned_row
-
-    raise ValueError(f"Source key not found in inventory: {source_key}")
+def processed_dir(figure_key: str) -> Path:
+    return project_root() / "data" / "processed" / figure_key
 
 
-def get_figure_id(supabase: Any, figure_slug: str) -> int:
-    """Find the database figure ID using its stable figure slug."""
+def parse_bool(value: str | bool | None) -> bool:
+    if isinstance(value, bool):
+        return value
+
+    normalized = (value or "").strip().lower()
+    return normalized in {"1", "true", "yes", "y"}
+
+
+def clean_value(row: dict[str, Any], key: str) -> str:
+    value = row.get(key)
+
+    if value is None:
+        return ""
+
+    return str(value).strip()
+
+
+def nullable_value(row: dict[str, Any], key: str) -> str | None:
+    value = clean_value(row, key)
+    return value or None
+
+
+def read_inventory(figure_key: str) -> list[dict[str, str]]:
+    path = inventory_path(figure_key)
+
+    if not path.exists():
+        raise FileNotFoundError(f"Inventory not found: {path}")
+
+    raw = path.read_text(encoding="utf-8-sig")
+
+    try:
+        dialect = csv.Sniffer().sniff(raw[:4096], delimiters=",\t;")
+        delimiter = dialect.delimiter
+    except csv.Error:
+        delimiter = ","
+
+    rows = list(csv.DictReader(io.StringIO(raw), delimiter=delimiter))
+
+    if not rows:
+        raise ValueError(f"Inventory is empty: {path}")
+
+    required = {
+        "source_key",
+        "title",
+        "source_type",
+        "source_level",
+        "publication_date",
+        "original_url",
+        "source_owner",
+        "language",
+        "rights_status",
+        "rights_notes",
+        "local_filename",
+        "approved_for_ingestion",
+        "figure_slug",
+    }
+
+    missing = required - set(rows[0].keys())
+
+    if missing:
+        raise ValueError(
+            f"Inventory {path} is missing required columns: "
+            + ", ".join(sorted(missing))
+        )
+
+    return rows
+
+
+def get_figure_id(supabase, figure_slug: str) -> int:
     response = (
         supabase.table("figures")
         .select("id")
@@ -73,51 +118,61 @@ def get_figure_id(supabase: Any, figure_slug: str) -> int:
     return response.data["id"]
 
 
-def upsert_source(supabase: Any, source: dict[str, str], figure_id: int) -> int:
-    """Create or update the source record and return its database ID."""
-    source_row = {
+def upsert_source(
+    supabase,
+    figure_id: int,
+    row: dict[str, str],
+) -> int:
+    source_key = clean_value(row, "source_key")
+
+    payload = {
         "figure_id": figure_id,
-        "source_key": source["source_key"],
-        "title": source["title"],
-        "author": source["author"],
-        "source_type": source["source_type"],
-        "source_level": source["source_level"],
-        "publication_date": source.get("publication_date") or None,
-        "original_url": source["original_url"],
-        "source_owner": source["source_owner"],
-        "language": source["language"],
-        "rights_status": source["rights_status"],
-        "rights_notes": source["rights_notes"],
+        "source_key": source_key,
+        "title": clean_value(row, "title"),
+        "author": nullable_value(row, "author"),
+        "source_type": clean_value(row, "source_type"),
+        "source_level": clean_value(row, "source_level"),
+        "publication_date": nullable_value(row, "publication_date"),
+        "original_url": nullable_value(row, "original_url"),
+        "source_owner": nullable_value(row, "source_owner"),
+        "language": clean_value(row, "language") or "English",
+        "rights_status": nullable_value(row, "rights_status"),
+        "rights_notes": nullable_value(row, "rights_notes"),
         "approved_for_ingestion": True,
     }
 
-    response = supabase.table("sources").upsert(source_row, on_conflict="source_key").execute()
-
-    if response.data:
-        return response.data[0]["id"]
-
-    lookup = (
+    response = (
         supabase.table("sources")
-        .select("id")
-        .eq("source_key", source["source_key"])
-        .single()
+        .upsert(payload, on_conflict="source_key")
         .execute()
     )
 
-    return lookup.data["id"]
+    if not response.data:
+        # Fallback lookup in case the API response does not return rows.
+        lookup = (
+            supabase.table("sources")
+            .select("id")
+            .eq("source_key", source_key)
+            .single()
+            .execute()
+        )
+
+        if not lookup.data:
+            raise RuntimeError(f"Could not resolve source row: {source_key}")
+
+        return lookup.data["id"]
+
+    return response.data[0]["id"]
 
 
 def upsert_document(
-    supabase: Any,
-    source: dict[str, str],
-    source_id: int,
-    character_count: int,
+    supabase,
     figure_key: str,
+    source_id: int,
+    local_filename: str,
+    character_count: int,
 ) -> int:
-    """Create or update the document record and return its database ID."""
-    local_filename = source["local_filename"]
-
-    document_row = {
+    payload = {
         "source_id": source_id,
         "file_name": local_filename,
         "storage_path": f"{figure_key}/{local_filename}",
@@ -136,154 +191,313 @@ def upsert_document(
 
     if existing.data:
         document_id = existing.data[0]["id"]
-        supabase.table("documents").update(document_row).eq("id", document_id).execute()
+
+        (
+            supabase.table("documents")
+            .update(payload)
+            .eq("id", document_id)
+            .execute()
+        )
+
         return document_id
 
-    response = supabase.table("documents").insert(document_row).execute()
+    response = supabase.table("documents").insert(payload).execute()
 
     if not response.data:
-        raise RuntimeError("Document insertion returned no row.")
+        raise RuntimeError(
+            f"Could not create document row for source_id={source_id}"
+        )
 
     return response.data[0]["id"]
 
 
 def load_chunk_records(
-    source: dict[str, str],
-    processed_dir: Path,
+    figure_key: str,
+    source_key: str,
     figure_slug: str,
 ) -> list[dict[str, Any]]:
-    """Load and validate the processed chunk JSON for one source."""
-    local_filename = source["local_filename"]
-    chunks_file = processed_dir / f"{Path(local_filename).stem}_chunks.json"
+    path = processed_dir(figure_key) / f"{source_key}_chunks.json"
 
-    if not chunks_file.exists():
-        raise FileNotFoundError(f"Processed chunk file not found: {chunks_file}")
+    if not path.exists():
+        raise FileNotFoundError(f"Chunk file not found: {path}")
 
-    records = json.loads(chunks_file.read_text(encoding="utf-8"))
+    records = json.loads(path.read_text(encoding="utf-8"))
 
-    if not records:
-        raise ValueError(f"No chunks found in: {chunks_file}")
+    if not isinstance(records, list):
+        raise ValueError(f"Chunk file must contain a JSON list: {path}")
 
     for record in records:
-        if record.get("source_key") != source["source_key"]:
-            raise ValueError(f"Chunk source key does not match selected source: {chunks_file}")
+        if record.get("source_key") != source_key:
+            raise ValueError(
+                f"Chunk source mismatch in {path}: "
+                f"expected {source_key}, got {record.get('source_key')}"
+            )
 
         if record.get("figure_slug") != figure_slug:
-            raise ValueError(f"Chunk figure slug does not match selected figure: {chunks_file}")
+            raise ValueError(
+                f"Chunk figure mismatch in {path}: "
+                f"expected {figure_slug}, got {record.get('figure_slug')}"
+            )
 
     return records
 
 
-def get_raw_character_count(source: dict[str, str], raw_dir: Path) -> int:
-    """Read the raw source file and return its character count."""
-    source_file = raw_dir / source["local_filename"]
-
-    if not source_file.exists():
-        raise FileNotFoundError(f"Raw source file not found: {source_file}")
-
-    return len(source_file.read_text(encoding="utf-8-sig"))
-
-
-def build_chunk_rows(
-    records: list[dict[str, Any]],
-    embeddings: list[list[float]],
-    figure_id: int,
+def build_chunk_row(
+    record: dict[str, Any],
+    *,
     document_id: int,
-    source: dict[str, str],
-    figure_slug: str,
-) -> list[dict[str, Any]]:
-    """Combine processed chunks and embeddings into Supabase chunk rows."""
-    rows = []
+    figure_id: int,
+    inventory_row: dict[str, str],
+    embedding: list[float],
+) -> dict[str, Any]:
+    source_key = clean_value(inventory_row, "source_key")
 
-    for record, embedding in zip(records, embeddings, strict=True):
-        rows.append({
-            "chunk_key": record["chunk_id"],
-            "document_id": document_id,
-            "figure_id": figure_id,
-            "chunk_index": record["chunk_index"],
-            "content": record["text"],
-            "character_count": record["character_count"],
-            "token_count": record["token_count"],
-            "embedding": embedding,
-            "metadata": {
-                "source_key": source["source_key"],
-                "source_title": source["title"],
-                "figure_slug": figure_slug,
-                "embedding_model": EMBEDDING_MODEL,
-                "publication_date": source.get("publication_date", ""),
-                "source_type": source.get("source_type", ""),
-            },
-        })
+    return {
+        "chunk_key": record["chunk_id"],
+        "document_id": document_id,
+        "figure_id": figure_id,
+        "chunk_index": record["chunk_index"],
+        "content": record["text"],
+        "character_count": record["character_count"],
+        "token_count": record["token_count"],
+        "embedding": embedding,
+        "metadata": {
+            "source_key": source_key,
+            "source_title": clean_value(inventory_row, "title"),
+            "figure_slug": clean_value(inventory_row, "figure_slug"),
+            "embedding_model": EMBEDDING_MODEL,
+            "publication_date": clean_value(
+                inventory_row,
+                "publication_date",
+            ),
+            "source_type": clean_value(inventory_row, "source_type"),
+            "language": clean_value(inventory_row, "language") or "English",
+        },
+    }
 
-    return rows
 
+def ingest_source(
+    supabase,
+    figure_key: str,
+    row: dict[str, str],
+) -> int:
+    source_key = clean_value(row, "source_key")
+    figure_slug = clean_value(row, "figure_slug")
+    local_filename = clean_value(row, "local_filename")
 
-def main() -> None:
-    """Load one processed source, embed its chunks, and ingest everything into Supabase."""
-    args = parse_arguments()
-    inventory_file, raw_dir, processed_dir = get_figure_paths(args.figure_key)
+    if not source_key:
+        raise ValueError("Inventory row is missing source_key")
 
-    source = load_source_record(args.source_key, inventory_file)
-
-    figure_slug = source.get("figure_slug", "").strip()
     if not figure_slug:
-        raise ValueError(f"No figure_slug configured for source: {args.source_key}")
+        raise ValueError(f"Missing figure_slug for source: {source_key}")
 
-    if not is_approved(source.get("approved_for_ingestion", "")):
-        raise ValueError(f"Source is not approved for ingestion: {args.source_key}")
+    if not parse_bool(row.get("approved_for_ingestion")):
+        raise ValueError(
+            f"Source is not approved for ingestion: {source_key}"
+        )
 
-    records = load_chunk_records(source, processed_dir, figure_slug)
-    character_count = get_raw_character_count(source, raw_dir)
+    if not local_filename:
+        raise ValueError(
+            f"Missing local_filename for source: {source_key}"
+        )
 
-    supabase = get_supabase_client()
+    raw_path = raw_dir(figure_key) / local_filename
+
+    if not raw_path.exists():
+        raise FileNotFoundError(
+            f"Raw source file not found: {raw_path}"
+        )
+
+    raw_text = raw_path.read_text(encoding="utf-8")
+
+    chunk_records = load_chunk_records(
+        figure_key=figure_key,
+        source_key=source_key,
+        figure_slug=figure_slug,
+    )
+
     figure_id = get_figure_id(supabase, figure_slug)
-    source_id = upsert_source(supabase, source, figure_id)
+
+    source_id = upsert_source(
+        supabase=supabase,
+        figure_id=figure_id,
+        row=row,
+    )
 
     document_id = upsert_document(
         supabase=supabase,
-        source=source,
+        figure_key=figure_key,
         source_id=source_id,
-        character_count=character_count,
-        figure_key=args.figure_key,
+        local_filename=local_filename,
+        character_count=len(raw_text),
     )
 
-    total_chunks = len(records)
+    print(
+        f"    figure_id={figure_id} "
+        f"source_id={source_id} "
+        f"document_id={document_id}"
+    )
+    print(f"    chunks={len(chunk_records):,}")
 
-    print(f"Figure: {figure_slug}")
-    print(f"Source: {source['title']}")
-    print(f"Source key: {source['source_key']}")
-    print(f"Embedding model: {EMBEDDING_MODEL}")
-    print(f"Total chunks: {total_chunks:,}")
-    print(f"Batch size: {BATCH_SIZE}")
-    print(f"Figure ID: {figure_id}")
-    print(f"Source ID: {source_id}")
-    print(f"Document ID: {document_id}")
-    print()
+    ingested = 0
 
-    for batch_start in range(0, total_chunks, BATCH_SIZE):
-        batch_end = min(batch_start + BATCH_SIZE, total_chunks)
-        batch_records = records[batch_start:batch_end]
-        texts = [record["text"] for record in batch_records]
+    for start in range(0, len(chunk_records), BATCH_SIZE):
+        batch = chunk_records[start : start + BATCH_SIZE]
 
-        print(f"Processing chunks {batch_start} through {batch_end - 1}")
-
+        texts = [record["text"] for record in batch]
         embeddings = generate_embeddings(texts)
 
-        rows = build_chunk_rows(
-            records=batch_records,
-            embeddings=embeddings,
-            figure_id=figure_id,
-            document_id=document_id,
-            source=source,
-            figure_slug=figure_slug,
+        if len(embeddings) != len(batch):
+            raise RuntimeError(
+                f"Embedding count mismatch for {source_key}: "
+                f"{len(embeddings)} embeddings for {len(batch)} chunks"
+            )
+
+        rows = [
+            build_chunk_row(
+                record,
+                document_id=document_id,
+                figure_id=figure_id,
+                inventory_row=row,
+                embedding=embedding,
+            )
+            for record, embedding in zip(batch, embeddings)
+        ]
+
+        (
+            supabase.table("chunks")
+            .upsert(rows, on_conflict="chunk_key")
+            .execute()
         )
 
-        response = supabase.table("chunks").upsert(rows, on_conflict="chunk_key").execute()
+        ingested += len(rows)
 
-        print(f"Stored {len(response.data)} rows ({batch_end}/{total_chunks} complete)")
+        print(
+            f"    embedded/upserted "
+            f"{ingested:,}/{len(chunk_records):,}"
+        )
+
+    return ingested
+
+
+def ingest_inventory(
+    figure_key: str,
+    source_key: str | None = None,
+) -> None:
+    rows = read_inventory(figure_key)
+
+    if source_key:
+        matching = [
+            row
+            for row in rows
+            if clean_value(row, "source_key") == source_key
+        ]
+
+        if not matching:
+            raise ValueError(
+                f"Source key '{source_key}' not found in "
+                f"{inventory_path(figure_key)}"
+            )
+
+        rows = matching
+    else:
+        # Figure-wide mode: process every approved source.
+        approved_rows = [
+            row
+            for row in rows
+            if parse_bool(row.get("approved_for_ingestion"))
+        ]
+
+        skipped_unapproved = len(rows) - len(approved_rows)
+
+        if skipped_unapproved:
+            print(
+                f"Skipping {skipped_unapproved} source(s) not approved "
+                f"for ingestion."
+            )
+
+        rows = approved_rows
+
+        if not rows:
+            raise ValueError(
+                f"No approved sources found in {inventory_path(figure_key)}"
+            )
+
+    supabase = get_supabase_client()
+
+    print(f"Figure key: {figure_key}")
+    print(f"Inventory:  {inventory_path(figure_key)}")
+    print(f"Processed:  {processed_dir(figure_key)}")
+    print(f"Embedding:  {EMBEDDING_MODEL}")
+    print(f"Batch size: {BATCH_SIZE}")
+    print(f"Sources:    {len(rows)}")
+    print()
+
+    completed = 0
+    failed = 0
+    total_chunks = 0
+
+    for index, row in enumerate(rows, start=1):
+        key = clean_value(row, "source_key")
+        language = clean_value(row, "language") or "English"
+
+        print(f"[{index}/{len(rows)}] {key} [{language}]")
+
+        try:
+            count = ingest_source(
+                supabase=supabase,
+                figure_key=figure_key,
+                row=row,
+            )
+
+            completed += 1
+            total_chunks += count
+            print(f"    DONE: {count:,} chunks")
+        except Exception as exc:
+            failed += 1
+            print(f"    FAILED: {exc}")
+
         print()
 
-    print(f"Successfully ingested: {source['title']}")
+    print("Ingestion summary")
+    print(f"  sources completed: {completed}")
+    print(f"  sources failed:    {failed}")
+    print(f"  chunks ingested:   {total_chunks:,}")
+
+    if failed:
+        raise SystemExit(1)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Embed and ingest RecChat processed chunks into Supabase. "
+            "Pass only figure_key to ingest all approved sources, or add "
+            "source_key to ingest one source."
+        )
+    )
+
+    parser.add_argument(
+        "figure_key",
+        help="Filesystem/inventory key, e.g. einstein, curie, gandhi",
+    )
+
+    parser.add_argument(
+        "source_key",
+        nargs="?",
+        default=None,
+        help=(
+            "Optional source_key. "
+            "If omitted, all approved sources for the figure are ingested."
+        ),
+    )
+
+    args = parser.parse_args()
+
+    ingest_inventory(
+        figure_key=args.figure_key,
+        source_key=args.source_key,
+    )
 
 
 if __name__ == "__main__":
