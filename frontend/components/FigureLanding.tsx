@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import { BRAND } from "@/lib/brand";
 import { Figure } from "@/lib/types";
 
 type Props = {
@@ -26,8 +27,6 @@ const FIGURE_IMAGES: Record<string, string> = {
   "abraham-lincoln": "/figures/abraham-lincoln.jpg",
   "lord-mahavira": "/figures/lord-mahavira.jpg",
   "cory-doctorow": "/figures/cory-doctorow.jpg",
-
-  // Keep logos as PNG so transparency stays intact.
   nasa: "/figures/nasa.png",
   noaa: "/figures/noaa.png",
   nist: "/figures/nist.png",
@@ -50,14 +49,6 @@ function getFigureInitials(name: string) {
     .join("");
 }
 
-function getLifeYears(figure: Figure) {
-  if (!figure.birth_year && !figure.death_year) {
-    return null;
-  }
-
-  return `${figure.birth_year ?? "?"} – ${figure.death_year ?? "?"}`;
-}
-
 export default function FigureLanding({
   figures,
   selectedFigure,
@@ -70,13 +61,78 @@ export default function FigureLanding({
   onSelectSuggestedQuestion,
 }: Props) {
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [isPickerOpen, setIsPickerOpen] = useState(false);
+
+  useEffect(() => {
+    if (selectedFigureSlug) {
+      setIsPickerOpen(false);
+    }
+  }, [selectedFigureSlug]);
+
+  function chooseFigure(figureSlug: string) {
+    onChangeFigure(figureSlug);
+    setIsPickerOpen(false);
+  }
+
+  function renderImage(figure: Figure, compact = false) {
+    const organization = isOrganization(figure.slug);
+    const imageFailed = failedImages[figure.slug];
+
+    return (
+      <div
+        className={[
+          "relative h-full w-full overflow-hidden",
+          organization ? "bg-[#f7f6f1]" : "bg-[#ded9c8]",
+        ].join(" ")}
+      >
+        {imageFailed ? (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#e4dfcf] to-[#c9c2ab]">
+            <span
+              className={[
+                "font-serif font-semibold text-stone-500/70",
+                compact ? "text-2xl" : "text-3xl sm:text-4xl",
+              ].join(" ")}
+            >
+              {getFigureInitials(figure.display_name)}
+            </span>
+          </div>
+        ) : (
+          <img
+            src={getFigureImage(figure)}
+            alt={
+              organization
+                ? `${figure.display_name} logo`
+                : figure.display_name
+            }
+            loading="lazy"
+            onError={() =>
+              setFailedImages((current) => ({
+                ...current,
+                [figure.slug]: true,
+              }))
+            }
+            className={[
+              "h-full w-full transition duration-300",
+              organization
+                ? compact
+                  ? "object-contain p-3"
+                  : figure.slug === "nist"
+                    ? "object-contain p-7 sm:p-9"
+                    : "object-contain p-6 sm:p-8"
+                : "object-cover object-top group-hover:scale-[1.02]",
+            ].join(" ")}
+          />
+        )}
+      </div>
+    );
+  }
 
   if (isFiguresLoading) {
     return (
       <section className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
         <div className="mb-6">
-          <div className="h-8 w-56 animate-pulse rounded-lg bg-stone-200" />
-          <div className="mt-3 h-4 w-72 max-w-full animate-pulse rounded bg-stone-200" />
+          <div className="h-8 w-64 animate-pulse rounded-lg bg-stone-200" />
+          <div className="mt-3 h-4 w-80 max-w-full animate-pulse rounded bg-stone-200" />
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
@@ -91,191 +147,123 @@ export default function FigureLanding({
     );
   }
 
+  const showPicker = !selectedFigure || isPickerOpen;
+
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
-      <div className="mb-6 sm:mb-8">
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#74715f]">
-          RecChat
-        </p>
+    <section className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
+      {showPicker ? (
+        <>
+          <div className="mb-5 sm:mb-7">
+            <h1 className="font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
+              {BRAND.landingHeadline}
+            </h1>
 
-        <h1 className="font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-          Choose a mind to explore
-        </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-600 sm:text-base">
+              {BRAND.landingDescription}
+            </p>
+          </div>
 
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-600 sm:text-base">
-          Ask questions grounded in writings, speeches, interviews, and
-          historical or institutional sources.
-        </p>
-      </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+            {figures.map((figure) => {
+              const isSelected = figure.slug === selectedFigureSlug;
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-        {figures.map((figure) => {
-          const organization = isOrganization(figure.slug);
-          const isSelected = figure.slug === selectedFigureSlug;
-          const imageFailed = failedImages[figure.slug];
-          const lifeYears = getLifeYears(figure);
-
-          return (
-            <button
-              key={figure.slug}
-              type="button"
-              aria-pressed={isSelected}
-              disabled={isLoading}
-              onClick={() => onChangeFigure(figure.slug)}
-              className={[
-                "group relative aspect-[4/5] overflow-hidden rounded-2xl text-left",
-                "transition duration-200 ease-out",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] focus-visible:ring-offset-2",
-                "disabled:cursor-not-allowed disabled:opacity-70",
-                isSelected
-                  ? "ring-2 ring-[#6f7252] ring-offset-2"
-                  : "ring-1 ring-black/5 hover:-translate-y-0.5 hover:shadow-lg",
-                organization ? "bg-[#f7f6f1]" : "bg-[#ded9c8]",
-              ].join(" ")}
-            >
-              {organization ? (
-                <>
-                  {/* Organization card: logo gets its own clean image area */}
-                  <div className="absolute inset-x-0 top-0 h-[64%] bg-[#f7f6f1]">
-                    <div className="flex h-full w-full items-center justify-center p-5 sm:p-7">
-                      {!imageFailed ? (
-                        <img
-                          src={getFigureImage(figure)}
-                          alt={`${figure.display_name} logo`}
-                          loading="lazy"
-                          onError={() =>
-                            setFailedImages((current) => ({
-                              ...current,
-                              [figure.slug]: true,
-                            }))
-                          }
-                          className={[
-                            "h-full w-full object-contain transition duration-300",
-                            "group-hover:scale-[1.025]",
-                            figure.slug === "nist"
-                              ? "max-h-[72%] max-w-[86%]"
-                              : "max-h-[88%] max-w-[88%]",
-                          ].join(" ")}
-                        />
-                      ) : (
-                        <span className="font-serif text-3xl font-semibold text-stone-400 sm:text-4xl">
-                          {getFigureInitials(figure.display_name)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Dedicated footer prevents logo/text overlap */}
-                  <div className="absolute inset-x-0 bottom-0 h-[36%] border-t border-stone-200 bg-white p-3 sm:p-4">
-                    <h2 className="text-base font-semibold leading-tight text-stone-900 sm:text-xl">
-                      {figure.display_name}
-                    </h2>
-
-                    {figure.short_description && (
-                      <p className="mt-1.5 line-clamp-3 text-[11px] leading-[1.35rem] text-stone-600 sm:text-sm sm:leading-5">
-                        {figure.short_description}
-                      </p>
-                    )}
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* Person card: portrait fills the card */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#e4dfcf] to-[#c9c2ab]">
-                    <span className="font-serif text-3xl font-semibold text-stone-500/70 sm:text-4xl">
-                      {getFigureInitials(figure.display_name)}
-                    </span>
-                  </div>
-
-                  {!imageFailed && (
-                    <img
-                      src={getFigureImage(figure)}
-                      alt={figure.display_name}
-                      loading="lazy"
-                      onError={() =>
-                        setFailedImages((current) => ({
-                          ...current,
-                          [figure.slug]: true,
-                        }))
-                      }
-                      className="absolute inset-0 h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.025]"
-                    />
-                  )}
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-
-                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                    <h2 className="font-serif text-lg font-semibold leading-tight text-white sm:text-2xl">
-                      {figure.display_name}
-                    </h2>
-
-                    {lifeYears && (
-                      <p className="mt-1 text-[11px] font-medium text-white/75 sm:text-sm">
-                        {lifeYears}
-                      </p>
-                    )}
-
-                    {figure.short_description && (
-                      <p className="mt-1.5 hidden text-sm leading-5 text-white/80 sm:line-clamp-2 sm:block">
-                        {figure.short_description}
-                      </p>
-                    )}
-                  </div>
-                </>
-              )}
-
-              {isSelected && (
-                <div
+              return (
+                <button
+                  key={figure.slug}
+                  type="button"
+                  aria-pressed={isSelected}
+                  disabled={isLoading}
+                  onClick={() => chooseFigure(figure.slug)}
                   className={[
-                    "absolute right-2.5 top-2.5 rounded-full px-2 py-1",
-                    "text-[10px] font-semibold uppercase tracking-wide shadow-sm sm:right-3 sm:top-3 sm:text-xs",
-                    organization
-                      ? "bg-[#6f7252] text-white"
-                      : "bg-[#f5f1e6]/95 text-[#55583e]",
+                    "group relative aspect-[4/5] overflow-hidden rounded-2xl bg-white text-left",
+                    "border transition duration-200 ease-out",
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] focus-visible:ring-offset-2",
+                    "disabled:cursor-not-allowed disabled:opacity-70",
+                    isSelected
+                      ? "border-[#6f7252] ring-2 ring-[#6f7252]/35"
+                      : "border-stone-200 hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-md",
                   ].join(" ")}
                 >
-                  Selected
-                </div>
-              )}
+                  <div className="h-[72%] border-b border-stone-200">
+                    {renderImage(figure)}
+                  </div>
+
+                  <div className="flex h-[28%] min-h-0 flex-col justify-center px-3 py-2.5 sm:px-4">
+                    <h2 className="truncate text-base font-semibold leading-tight text-stone-900 sm:text-lg">
+                      {figure.display_name}
+                    </h2>
+
+                    <p className="mt-1 truncate text-[11px] leading-5 text-stone-500 sm:text-xs">
+                      {figure.short_description || BRAND.cardFallbackDescription}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {selectedFigure && (
+            <button
+              type="button"
+              onClick={() => setIsPickerOpen(false)}
+              className="mt-5 text-sm font-medium text-[#62664a] underline-offset-4 hover:underline"
+            >
+              {BRAND.keepPerspectivePrefix} {displayFigureName}
             </button>
-          );
-        })}
-      </div>
+          )}
+        </>
+      ) : (
+        <>
+          <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+            <div className="flex min-h-[104px] items-stretch">
+              <div className="w-[96px] shrink-0 border-r border-stone-200 sm:w-[124px]">
+                {renderImage(selectedFigure, true)}
+              </div>
 
-      {selectedFigure && (
-        <div className="mt-7 rounded-2xl border border-stone-200 bg-[#faf8f2] p-4 sm:mt-9 sm:p-6">
-          <div className="mb-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#74715f]">
-              Start a conversation
-            </p>
+              <div className="flex min-w-0 flex-1 items-center justify-between gap-3 px-4 py-3 sm:px-5">
+                <div className="min-w-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#74715f] sm:text-xs">
+                    {BRAND.selectedPerspectiveLabel}
+                  </p>
 
-            <h2 className="mt-1 font-serif text-2xl font-semibold text-stone-900">
-              Ask {displayFigureName}
-            </h2>
+                  <h1 className="mt-1 truncate font-serif text-2xl font-semibold text-stone-900 sm:text-3xl">
+                    {displayFigureName}
+                  </h1>
 
-            {selectedFigure.short_description && (
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
-                {selectedFigure.short_description}
-              </p>
-            )}
+                  <p className="mt-1 truncate text-xs text-stone-500 sm:text-sm">
+                    {selectedFigure.short_description ||
+                      BRAND.cardFallbackDescription}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  disabled={isLoading}
+                  onClick={() => setIsPickerOpen(true)}
+                  className="shrink-0 rounded-full border border-stone-300 bg-[#faf8f2] px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-[#777b55] hover:bg-[#f1f1e7] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:text-sm"
+                >
+                  {BRAND.changePerspectiveLabel}
+                </button>
+              </div>
+            </div>
           </div>
 
           {suggestedQuestions.length > 0 && (
-            <div className="grid gap-2 sm:grid-cols-2">
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
               {suggestedQuestions.map((question) => (
                 <button
                   key={question}
                   type="button"
                   disabled={isLoading}
                   onClick={() => onSelectSuggestedQuestion(question)}
-                  className="rounded-xl border border-stone-200 bg-white px-4 py-3 text-left text-sm leading-5 text-stone-700 transition hover:border-[#a4a58a] hover:bg-[#f5f3ea] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="rounded-xl border border-stone-200 bg-[#faf8f2] px-4 py-3 text-left text-sm leading-5 text-stone-700 transition hover:border-[#a4a58a] hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {question}
                 </button>
               ))}
             </div>
           )}
-        </div>
+        </>
       )}
     </section>
   );

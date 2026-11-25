@@ -1,86 +1,61 @@
-import ReactMarkdown from "react-markdown";
+"use client";
+
+import { ReactNode } from "react";
 
 import { AnswerSource } from "@/lib/types";
 
 type Props = {
-  answer: string;
+  text: string;
   sources: AnswerSource[];
-  onCitationClick: (source: AnswerSource) => void;
+  onSelectSource: (source: AnswerSource) => void;
 };
 
 export default function CitationText({
-  answer,
+  text,
   sources,
-  onCitationClick,
+  onSelectSource,
 }: Props) {
-  // Render Markdown while converting numbered citations into evidence buttons.
-  const markdown = answer.replace(/\[(\d+)\]/g, "[$1](#citation-$1)");
+  const citationPattern = /\[(\d+)\]/g;
+  const parts: ReactNode[] = [];
 
-  return (
-    <div className="space-y-4">
-      <ReactMarkdown
-        components={{
-          p: ({ children }) => (
-            <p className="leading-7 text-stone-800">{children}</p>
-          ),
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
 
-          strong: ({ children }) => (
-            <strong className="font-semibold text-stone-950">
-              {children}
-            </strong>
-          ),
+  while ((match = citationPattern.exec(text)) !== null) {
+    const citationStart = match.index;
+    const citationEnd = citationStart + match[0].length;
 
-          ul: ({ children }) => (
-            <ul className="list-disc space-y-2 pl-6">{children}</ul>
-          ),
+    if (citationStart > lastIndex) {
+      parts.push(text.slice(lastIndex, citationStart));
+    }
 
-          ol: ({ children }) => (
-            <ol className="list-decimal space-y-2 pl-6">{children}</ol>
-          ),
+    const sourceNumber = Number(match[1]);
+    const source = sources.find(
+      (item) => item.source_number === sourceNumber,
+    );
 
-          li: ({ children }) => (
-            <li className="pl-1 leading-7 text-stone-800">{children}</li>
-          ),
+    if (source) {
+      parts.push(
+        <button
+          key={`${citationStart}-${sourceNumber}`}
+          type="button"
+          onClick={() => onSelectSource(source)}
+          className="mx-0.5 inline-flex min-w-7 items-center justify-center rounded-md border border-[#c7c9a9] bg-[#ececdc] px-1.5 py-0.5 align-baseline text-xs font-semibold text-[#565a3d] transition hover:bg-[#dfe1c9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252]"
+          aria-label={`Open source ${sourceNumber}`}
+        >
+          [{sourceNumber}]
+        </button>,
+      );
+    } else {
+      parts.push(match[0]);
+    }
 
-          a: ({ href, children }) => {
-            if (href?.startsWith("#citation-")) {
-              const sourceNumber = Number(
-                href.replace("#citation-", ""),
-              );
+    lastIndex = citationEnd;
+  }
 
-              const source = sources.find(
-                (item) => item.source_number === sourceNumber,
-              );
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
 
-              if (!source) return <>{children}</>;
-
-              return (
-                <button
-                  type="button"
-                  onClick={() => onCitationClick(source)}
-                  className="mx-0.5 inline-flex min-w-6 items-center justify-center rounded-md border border-[#c8cbb2] bg-[#e7e8d8] px-1.5 py-0.5 align-baseline text-xs font-semibold text-[#52563b] transition hover:border-[#777b55] hover:bg-[#d9dbc2] focus:outline-none focus:ring-2 focus:ring-[#777b55]"
-                  aria-label={`Open source ${sourceNumber}`}
-                >
-                  [{sourceNumber}]
-                </button>
-              );
-            }
-
-            return (
-              <a
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className="underline decoration-stone-400 underline-offset-2"
-              >
-                {children}
-              </a>
-            );
-          },
-        }}
-      >
-        {markdown}
-      </ReactMarkdown>
-    </div>
-  );
+  return <>{parts}</>;
 }

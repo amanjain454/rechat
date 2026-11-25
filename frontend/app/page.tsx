@@ -1,47 +1,62 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import AppHeader from "@/components/AppHeader";
 import ChatComposer from "@/components/ChatComposer";
 import ChatMessageCard from "@/components/ChatMessageCard";
 import EvidencePanel from "@/components/EvidencePanel";
 import FigureLanding from "@/components/FigureLanding";
-import { fetchAnswer, fetchFigures } from "@/lib/api";
-import { ROTATION_INTERVAL_MS } from "@/lib/config";
+import {
+  fetchFigures,
+  streamAnswer,
+  warmBackend,
+} from "@/lib/api";
+import { BRAND } from "@/lib/brand";
 import { buildSuggestedQuestions } from "@/lib/figure";
-import { AnswerSource, ChatMessage, Figure } from "@/lib/types";
+import {
+  AnswerSource,
+  ChatMessage,
+  Figure,
+} from "@/lib/types";
 
 export default function Home() {
-  // Coordinate figure discovery, chat state, retrieval responses, and evidence.
   const [figures, setFigures] = useState<Figure[]>([]);
-  const [selectedFigureSlug, setSelectedFigureSlug] = useState("");
-  const [rotatingFigureIndex, setRotatingFigureIndex] = useState(0);
-  const [isFiguresLoading, setIsFiguresLoading] = useState(true);
+  const [selectedFigureSlug, setSelectedFigureSlug] =
+    useState("");
+
+  const [isFiguresLoading, setIsFiguresLoading] =
+    useState(true);
   const [figuresError, setFiguresError] = useState("");
 
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [selectedSource, setSelectedSource] = useState<AnswerSource | null>(null);
+  const [selectedSource, setSelectedSource] =
+    useState<AnswerSource | null>(null);
+
   const [isLoading, setIsLoading] = useState(false);
+  const [streamingMessageId, setStreamingMessageId] =
+    useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   const selectedFigure = useMemo(
-    () => figures.find((figure) => figure.slug === selectedFigureSlug) ?? null,
+    () =>
+      figures.find(
+        (figure) => figure.slug === selectedFigureSlug,
+      ) ?? null,
     [figures, selectedFigureSlug],
   );
 
-  const rotatingFigure = figures[rotatingFigureIndex] ?? null;
-
   const displayFigureName =
     selectedFigure?.display_name ??
-    rotatingFigure?.display_name ??
-    "history";
+    BRAND.genericPerspectiveName;
 
   const suggestedQuestions = useMemo(
     () =>
       selectedFigure
-        ? buildSuggestedQuestions(selectedFigure.display_name)
+        ? buildSuggestedQuestions(
+            selectedFigure.display_name,
+          )
         : [],
     [selectedFigure],
   );
@@ -50,76 +65,119 @@ export default function Home() {
     () =>
       [...messages]
         .reverse()
-        .find((message) => message.role === "assistant"),
+        .find(
+          (message) =>
+            message.role === "assistant",
+        ),
     [messages],
   );
 
-  const visibleSources = latestAssistantMessage?.sources ?? [];
+  const visibleSources =
+    latestAssistantMessage?.sources ?? [];
+
+  const latestUserQuestion = useMemo(
+    () =>
+      [...messages]
+        .reverse()
+        .find(
+          (message) => message.role === "user",
+        )?.content ?? "",
+    [messages],
+  );
 
   useEffect(() => {
-    // Load figures once when the application starts.
+    let isCancelled = false;
+
     async function loadFigures() {
       try {
         setIsFiguresLoading(true);
         setFiguresError("");
 
         const data = await fetchFigures();
-        setFigures(data.figures);
+
+        if (!isCancelled) {
+          setFigures(data.figures);
+        }
       } catch (error) {
-        setFiguresError(
-          error instanceof Error
-            ? error.message
-            : "Unable to load figures.",
-        );
+        if (!isCancelled) {
+          setFiguresError(
+            error instanceof Error
+              ? error.message
+              : "Unable to load available perspectives.",
+          );
+        }
       } finally {
-        setIsFiguresLoading(false);
+        if (!isCancelled) {
+          setIsFiguresLoading(false);
+        }
       }
     }
 
+    // These run independently:
+    // 1. Figure metadata normally comes from Vercel's cache.
+    // 2. Render wakes and warms in the background while the user browses.
     loadFigures();
+
+    void warmBackend().catch((error) => {
+      // Warmup should never block the landing experience. If it fails, the
+      // normal chat request can still wake/use the backend as a fallback.
+      console.warn("Backend warmup did not complete:", error);
+    });
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
-  useEffect(() => {
-    // Rotate figure names on the landing page until a figure is selected.
-    if (selectedFigureSlug || figures.length <= 1) return;
-
-    const interval = window.setInterval(() => {
-      setRotatingFigureIndex(
-        (index) => (index + 1) % figures.length,
-      );
-    }, ROTATION_INTERVAL_MS);
-
-    return () => window.clearInterval(interval);
-  }, [figures, selectedFigureSlug]);
-
   function changeFigure(figureSlug: string) {
-    // Switch figures and clear state from the previous conversation.
+    if (
+      isLoading ||
+      figureSlug === selectedFigureSlug
+    ) {
+      return;
+    }
+
     setSelectedFigureSlug(figureSlug);
     setMessages([]);
     setQuestion("");
     setSelectedSource(null);
     setErrorMessage("");
+    setStreamingMessageId(null);
+  }
+
+  function selectSuggestedQuestion(
+    suggestedQuestion: string,
+  ) {
+    setQuestion(suggestedQuestion);
   }
 
   function selectSource(source: AnswerSource) {
-    // Select evidence and scroll it into view on smaller screens.
     setSelectedSource(source);
-
-    window.setTimeout(() => {
-      document.getElementById("evidence-panel")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 0);
   }
 
-  async function submitQuestion(event: FormEvent<HTMLFormElement>) {
-    // Submit the user's question and append the grounded response to the chat.
-    event.preventDefault();
+  function updateAssistantMessage(
+    messageId: string,
+    updater: (message: ChatMessage) => ChatMessage,
+  ) {
+    setMessages((currentMessages) =>
+      currentMessages.map((message) =>
+        message.id === messageId
+          ? updater(message)
+          : message,
+      ),
+    );
+  }
 
+  async function submitQuestion() {
     const trimmedQuestion = question.trim();
 
-    if (!trimmedQuestion || !selectedFigure || isLoading) return;
+    if (
+      !trimmedQuestion ||
+      !selectedFigure ||
+      isLoading
+    ) {
+      return;
+    }
 
     const userMessage: ChatMessage = {
       id: crypto.randomUUID(),
@@ -127,32 +185,65 @@ export default function Home() {
       content: trimmedQuestion,
     };
 
-    setMessages((current) => [...current, userMessage]);
+    const assistantMessageId = crypto.randomUUID();
+
+    const assistantMessage: ChatMessage = {
+      id: assistantMessageId,
+      role: "assistant",
+      content: "",
+      sources: [],
+    };
+
+    setMessages((currentMessages) => [
+      ...currentMessages,
+      userMessage,
+      assistantMessage,
+    ]);
+
     setQuestion("");
     setErrorMessage("");
-    setIsLoading(true);
     setSelectedSource(null);
+    setIsLoading(true);
+    setStreamingMessageId(assistantMessageId);
 
     try {
-      const data = await fetchAnswer(
+      await streamAnswer(
         trimmedQuestion,
         selectedFigure.slug,
+        {
+          onSources: (sources) => {
+            updateAssistantMessage(
+              assistantMessageId,
+              (message) => ({
+                ...message,
+                sources,
+              }),
+            );
+          },
+
+          onDelta: (text) => {
+            updateAssistantMessage(
+              assistantMessageId,
+              (message) => ({
+                ...message,
+                content: message.content + text,
+              }),
+            );
+          },
+        },
       );
-
-      const assistantMessage: ChatMessage = {
-        id: crypto.randomUUID(),
-        role: "assistant",
-        content: data.answer,
-        sources: data.sources,
-      };
-
-      setMessages((current) => [...current, assistantMessage]);
-
-      if (data.sources.length > 0) {
-        setSelectedSource(data.sources[0]);
-      }
     } catch (error) {
       console.error(error);
+
+      // Remove an empty assistant placeholder if streaming failed before any
+      // visible answer text arrived.
+      setMessages((currentMessages) =>
+        currentMessages.filter(
+          (message) =>
+            message.id !== assistantMessageId ||
+            Boolean(message.content),
+        ),
+      );
 
       setErrorMessage(
         error instanceof Error
@@ -160,89 +251,91 @@ export default function Home() {
           : "Something went wrong.",
       );
     } finally {
+      setStreamingMessageId(null);
       setIsLoading(false);
     }
   }
 
   return (
-    <main className="min-h-screen bg-[#f3efe6] text-stone-900">
-      <div className="mx-auto flex min-h-screen max-w-[1500px] flex-col">
+    <main className="min-h-dvh bg-[#f3efe6] text-stone-900">
+      <div className="mx-auto flex min-h-dvh max-w-[1500px] flex-col">
+        <AppHeader />
 
-        <AppHeader selectedFigure={selectedFigure} />
+        <FigureLanding
+          figures={figures}
+          selectedFigure={selectedFigure}
+          selectedFigureSlug={selectedFigureSlug}
+          displayFigureName={displayFigureName}
+          suggestedQuestions={
+            messages.length === 0
+              ? suggestedQuestions
+              : []
+          }
+          isFiguresLoading={isFiguresLoading}
+          isLoading={isLoading}
+          onChangeFigure={changeFigure}
+          onSelectSuggestedQuestion={
+            selectSuggestedQuestion
+          }
+        />
 
-        <div className="grid flex-1 grid-cols-1 lg:grid-cols-[minmax(0,2.6fr)_minmax(300px,1fr)]">
+        {figuresError && (
+          <div className="mx-4 mb-5 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800 sm:mx-8">
+            {figuresError}
+          </div>
+        )}
 
-          <section className="flex min-h-0 min-w-0 flex-col border-stone-300 lg:border-r">
+        {selectedFigure && (
+          <section className="flex min-h-0 w-full flex-1 flex-col">
+            <div className="mx-auto w-full max-w-6xl flex-1 px-4 pb-6 sm:px-6">
+              <div className="mx-auto max-w-3xl space-y-5 sm:space-y-6">
+                {messages.map((message) => (
+                  <ChatMessageCard
+                    key={message.id}
+                    message={message}
+                    selectedFigure={selectedFigure}
+                    onSelectSource={selectSource}
+                    isStreaming={
+                      message.id === streamingMessageId
+                    }
+                  />
+                ))}
 
-            <div className="flex-1 space-y-6 overflow-y-auto px-5 py-6 sm:px-8">
-
-              {messages.length === 0 && (
-                <FigureLanding
-                  figures={figures}
-                  selectedFigure={selectedFigure}
-                  selectedFigureSlug={selectedFigureSlug}
-                  displayFigureName={displayFigureName}
-                  suggestedQuestions={suggestedQuestions}
-                  isFiguresLoading={isFiguresLoading}
-                  isLoading={isLoading}
-                  onChangeFigure={changeFigure}
-                  onSelectSuggestedQuestion={setQuestion}
-                />
-              )}
-
-              {messages.map((message) => (
-                <ChatMessageCard
-                  key={message.id}
-                  message={message}
-                  selectedFigure={selectedFigure}
-                  onSelectSource={selectSource}
-                />
-              ))}
-
-              {isLoading && (
-                <div className="max-w-3xl rounded-2xl border border-stone-300 bg-[#fbfaf6] px-6 py-5">
-                  <div className="flex items-center gap-3">
-                    <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-[#6b6f4c]" />
-
-                    <p className="text-sm text-stone-600">
-                      Searching the archive and preparing a grounded response…
-                    </p>
+                {errorMessage && (
+                  <div className="max-w-3xl rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
+                    {errorMessage}
                   </div>
-                </div>
-              )}
-
-              {figuresError && (
-                <div className="max-w-3xl rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
-                  {figuresError}
-                </div>
-              )}
-
-              {errorMessage && (
-                <div className="max-w-3xl rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
-                  {errorMessage}
-                </div>
-              )}
-
+                )}
+              </div>
             </div>
 
             <ChatComposer
               question={question}
-              selectedFigure={selectedFigure}
+              displayFigureName={displayFigureName}
               isLoading={isLoading}
+              isDisabled={!selectedFigure}
               onQuestionChange={setQuestion}
               onSubmit={submitQuestion}
             />
-
           </section>
+        )}
 
-          <EvidencePanel
-            selectedSource={selectedSource}
-            visibleSources={visibleSources}
-            onSelectSource={selectSource}
-          />
-
-        </div>
+        {!selectedFigure && !isFiguresLoading && (
+          <div className="mt-auto px-4 pb-6 sm:px-8">
+            <p className="text-center text-xs text-stone-500">
+              {BRAND.emptyState}
+            </p>
+          </div>
+        )}
       </div>
+
+      <EvidencePanel
+        selectedSource={selectedSource}
+        visibleSources={visibleSources}
+        onSelectSource={selectSource}
+        onClose={() => setSelectedSource(null)}
+        query={latestUserQuestion}
+      />
     </main>
   );
 }

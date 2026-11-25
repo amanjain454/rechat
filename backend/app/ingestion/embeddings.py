@@ -1,3 +1,4 @@
+from functools import lru_cache
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -10,6 +11,17 @@ load_dotenv(BACKEND_ROOT / ".env")
 
 EMBEDDING_MODEL = "text-embedding-3-small"
 EXPECTED_DIMENSIONS = 1536
+
+
+@lru_cache(maxsize=1)
+def get_openai_client() -> OpenAI:
+    """
+    Create and cache one OpenAI client for backend use.
+
+    Reusing the client avoids rebuilding the underlying HTTP client
+    and connection pool for every embedding request.
+    """
+    return OpenAI()
 
 
 def generate_embeddings(
@@ -25,7 +37,7 @@ def generate_embeddings(
     if any(not text.strip() for text in texts):
         raise ValueError("Embedding inputs cannot be empty.")
 
-    client = OpenAI()
+    client = get_openai_client()
 
     response = client.embeddings.create(
         model=EMBEDDING_MODEL,

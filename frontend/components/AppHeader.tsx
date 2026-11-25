@@ -1,39 +1,24 @@
-import { Figure } from "@/lib/types";
+"use client";
 
+import { BRAND } from "@/lib/brand";
 
-type Props = {
-  selectedFigure: Figure | null;
-};
-
-
-export default function AppHeader({ selectedFigure }: Props) {
-  // Render the persistent rechat header and selected figure identity.
+export default function AppHeader() {
   return (
-    <header className="border-b border-stone-300 bg-[#f7f3eb] px-5 py-4 sm:px-8">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
-            rechat
+    <header className="sticky top-0 z-30 border-b border-stone-300 bg-[#f7f3eb]/95 px-4 py-3 backdrop-blur sm:px-8 sm:py-4">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-serif text-xl font-semibold tracking-tight text-stone-900 sm:text-2xl">
+            {BRAND.productName}
           </p>
 
-          {selectedFigure && (
-            <p className="mt-1 text-lg font-semibold text-stone-900">
-              {selectedFigure.display_name}
-            </p>
-          )}
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="rounded-full border border-olive-700 bg-[#e9eadc] px-3 py-1 text-xs font-medium text-[#53583d]">
-            Source-grounded simulation
-          </span>
-
-          <span className="text-xs text-stone-500">
-            Historical sources
+          <span className="shrink-0 rounded-full border border-[#c8c9ae] bg-[#e9eadc] px-2.5 py-1.5 text-[10px] font-semibold text-[#53583d] sm:px-3 sm:text-xs">
+            {BRAND.trustCue}
           </span>
         </div>
 
+        <p className="mt-1 text-xs leading-5 text-stone-600 sm:text-sm">
+          {BRAND.tagline}
+        </p>
       </div>
     </header>
   );
