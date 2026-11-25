@@ -74,6 +74,17 @@ export default function FigureLanding({
     setIsPickerOpen(false);
   }
 
+  function openPicker() {
+    setIsPickerOpen(true);
+
+    // The sticky selected card may be visible far down the conversation.
+    // Bring the picker back into view when Change is tapped.
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   function renderImage(figure: Figure, compact = false) {
     const organization = isOrganization(figure.slug);
     const imageFailed = failedImages[figure.slug];
@@ -149,88 +160,92 @@ export default function FigureLanding({
 
   const showPicker = !selectedFigure || isPickerOpen;
 
+  if (showPicker) {
+    return (
+      <section className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
+        <div className="mb-5 sm:mb-7">
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
+            {BRAND.landingHeadline}
+          </h1>
+
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-600 sm:text-base">
+            {BRAND.landingDescription}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+          {figures.map((figure) => {
+            const isSelected = figure.slug === selectedFigureSlug;
+
+            return (
+              <button
+                key={figure.slug}
+                type="button"
+                aria-pressed={isSelected}
+                disabled={isLoading}
+                onClick={() => chooseFigure(figure.slug)}
+                className={[
+                  "group relative aspect-[4/5] overflow-hidden rounded-2xl bg-white text-left",
+                  "border transition duration-200 ease-out",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] focus-visible:ring-offset-2",
+                  "disabled:cursor-not-allowed disabled:opacity-70",
+                  isSelected
+                    ? "border-[#6f7252] ring-2 ring-[#6f7252]/35"
+                    : "border-stone-200 hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-md",
+                ].join(" ")}
+              >
+                <div className="h-[72%] border-b border-stone-200">
+                  {renderImage(figure)}
+                </div>
+
+                <div className="flex h-[28%] min-h-0 flex-col justify-center px-3 py-2.5 sm:px-4">
+                  <h2 className="truncate text-base font-semibold leading-tight text-stone-900 sm:text-lg">
+                    {figure.display_name}
+                  </h2>
+
+                  <p className="mt-1 truncate text-[11px] leading-5 text-stone-500 sm:text-xs">
+                    {figure.short_description || BRAND.cardFallbackDescription}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {selectedFigure && (
+          <button
+            type="button"
+            onClick={() => setIsPickerOpen(false)}
+            className="mt-5 text-sm font-medium text-[#62664a] underline-offset-4 hover:underline"
+          >
+            {BRAND.keepPerspectivePrefix} {displayFigureName}
+          </button>
+        )}
+      </section>
+    );
+  }
+
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
-      {showPicker ? (
-        <>
-          <div className="mb-5 sm:mb-7">
-            <h1 className="font-serif text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">
-              {BRAND.landingHeadline}
-            </h1>
-
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-600 sm:text-base">
-              {BRAND.landingDescription}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-            {figures.map((figure) => {
-              const isSelected = figure.slug === selectedFigureSlug;
-
-              return (
-                <button
-                  key={figure.slug}
-                  type="button"
-                  aria-pressed={isSelected}
-                  disabled={isLoading}
-                  onClick={() => chooseFigure(figure.slug)}
-                  className={[
-                    "group relative aspect-[4/5] overflow-hidden rounded-2xl bg-white text-left",
-                    "border transition duration-200 ease-out",
-                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] focus-visible:ring-offset-2",
-                    "disabled:cursor-not-allowed disabled:opacity-70",
-                    isSelected
-                      ? "border-[#6f7252] ring-2 ring-[#6f7252]/35"
-                      : "border-stone-200 hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-md",
-                  ].join(" ")}
-                >
-                  <div className="h-[72%] border-b border-stone-200">
-                    {renderImage(figure)}
-                  </div>
-
-                  <div className="flex h-[28%] min-h-0 flex-col justify-center px-3 py-2.5 sm:px-4">
-                    <h2 className="truncate text-base font-semibold leading-tight text-stone-900 sm:text-lg">
-                      {figure.display_name}
-                    </h2>
-
-                    <p className="mt-1 truncate text-[11px] leading-5 text-stone-500 sm:text-xs">
-                      {figure.short_description || BRAND.cardFallbackDescription}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {selectedFigure && (
-            <button
-              type="button"
-              onClick={() => setIsPickerOpen(false)}
-              className="mt-5 text-sm font-medium text-[#62664a] underline-offset-4 hover:underline"
-            >
-              {BRAND.keepPerspectivePrefix} {displayFigureName}
-            </button>
-          )}
-        </>
-      ) : (
-        <>
+    <>
+      <section className="sticky top-0 z-30 w-full bg-[#f3efe6]/95 px-4 py-2 backdrop-blur sm:px-6 sm:py-3">
+        <div className="mx-auto w-full max-w-6xl">
           <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-            <div className="flex min-h-[104px] items-stretch">
-              <div className="w-[96px] shrink-0 border-r border-stone-200 sm:w-[124px]">
+            <div className="flex min-h-[82px] items-stretch sm:min-h-[104px]">
+              <div className="w-[76px] shrink-0 border-r border-stone-200 sm:w-[124px]">
                 {renderImage(selectedFigure, true)}
               </div>
 
-              <div className="flex min-w-0 flex-1 items-center justify-between gap-3 px-4 py-3 sm:px-5">
+              <div className="flex min-w-0 flex-1 items-center justify-between gap-3 px-3 py-2.5 sm:px-5 sm:py-3">
                 <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#74715f] sm:text-xs">
+                  <p className="hidden text-[10px] font-semibold uppercase tracking-[0.18em] text-[#74715f] sm:block sm:text-xs">
                     {BRAND.selectedPerspectiveLabel}
                   </p>
 
-                  <h1 className="mt-1 truncate font-serif text-2xl font-semibold text-stone-900 sm:text-3xl">
+                  <h1 className="truncate font-serif text-xl font-semibold text-stone-900 sm:mt-1 sm:text-3xl">
                     {displayFigureName}
                   </h1>
 
-                  <p className="mt-1 truncate text-xs text-stone-500 sm:text-sm">
+                  <p className="mt-1 hidden truncate text-xs text-stone-500 sm:block sm:text-sm">
                     {selectedFigure.short_description ||
                       BRAND.cardFallbackDescription}
                   </p>
@@ -239,7 +254,7 @@ export default function FigureLanding({
                 <button
                   type="button"
                   disabled={isLoading}
-                  onClick={() => setIsPickerOpen(true)}
+                  onClick={openPicker}
                   className="shrink-0 rounded-full border border-stone-300 bg-[#faf8f2] px-3 py-2 text-xs font-semibold text-stone-700 transition hover:border-[#777b55] hover:bg-[#f1f1e7] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:text-sm"
                 >
                   {BRAND.changePerspectiveLabel}
@@ -247,24 +262,28 @@ export default function FigureLanding({
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {suggestedQuestions.length > 0 && (
-            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-              {suggestedQuestions.map((question) => (
-                <button
-                  key={question}
-                  type="button"
-                  disabled={isLoading}
-                  onClick={() => onSelectSuggestedQuestion(question)}
-                  className="rounded-xl border border-stone-200 bg-[#faf8f2] px-4 py-3 text-left text-sm leading-5 text-stone-700 transition hover:border-[#a4a58a] hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
-          )}
-        </>
+      {suggestedQuestions.length > 0 && (
+        <section className="mx-auto w-full max-w-6xl px-4 pb-5 sm:px-6 sm:pb-8">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {suggestedQuestions.map((suggestedQuestion) => (
+              <button
+                key={suggestedQuestion}
+                type="button"
+                disabled={isLoading}
+                onClick={() =>
+                  onSelectSuggestedQuestion(suggestedQuestion)
+                }
+                className="rounded-xl border border-stone-200 bg-[#faf8f2] px-4 py-3 text-left text-sm leading-5 text-stone-700 transition hover:border-[#a4a58a] hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {suggestedQuestion}
+              </button>
+            ))}
+          </div>
+        </section>
       )}
-    </section>
+    </>
   );
 }

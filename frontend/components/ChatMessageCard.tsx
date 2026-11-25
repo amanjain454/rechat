@@ -7,12 +7,19 @@ import {
   ChatMessage,
   Figure,
 } from "@/lib/types";
+import { StreamStatus } from "@/lib/api";
 
 type Props = {
   message: ChatMessage;
   selectedFigure: Figure | null;
   onSelectSource: (source: AnswerSource) => void;
   isStreaming?: boolean;
+  loadingStage?: StreamStatus | null;
+  isBlocked?: boolean;
+  feedbackRating?: 1 | -1 | null;
+  feedbackPending?: boolean;
+  feedbackError?: boolean;
+  onFeedback?: (rating: 1 | -1) => void;
 };
 
 function getFigureInitials(name: string) {
@@ -67,11 +74,67 @@ function getCitedSources(
   return cited;
 }
 
+function getLoadingLabel(
+  stage: StreamStatus | null | undefined,
+) {
+  if (stage === "checking") {
+    return BRAND.loadingChecking;
+  }
+
+  if (stage === "preparing") {
+    return BRAND.loadingPreparing;
+  }
+
+  return BRAND.loadingSearching;
+}
+
+function ThumbUpIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 10v10H3V10h4Z" />
+      <path d="M7 19h10.3a2 2 0 0 0 1.95-1.56l1.3-6A2 2 0 0 0 18.6 9H14l.7-3.2A2.8 2.8 0 0 0 12 2.5L7 10v9Z" />
+    </svg>
+  );
+}
+
+function ThumbDownIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 14V4H3v10h4Z" />
+      <path d="M7 5h10.3a2 2 0 0 1 1.95 1.56l1.3 6A2 2 0 0 1 18.6 15H14l.7 3.2A2.8 2.8 0 0 1 12 21.5L7 14V5Z" />
+    </svg>
+  );
+}
+
 export default function ChatMessageCard({
   message,
   selectedFigure,
   onSelectSource,
   isStreaming = false,
+  loadingStage = null,
+  isBlocked = false,
+  feedbackRating = null,
+  feedbackPending = false,
+  feedbackError = false,
+  onFeedback,
 }: Props) {
   if (message.role === "user") {
     return (
@@ -96,6 +159,12 @@ export default function ChatMessageCard({
     sources,
   );
 
+  const canShowFeedback =
+    Boolean(message.content) &&
+    !isStreaming &&
+    !isBlocked &&
+    Boolean(onFeedback);
+
   return (
     <article className="w-full max-w-3xl">
       <div className="rounded-2xl border border-stone-300 bg-[#fbfaf6] px-4 py-5 shadow-sm sm:px-7 sm:py-6">
@@ -105,12 +174,22 @@ export default function ChatMessageCard({
           </div>
 
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-stone-900">
-              {figureName}
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="truncate text-sm font-semibold text-stone-900">
+                {figureName}
+              </p>
+
+              {isBlocked && (
+                <span className="rounded-full border border-stone-300 bg-stone-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-500">
+                  {BRAND.safetyLabel}
+                </span>
+              )}
+            </div>
 
             <p className="text-xs text-stone-500">
-              {BRAND.answerAttribution}
+              {isBlocked
+                ? "Request handled safely"
+                : BRAND.answerAttribution}
             </p>
           </div>
         </div>
@@ -133,15 +212,22 @@ export default function ChatMessageCard({
             )}
           </div>
         ) : isStreaming ? (
-          <div className="flex items-center gap-3 py-1">
-            <div className="flex gap-1">
+          <div
+            className="flex items-center gap-3 py-1"
+            role="status"
+            aria-live="polite"
+          >
+            <div
+              className="flex items-center gap-1"
+              aria-hidden="true"
+            >
               <span className="h-2 w-2 animate-pulse rounded-full bg-[#6b6f4c]" />
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#6b6f4c] [animation-delay:150ms]" />
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#6b6f4c] [animation-delay:300ms]" />
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#6b6f4c] [animation-delay:180ms]" />
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#6b6f4c] [animation-delay:360ms]" />
             </div>
 
             <p className="text-sm text-stone-600">
-              {BRAND.loadingResponse}
+              {getLoadingLabel(loadingStage)}
             </p>
           </div>
         ) : null}
@@ -172,6 +258,58 @@ export default function ChatMessageCard({
                 </button>
               ))}
             </div>
+          </div>
+        )}
+
+        {canShowFeedback && (
+          <div className="mt-5 flex items-center gap-2 border-t border-stone-200 pt-4">
+            <span className="mr-1 text-xs text-stone-500">
+              {feedbackRating
+                ? BRAND.feedbackSaved
+                : BRAND.feedbackPrompt}
+            </span>
+
+            <button
+              type="button"
+              aria-label="Helpful"
+              aria-pressed={feedbackRating === 1}
+              disabled={feedbackPending}
+              onClick={() => onFeedback?.(1)}
+              className={[
+                "rounded-full border p-2 transition",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252]",
+                "disabled:cursor-wait disabled:opacity-60",
+                feedbackRating === 1
+                  ? "border-[#7d815c] bg-[#e9eadc] text-[#4f5339]"
+                  : "border-stone-300 bg-white text-stone-500 hover:border-[#8d9070] hover:text-[#565a3d]",
+              ].join(" ")}
+            >
+              <ThumbUpIcon />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Not helpful"
+              aria-pressed={feedbackRating === -1}
+              disabled={feedbackPending}
+              onClick={() => onFeedback?.(-1)}
+              className={[
+                "rounded-full border p-2 transition",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6f7252]",
+                "disabled:cursor-wait disabled:opacity-60",
+                feedbackRating === -1
+                  ? "border-stone-500 bg-stone-200 text-stone-800"
+                  : "border-stone-300 bg-white text-stone-500 hover:border-stone-500 hover:text-stone-700",
+              ].join(" ")}
+            >
+              <ThumbDownIcon />
+            </button>
+
+            {feedbackError && (
+              <span className="ml-1 text-[11px] text-stone-500">
+                Couldn’t save. Try again.
+              </span>
+            )}
           </div>
         )}
       </div>

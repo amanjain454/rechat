@@ -4,7 +4,7 @@ import { BRAND } from "@/lib/brand";
 
 export default function AppHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-stone-300 bg-[#f7f3eb]/95 px-4 py-3 backdrop-blur sm:px-8 sm:py-4">
+    <header className="border-b border-stone-300 bg-[#f7f3eb] px-4 py-3 sm:px-8 sm:py-4">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between gap-3">
           <p className="font-serif text-xl font-semibold tracking-tight text-stone-900 sm:text-2xl">

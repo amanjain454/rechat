@@ -27,8 +27,14 @@ export const BRAND = {
   hideFullPassageLabel: "Hide full passage",
   technicalDetailsLabel: "Technical details",
 
-  loadingResponse:
-    "Searching sources and preparing a grounded response…",
+  loadingChecking: "Checking request…",
+  loadingSearching: "Searching sources…",
+  loadingPreparing: "Preparing answer…",
+
+  safetyLabel: "Safety",
+  feedbackPrompt: "Helpful?",
+  feedbackSaved: "Thanks",
+
   emptyState:
     "Choose a perspective above to start exploring.",
 } as const;

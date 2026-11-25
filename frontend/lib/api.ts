@@ -19,7 +19,20 @@ type AnswerResponse = {
   sources: AnswerSource[];
 };
 
+export type StreamStatus =
+  | "checking"
+  | "searching"
+  | "preparing";
+
 type StreamEvent =
+  | {
+      type: "meta";
+      response_id: string;
+    }
+  | {
+      type: "status";
+      status: "searching";
+    }
   | {
       type: "sources";
       sources: AnswerSource[];
@@ -27,6 +40,11 @@ type StreamEvent =
   | {
       type: "delta";
       text: string;
+    }
+  | {
+      type: "blocked";
+      message: string;
+      categories: string[];
     }
   | {
       type: "done";
@@ -38,8 +56,14 @@ type StreamEvent =
     };
 
 type StreamAnswerHandlers = {
+  onMeta?: (responseId: string) => void;
+  onStatus?: (status: StreamStatus) => void;
   onSources?: (sources: AnswerSource[]) => void;
   onDelta?: (text: string) => void;
+  onBlocked?: (
+    message: string,
+    categories: string[],
+  ) => void;
   onDone?: (model: string | null) => void;
 };
 
@@ -64,9 +88,6 @@ async function getErrorMessage(
 }
 
 export async function fetchFigures(): Promise<FiguresResponse> {
-  // Read figure metadata through Next.js instead of directly from Render.
-  // The server route caches this slowly-changing data at Vercel, so the
-  // landing page does not need to wait for a sleeping Render backend.
   const response = await fetch("/api/figures");
 
   if (!response.ok) {
@@ -82,9 +103,6 @@ export async function fetchFigures(): Promise<FiguresResponse> {
 }
 
 export async function warmBackend(): Promise<void> {
-  // Fire-and-forget from the landing page. On Render Free this request wakes
-  // the sleeping service; once running, /warmup primes Supabase, figure IDs,
-  // and the shared OpenAI connection before the user asks a question.
   const response = await fetch(
     `${API_BASE_URL}/warmup`,
     {
@@ -136,6 +154,8 @@ export async function streamAnswer(
   handlers: StreamAnswerHandlers,
   matchCount = 5,
 ): Promise<void> {
+  handlers.onStatus?.("checking");
+
   const response = await fetch(
     `${API_BASE_URL}/chat/answer/stream`,
     {
@@ -178,13 +198,32 @@ export async function streamAnswer(
 
     const event = JSON.parse(line) as StreamEvent;
 
+    if (event.type === "meta") {
+      handlers.onMeta?.(event.response_id);
+      return;
+    }
+
+    if (event.type === "status") {
+      handlers.onStatus?.(event.status);
+      return;
+    }
+
     if (event.type === "sources") {
+      handlers.onStatus?.("preparing");
       handlers.onSources?.(event.sources);
       return;
     }
 
     if (event.type === "delta") {
       handlers.onDelta?.(event.text);
+      return;
+    }
+
+    if (event.type === "blocked") {
+      handlers.onBlocked?.(
+        event.message,
+        event.categories,
+      );
       return;
     }
 
@@ -220,5 +259,39 @@ export async function streamAnswer(
 
   if (buffer.trim()) {
     processLine(buffer);
+  }
+}
+
+export async function submitAnswerFeedback(
+  responseId: string,
+  figureSlug: string,
+  question: string,
+  answer: string,
+  rating: 1 | -1,
+): Promise<void> {
+  const response = await fetch(
+    `${API_BASE_URL}/chat/feedback`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        response_id: responseId,
+        figure_slug: figureSlug,
+        question,
+        answer,
+        rating,
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(
+      await getErrorMessage(
+        response,
+        "Unable to save feedback.",
+      ),
+    );
   }
 }

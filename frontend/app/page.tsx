@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import AppHeader from "@/components/AppHeader";
 import ChatComposer from "@/components/ChatComposer";
@@ -9,7 +14,9 @@ import EvidencePanel from "@/components/EvidencePanel";
 import FigureLanding from "@/components/FigureLanding";
 import {
   fetchFigures,
+  StreamStatus,
   streamAnswer,
+  submitAnswerFeedback,
   warmBackend,
 } from "@/lib/api";
 import { BRAND } from "@/lib/brand";
@@ -19,6 +26,12 @@ import {
   ChatMessage,
   Figure,
 } from "@/lib/types";
+
+type FeedbackContext = {
+  responseId: string;
+  question: string;
+  figureSlug: string;
+};
 
 export default function Home() {
   const [figures, setFigures] = useState<Figure[]>([]);
@@ -37,7 +50,23 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [streamingMessageId, setStreamingMessageId] =
     useState<string | null>(null);
+  const [streamingStage, setStreamingStage] =
+    useState<StreamStatus | null>(null);
+  const [blockedMessageIds, setBlockedMessageIds] =
+    useState<Set<string>>(() => new Set());
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [feedbackContexts, setFeedbackContexts] =
+    useState<Record<string, FeedbackContext>>({});
+  const [feedbackRatings, setFeedbackRatings] =
+    useState<Record<string, 1 | -1>>({});
+  const [feedbackPendingIds, setFeedbackPendingIds] =
+    useState<Set<string>>(() => new Set());
+  const [feedbackErrorIds, setFeedbackErrorIds] =
+    useState<Set<string>>(() => new Set());
+
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const shouldAutoScrollRef = useRef(true);
 
   const selectedFigure = useMemo(
     () =>
@@ -113,21 +142,70 @@ export default function Home() {
       }
     }
 
-    // These run independently:
-    // 1. Figure metadata normally comes from Vercel's cache.
-    // 2. Render wakes and warms in the background while the user browses.
     loadFigures();
 
     void warmBackend().catch((error) => {
-      // Warmup should never block the landing experience. If it fails, the
-      // normal chat request can still wake/use the backend as a fallback.
-      console.warn("Backend warmup did not complete:", error);
+      console.warn(
+        "Backend warmup did not complete:",
+        error,
+      );
     });
 
     return () => {
       isCancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    function updateAutoScrollPreference() {
+      const documentElement =
+        document.documentElement;
+
+      const distanceFromBottom =
+        documentElement.scrollHeight -
+        window.innerHeight -
+        window.scrollY;
+
+      shouldAutoScrollRef.current =
+        distanceFromBottom < 180;
+    }
+
+    updateAutoScrollPreference();
+
+    window.addEventListener(
+      "scroll",
+      updateAutoScrollPreference,
+      { passive: true },
+    );
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        updateAutoScrollPreference,
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldAutoScrollRef.current) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      messagesEndRef.current?.scrollIntoView({
+        block: "end",
+        behavior: "auto",
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [
+    messages,
+    streamingMessageId,
+    streamingStage,
+  ]);
 
   function changeFigure(figureSlug: string) {
     if (
@@ -143,6 +221,13 @@ export default function Home() {
     setSelectedSource(null);
     setErrorMessage("");
     setStreamingMessageId(null);
+    setStreamingStage(null);
+    setBlockedMessageIds(new Set());
+    setFeedbackContexts({});
+    setFeedbackRatings({});
+    setFeedbackPendingIds(new Set());
+    setFeedbackErrorIds(new Set());
+    shouldAutoScrollRef.current = true;
   }
 
   function selectSuggestedQuestion(
@@ -168,6 +253,82 @@ export default function Home() {
     );
   }
 
+  async function handleFeedback(
+    messageId: string,
+    rating: 1 | -1,
+  ) {
+    const context = feedbackContexts[messageId];
+    const message = messages.find(
+      (candidate) => candidate.id === messageId,
+    );
+
+    if (
+      !context ||
+      !message ||
+      !message.content ||
+      feedbackPendingIds.has(messageId) ||
+      feedbackRatings[messageId] === rating
+    ) {
+      return;
+    }
+
+    const previousRating =
+      feedbackRatings[messageId];
+
+    setFeedbackRatings((current) => ({
+      ...current,
+      [messageId]: rating,
+    }));
+
+    setFeedbackPendingIds((current) => {
+      const next = new Set(current);
+      next.add(messageId);
+      return next;
+    });
+
+    setFeedbackErrorIds((current) => {
+      const next = new Set(current);
+      next.delete(messageId);
+      return next;
+    });
+
+    try {
+      await submitAnswerFeedback(
+        context.responseId,
+        context.figureSlug,
+        context.question,
+        message.content,
+        rating,
+      );
+    } catch (error) {
+      console.error(error);
+
+      setFeedbackRatings((current) => {
+        const next = { ...current };
+
+        if (previousRating) {
+          next[messageId] = previousRating;
+        } else {
+          delete next[messageId];
+        }
+
+        return next;
+      });
+
+      setFeedbackErrorIds((current) => {
+        const next = new Set(current);
+        next.add(messageId);
+        return next;
+      });
+    } finally {
+      setFeedbackPendingIds((current) => {
+        const next = new Set(current);
+        next.delete(messageId);
+        return next;
+      });
+    }
+  }
+
   async function submitQuestion() {
     const trimmedQuestion = question.trim();
 
@@ -179,6 +340,8 @@ export default function Home() {
       return;
     }
 
+    shouldAutoScrollRef.current = true;
+
     const userMessage: ChatMessage = {
       id: crypto.randomUUID(),
       role: "user",
@@ -186,6 +349,7 @@ export default function Home() {
     };
 
     const assistantMessageId = crypto.randomUUID();
+    const responseId = crypto.randomUUID();
 
     const assistantMessage: ChatMessage = {
       id: assistantMessageId,
@@ -193,6 +357,15 @@ export default function Home() {
       content: "",
       sources: [],
     };
+
+    setFeedbackContexts((current) => ({
+      ...current,
+      [assistantMessageId]: {
+        responseId,
+        question: trimmedQuestion,
+        figureSlug: selectedFigure.slug,
+      },
+    }));
 
     setMessages((currentMessages) => [
       ...currentMessages,
@@ -205,13 +378,20 @@ export default function Home() {
     setSelectedSource(null);
     setIsLoading(true);
     setStreamingMessageId(assistantMessageId);
+    setStreamingStage("checking");
 
     try {
       await streamAnswer(
         trimmedQuestion,
         selectedFigure.slug,
         {
+          onStatus: (status) => {
+            setStreamingStage(status);
+          },
+
           onSources: (sources) => {
+            setStreamingStage("preparing");
+
             updateAssistantMessage(
               assistantMessageId,
               (message) => ({
@@ -222,6 +402,8 @@ export default function Home() {
           },
 
           onDelta: (text) => {
+            setStreamingStage(null);
+
             updateAssistantMessage(
               assistantMessageId,
               (message) => ({
@@ -230,13 +412,30 @@ export default function Home() {
               }),
             );
           },
+
+          onBlocked: (message) => {
+            setStreamingStage(null);
+
+            setBlockedMessageIds((current) => {
+              const next = new Set(current);
+              next.add(assistantMessageId);
+              return next;
+            });
+
+            updateAssistantMessage(
+              assistantMessageId,
+              (currentMessage) => ({
+                ...currentMessage,
+                content: message,
+                sources: [],
+              }),
+            );
+          },
         },
       );
     } catch (error) {
       console.error(error);
 
-      // Remove an empty assistant placeholder if streaming failed before any
-      // visible answer text arrived.
       setMessages((currentMessages) =>
         currentMessages.filter(
           (message) =>
@@ -252,6 +451,7 @@ export default function Home() {
       );
     } finally {
       setStreamingMessageId(null);
+      setStreamingStage(null);
       setIsLoading(false);
     }
   }
@@ -289,23 +489,65 @@ export default function Home() {
           <section className="flex min-h-0 w-full flex-1 flex-col">
             <div className="mx-auto w-full max-w-6xl flex-1 px-4 pb-6 sm:px-6">
               <div className="mx-auto max-w-3xl space-y-5 sm:space-y-6">
-                {messages.map((message) => (
-                  <ChatMessageCard
-                    key={message.id}
-                    message={message}
-                    selectedFigure={selectedFigure}
-                    onSelectSource={selectSource}
-                    isStreaming={
-                      message.id === streamingMessageId
-                    }
-                  />
-                ))}
+                {messages.map((message) => {
+                  const isAssistant =
+                    message.role === "assistant";
+                  const isStreaming =
+                    message.id === streamingMessageId;
+                  const isBlocked =
+                    blockedMessageIds.has(message.id);
+                  const feedbackContext =
+                    feedbackContexts[message.id];
+
+                  return (
+                    <ChatMessageCard
+                      key={message.id}
+                      message={message}
+                      selectedFigure={selectedFigure}
+                      onSelectSource={selectSource}
+                      isStreaming={isStreaming}
+                      loadingStage={
+                        isStreaming
+                          ? streamingStage
+                          : null
+                      }
+                      isBlocked={isBlocked}
+                      feedbackRating={
+                        feedbackRatings[message.id] ?? null
+                      }
+                      feedbackPending={
+                        feedbackPendingIds.has(message.id)
+                      }
+                      feedbackError={
+                        feedbackErrorIds.has(message.id)
+                      }
+                      onFeedback={
+                        isAssistant &&
+                        feedbackContext &&
+                        !isBlocked &&
+                        !isStreaming
+                          ? (rating) =>
+                              handleFeedback(
+                                message.id,
+                                rating,
+                              )
+                          : undefined
+                      }
+                    />
+                  );
+                })}
 
                 {errorMessage && (
                   <div className="max-w-3xl rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
                     {errorMessage}
                   </div>
                 )}
+
+                <div
+                  ref={messagesEndRef}
+                  aria-hidden="true"
+                  className="h-px"
+                />
               </div>
             </div>
 
