@@ -1,36 +1,35 @@
 from typing import Any
+from uuid import UUID
 
 from pydantic import BaseModel, Field
 
 
 class AnswerRequest(BaseModel):
-    """
-    Request body for grounded answer generation.
-    """
+    """Request body for grounded answer generation."""
 
     question: str = Field(
         min_length=1,
         description="Question to answer using retrieved sources.",
     )
-
     figure_slug: str = Field(
         default="mahatma-gandhi",
         min_length=1,
         description="Stable slug of the selected figure.",
     )
-
     match_count: int = Field(
         default=5,
         ge=1,
         le=10,
         description="Number of source chunks used as context.",
     )
+    request_id: UUID | None = Field(
+        default=None,
+        description="Client-generated request identifier for correlation.",
+    )
 
 
 class AnswerSource(BaseModel):
-    """
-    Retrieved source passage supporting the generated answer.
-    """
+    """Retrieved source passage supporting the generated answer."""
 
     source_number: int
     chunk_key: str
@@ -41,9 +40,7 @@ class AnswerSource(BaseModel):
 
 
 class AnswerResponse(BaseModel):
-    """
-    Grounded answer plus the passages used to generate it.
-    """
+    """Grounded answer plus the passages used to generate it."""
 
     question: str
     figure_slug: str
