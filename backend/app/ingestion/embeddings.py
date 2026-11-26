@@ -4,6 +4,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from app.observability import Observation, record_usage
+
 
 BACKEND_ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(BACKEND_ROOT / ".env")
@@ -26,6 +28,8 @@ def get_openai_client() -> OpenAI:
 
 def generate_embeddings(
     texts: list[str],
+    *,
+    trace: Observation | None = None,
 ) -> list[list[float]]:
     """
     Generate one embedding vector for each supplied text.
@@ -39,27 +43,33 @@ def generate_embeddings(
 
     client = get_openai_client()
 
-    response = client.embeddings.create(
-        model=EMBEDDING_MODEL,
-        input=texts,
-    )
-
-    embeddings = [
-        item.embedding
-        for item in response.data
-    ]
-
-    if len(embeddings) != len(texts):
-        raise RuntimeError(
-            "The number of embeddings does not match "
-            "the number of input texts."
+    parent = trace if trace is not None else Observation()
+    with parent.child("query_embedding", "embedding", model=EMBEDDING_MODEL) as observation:
+        observation.preview_input({"model": EMBEDDING_MODEL, "text_count": len(texts), "text_length_chars": sum(map(len, texts))}, content={"texts": texts})
+        response = client.embeddings.create(
+            model=EMBEDDING_MODEL,
+            input=texts,
         )
 
-    for embedding in embeddings:
-        if len(embedding) != EXPECTED_DIMENSIONS:
+        record_usage(observation, response)
+
+        embeddings = [
+            item.embedding
+            for item in response.data
+        ]
+
+        if len(embeddings) != len(texts):
             raise RuntimeError(
-                f"Expected {EXPECTED_DIMENSIONS} dimensions, "
-                f"received {len(embedding)}."
+                "The number of embeddings does not match "
+                "the number of input texts."
             )
 
-    return embeddings
+        for embedding in embeddings:
+            if len(embedding) != EXPECTED_DIMENSIONS:
+                raise RuntimeError(
+                    f"Expected {EXPECTED_DIMENSIONS} dimensions, "
+                    f"received {len(embedding)}."
+                )
+
+        observation.annotate(embedding_dimensions=EXPECTED_DIMENSIONS)
+        return embeddings

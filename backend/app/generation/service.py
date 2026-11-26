@@ -1,9 +1,12 @@
 import logging
 import time
+from datetime import datetime, timezone
+from hashlib import sha256
 from typing import Any, Iterator
 
 from app.ingestion.embeddings import get_openai_client
 from app.retrieval.service import retrieve_chunks
+from app.observability import Observation, record_usage
 
 GENERATION_MODEL = "gpt-5.6-luna"
 MODERATION_MODEL = "omni-moderation-latest"
@@ -60,8 +63,10 @@ def build_context(matches: list[dict[str, Any]]) -> str:
     return "\n\n---\n\n".join(passages)
 
 
-def build_model_input(question: str, matches: list[dict[str, Any]]) -> str:
+def build_model_input(question: str, matches: list[dict[str, Any]], *, trace: Observation | None = None) -> str:
     context = build_context(matches)
+    if trace is not None:
+        trace.annotate(context_length_chars=len(context), passage_count=len(matches))
     return f"""
 Question:
 
@@ -107,68 +112,99 @@ def get_blocked_message(blocked_categories: list[str]) -> str:
     )
 
 
-def moderate_question(question: str) -> dict[str, Any]:
+def moderate_question(question: str, *, trace: Observation | None = None) -> dict[str, Any]:
     """Preserve existing input moderation policy, including fail-open behavior."""
-    started = time.perf_counter()
-    try:
-        client = get_openai_client()
-        response = client.moderations.create(model=MODERATION_MODEL, input=question)
-        payload = response.model_dump(mode="json", by_alias=True)
-        categories = payload.get("results", [{}])[0].get("categories", {})
-        flagged_categories = sorted(category for category, is_flagged in categories.items() if is_flagged)
-        blocked_categories = sorted(category for category in flagged_categories if category in BLOCKED_MODERATION_CATEGORIES)
-        return {
-            "blocked": bool(blocked_categories), "blocked_categories": blocked_categories,
-            "flagged_categories": flagged_categories,
-            "safety_ms": (time.perf_counter() - started) * 1000,
-        }
-    except Exception:
-        safety_ms = (time.perf_counter() - started) * 1000
-        logger.exception("SAFETY moderation_check_failed safety_ms=%.1f", safety_ms)
-        return {"blocked": False, "blocked_categories": [], "flagged_categories": [], "safety_ms": safety_ms}
+    parent = trace if trace is not None else Observation()
+    with parent.child("input_moderation", "guardrail", metadata={"model": MODERATION_MODEL}) as observation:
+        observation.preview_input({"model": MODERATION_MODEL, "question_length_chars": len(question)}, content={"question": question})
+        started = time.perf_counter()
+        try:
+            client = get_openai_client()
+            response = client.moderations.create(model=MODERATION_MODEL, input=question)
+            payload = response.model_dump(mode="json", by_alias=True)
+            categories = payload.get("results", [{}])[0].get("categories", {})
+            flagged_categories = sorted(category for category, is_flagged in categories.items() if is_flagged)
+            blocked_categories = sorted(category for category in flagged_categories if category in BLOCKED_MODERATION_CATEGORIES)
+            observation.annotate(blocked=bool(blocked_categories), blocked_categories=blocked_categories,
+                                 flagged_categories=flagged_categories,
+                                 moderation_outcome="blocked" if blocked_categories else "allowed")
+            parent.annotate(moderation_outcome="blocked" if blocked_categories else "allowed")
+            return {
+                "blocked": bool(blocked_categories), "blocked_categories": blocked_categories,
+                "flagged_categories": flagged_categories,
+                "safety_ms": (time.perf_counter() - started) * 1000,
+            }
+        except Exception:
+            safety_ms = (time.perf_counter() - started) * 1000
+            observation.annotate(moderation_outcome="service_error", outcome="failed")
+            parent.annotate(moderation_outcome="service_error")
+            logger.exception("SAFETY moderation_check_failed safety_ms=%.1f", safety_ms)
+            return {"blocked": False, "blocked_categories": [], "flagged_categories": [], "safety_ms": safety_ms}
 
 
-def generate_grounded_answer(question: str, figure_slug: str, match_count: int = DEFAULT_MATCH_COUNT) -> dict[str, Any]:
+def generate_grounded_answer(question: str, figure_slug: str, match_count: int = DEFAULT_MATCH_COUNT, *, trace: Observation | None = None) -> dict[str, Any]:
     """Non-streaming fallback endpoint; existing response contract preserved."""
+    parent = trace if trace is not None else Observation()
     total_started = time.perf_counter()
     cleaned_question = question.strip()
     if not cleaned_question:
         raise ValueError("Question cannot be empty.")
-    moderation = moderate_question(cleaned_question)
+    moderation = moderate_question(cleaned_question, trace=parent)
     if moderation["blocked"]:
+        parent.annotate(outcome="blocked", blocked_categories=moderation["blocked_categories"])
         total_ms = (time.perf_counter() - total_started) * 1000
         logger.info("PERF generation slug=%s blocked=true safety_ms=%.1f total_ms=%.1f categories=%s", figure_slug, moderation["safety_ms"], total_ms, ",".join(moderation["blocked_categories"]))
         return {"answer": get_blocked_message(moderation["blocked_categories"]), "model": None, "matches": []}
     retrieval_started = time.perf_counter()
-    matches = retrieve_chunks(question=cleaned_question, figure_slug=figure_slug, match_count=match_count)
+    matches = retrieve_chunks(question=cleaned_question, figure_slug=figure_slug, match_count=match_count, trace=parent)
     retrieval_ms = (time.perf_counter() - retrieval_started) * 1000
     if not matches:
+        parent.annotate(answer_type="insufficient_evidence")
         total_ms = (time.perf_counter() - total_started) * 1000
         logger.info("PERF generation slug=%s no_matches=true safety_ms=%.1f retrieval_ms=%.1f total_ms=%.1f", figure_slug, moderation["safety_ms"], retrieval_ms, total_ms)
         return {"answer": INSUFFICIENT_ANSWER, "model": None, "matches": []}
     context_started = time.perf_counter()
-    model_input = build_model_input(cleaned_question, matches)
+    prompt_version = sha256(GROUNDING_INSTRUCTIONS.encode("utf-8")).hexdigest()[:16]
+    with parent.child("context_construction", metadata={"prompt_version": prompt_version}) as context_observation:
+        context_observation.preview_input({"passage_count": len(matches), "question_length_chars": len(cleaned_question), "prompt_version": prompt_version}, content={"question": cleaned_question, "passages": [m["content"] for m in matches]})
+        model_input = build_model_input(cleaned_question, matches, trace=context_observation)
+        if context_observation.capture_content:
+            context_observation.preview_output(content={"model_input": model_input})
+        context_observation.annotate(model_input_length_chars=len(model_input))
     context_ms = (time.perf_counter() - context_started) * 1000
     client = get_openai_client()
     generation_started = time.perf_counter()
-    response = client.responses.create(model=GENERATION_MODEL, reasoning={"effort": "low"}, instructions=GROUNDING_INSTRUCTIONS, input=model_input)
-    generation_ms = (time.perf_counter() - generation_started) * 1000
-    answer = response.output_text.strip()
-    if not answer:
-        raise RuntimeError("The generation model returned an empty answer.")
+    with parent.child("llm_generation", "generation", model=GENERATION_MODEL,
+                      model_parameters={"reasoning_effort": "low"},
+                      metadata={"prompt_version": prompt_version, "reasoning_effort": "low"}) as generation:
+        generation.preview_input({"model": GENERATION_MODEL, "model_input_length_chars": len(model_input), "reasoning_effort": "low", "prompt_version": prompt_version}, content={"instructions": GROUNDING_INSTRUCTIONS, "model_input": model_input})
+        response = client.responses.create(model=GENERATION_MODEL, reasoning={"effort": "low"}, instructions=GROUNDING_INSTRUCTIONS, input=model_input)
+        record_usage(generation, response)
+        generation_ms = (time.perf_counter() - generation_started) * 1000
+        answer = response.output_text.strip()
+        if not answer:
+            raise RuntimeError("The generation model returned an empty answer.")
+        generation.annotate(output_length_chars=len(answer))
+        if generation.capture_content:
+            generation.preview_output(content={"answer": answer})
+        if answer == INSUFFICIENT_ANSWER:
+            generation.annotate(answer_type="insufficient_evidence")
+            parent.annotate(answer_type="insufficient_evidence")
     total_ms = (time.perf_counter() - total_started) * 1000
     logger.info("PERF generation slug=%s model=%s matches=%s safety_ms=%.1f retrieval_ms=%.1f context_ms=%.1f llm_ms=%.1f total_ms=%.1f", figure_slug, GENERATION_MODEL, len(matches), moderation["safety_ms"], retrieval_ms, context_ms, generation_ms, total_ms)
     return {"answer": answer, "model": GENERATION_MODEL, "matches": matches}
 
 
-def stream_grounded_answer(question: str, figure_slug: str, match_count: int = DEFAULT_MATCH_COUNT) -> Iterator[dict[str, Any]]:
+def stream_grounded_answer(question: str, figure_slug: str, match_count: int = DEFAULT_MATCH_COUNT, *, trace: Observation | None = None) -> Iterator[dict[str, Any]]:
     """Moderate, retrieve, stream visible answer, and report explicit answer type."""
+    parent = trace if trace is not None else Observation()
     total_started = time.perf_counter()
     cleaned_question = question.strip()
     if not cleaned_question:
         raise ValueError("Question cannot be empty.")
-    moderation = moderate_question(cleaned_question)
+    moderation = moderate_question(cleaned_question, trace=parent)
     if moderation["blocked"]:
+        parent.annotate(outcome="blocked", blocked_categories=moderation["blocked_categories"])
         total_ms = (time.perf_counter() - total_started) * 1000
         logger.info("PERF stream slug=%s blocked=true safety_ms=%.1f total_ms=%.1f categories=%s", figure_slug, moderation["safety_ms"], total_ms, ",".join(moderation["blocked_categories"]))
         yield {"type": "blocked", "message": get_blocked_message(moderation["blocked_categories"]), "categories": moderation["blocked_categories"]}
@@ -176,59 +212,85 @@ def stream_grounded_answer(question: str, figure_slug: str, match_count: int = D
         return
     yield {"type": "status", "status": "searching"}
     retrieval_started = time.perf_counter()
-    matches = retrieve_chunks(question=cleaned_question, figure_slug=figure_slug, match_count=match_count)
+    matches = retrieve_chunks(question=cleaned_question, figure_slug=figure_slug, match_count=match_count, trace=parent)
     retrieval_ms = (time.perf_counter() - retrieval_started) * 1000
     yield {"type": "sources", "sources": matches}
     if not matches:
+        parent.annotate(answer_type="insufficient_evidence")
         yield {"type": "delta", "text": INSUFFICIENT_ANSWER}
         total_ms = (time.perf_counter() - total_started) * 1000
         logger.info("PERF stream slug=%s no_matches=true safety_ms=%.1f retrieval_ms=%.1f ttft_ms=0.0 llm_ms=0.0 total_ms=%.1f", figure_slug, moderation["safety_ms"], retrieval_ms, total_ms)
         yield {"type": "done", "model": None, "answer_type": "insufficient_evidence"}
         return
     context_started = time.perf_counter()
-    model_input = build_model_input(cleaned_question, matches)
+    prompt_version = sha256(STREAM_INSTRUCTIONS.encode("utf-8")).hexdigest()[:16]
+    with parent.child("context_construction", metadata={"prompt_version": prompt_version}) as context_observation:
+        context_observation.preview_input({"passage_count": len(matches), "question_length_chars": len(cleaned_question), "prompt_version": prompt_version}, content={"question": cleaned_question, "passages": [m["content"] for m in matches]})
+        model_input = build_model_input(cleaned_question, matches, trace=context_observation)
+        if context_observation.capture_content:
+            context_observation.preview_output(content={"model_input": model_input})
+        context_observation.annotate(model_input_length_chars=len(model_input))
     context_ms = (time.perf_counter() - context_started) * 1000
     client = get_openai_client()
     generation_started = time.perf_counter()
     first_token_ms: float | None = None
     output_chars = 0
+    answer_parts: list[str] = []
     answer_type: str | None = None
     header = ""
     response_completed = False
-    stream = client.responses.create(model=GENERATION_MODEL, reasoning={"effort": "low"}, instructions=STREAM_INSTRUCTIONS, input=model_input, stream=True)
-    try:
-        for event in stream:
-            if event.type == "response.completed":
-                if getattr(event.response, "status", None) == "completed":
-                    response_completed = True
-                continue
-            if event.type in {"response.failed", "response.incomplete", "error"}:
-                raise RuntimeError("The model did not complete the answer.")
-            if event.type != "response.output_text.delta" or not event.delta:
-                continue
-            delta = event.delta
-            if answer_type is None:
-                header += delta
-                if "\n" not in header:
-                    if len(header) > 128:
-                        raise RuntimeError("Missing answer classification header.")
+    with parent.child("llm_generation", "generation", model=GENERATION_MODEL,
+                      model_parameters={"reasoning_effort": "low"},
+                      metadata={"prompt_version": prompt_version, "reasoning_effort": "low"}) as generation:
+        generation.preview_input({"model": GENERATION_MODEL, "model_input_length_chars": len(model_input), "reasoning_effort": "low", "prompt_version": prompt_version}, content={"instructions": STREAM_INSTRUCTIONS, "model_input": model_input})
+        stream = client.responses.create(model=GENERATION_MODEL, reasoning={"effort": "low"}, instructions=STREAM_INSTRUCTIONS, input=model_input, stream=True)
+        first_provider_text = False
+        try:
+            for event in stream:
+                if event.type == "response.completed":
+                    record_usage(generation, event.response)
+                    if getattr(event.response, "status", None) == "completed":
+                        response_completed = True
                     continue
-                label, delta = header.split("\n", 1)
-                labels = {"ANSWER_TYPE: substantive": "substantive", "ANSWER_TYPE: insufficient_evidence": "insufficient_evidence"}
-                answer_type = labels.get(label.strip())
+                if event.type in {"response.failed", "response.incomplete", "error"}:
+                    record_usage(generation, getattr(event, "response", None))
+                    raise RuntimeError("The model did not complete the answer.")
+                if event.type != "response.output_text.delta" or not event.delta:
+                    continue
+                delta = event.delta
+                if not first_provider_text and delta.strip():
+                    first_provider_text = True
+                    generation.update_native(completion_start_time=datetime.now(timezone.utc))
                 if answer_type is None:
-                    raise RuntimeError("Invalid answer classification header.")
-                header = ""
-            if not delta:
-                continue
-            if first_token_ms is None and delta.strip():
-                first_token_ms = (time.perf_counter() - generation_started) * 1000
-            output_chars += len(delta)
-            yield {"type": "delta", "text": delta}
-    finally:
-        stream.close()
-    if not response_completed or first_token_ms is None or answer_type is None:
-        raise RuntimeError("The model returned an incomplete answer.")
+                    header += delta
+                    if "\n" not in header:
+                        if len(header) > 128:
+                            raise RuntimeError("Missing answer classification header.")
+                        continue
+                    label, delta = header.split("\n", 1)
+                    labels = {"ANSWER_TYPE: substantive": "substantive", "ANSWER_TYPE: insufficient_evidence": "insufficient_evidence"}
+                    answer_type = labels.get(label.strip())
+                    if answer_type is None:
+                        raise RuntimeError("Invalid answer classification header.")
+                    header = ""
+                if not delta:
+                    continue
+                if first_token_ms is None and delta.strip():
+                    first_token_ms = (time.perf_counter() - generation_started) * 1000
+                output_chars += len(delta)
+                if generation.capture_content:
+                    answer_parts.append(delta)
+                yield {"type": "delta", "text": delta}
+        finally:
+            try:
+                stream.close()
+            finally:
+                generation.annotate(output_length_chars=output_chars, visible_ttft_ms=first_token_ms, answer_type=answer_type)
+                if generation.capture_content:
+                    generation.preview_output(content={"answer": "".join(answer_parts)})
+        if not response_completed or first_token_ms is None or answer_type is None:
+            raise RuntimeError("The model returned an incomplete answer.")
+        parent.annotate(answer_type=answer_type)
     generation_ms = (time.perf_counter() - generation_started) * 1000
     total_ms = (time.perf_counter() - total_started) * 1000
     logger.info("PERF stream slug=%s model=%s matches=%s safety_ms=%.1f retrieval_ms=%.1f context_ms=%.1f ttft_ms=%.1f llm_ms=%.1f output_chars=%s total_ms=%.1f answer_type=%s", figure_slug, GENERATION_MODEL, len(matches), moderation["safety_ms"], retrieval_ms, context_ms, first_token_ms, generation_ms, output_chars, total_ms, answer_type)

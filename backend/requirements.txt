@@ -7,3 +7,4 @@ httpx
 supabase
 tiktoken
 openai==2.48.0
+langfuse==5.2.0
